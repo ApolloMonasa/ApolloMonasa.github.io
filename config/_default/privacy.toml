@@ -1,0 +1,9 @@
+# -------------------------------------------------------------------------------------
+# Privacy Configuration
+# See: https://gohugo.io/about/hugo-and-gdpr/
+# -------------------------------------------------------------------------------------
+
+[x]
+  enableDNT = true
+[youtube]
+  privacyEnhanced = true
