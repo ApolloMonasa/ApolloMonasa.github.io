@@ -7,10 +7,11 @@ title = "Hugo FixIt Blog"
 baseURL = "https://hugo-fixit.github.io/hugo-fixit-starter1/"
 theme = [
   "FixIt",
-  "shortcode-docs-bookmark"
+  "shortcode-docs-bookmark",
+  "FixItsDoc"
 ]
-defaultContentLanguage = "en"
-languageCode = "en"
+defaultContentLanguage = "zh-cn"
+languageCode = "zh-cn"
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
@@ -19,4 +20,4 @@ relativeURLs = false
 buildDrafts = false
 summaryLength = 150
 # ignore some build errors
-ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", 'warning-dev-version']

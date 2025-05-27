@@ -2,6 +2,15 @@
 # Menu Configuration
 # See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
 # -------------------------------------------------------------------------------------
+[[main]]
+  identifier = "neoforge"
+  parent = ""
+  pre = ""
+  post = ""
+  name = "NeoForge Development Tutorial"
+  url = "/docs/neoforge/简介/"
+  title = ""
+  weight = 1
 
 [[main]]
   identifier = "archives"
@@ -14,7 +23,7 @@
   url = "/archives/"
   # title will be shown when you hover on this menu link
   title = ""
-  weight = 1
+  weight = 2
   # FixIt 0.2.14 | NEW add user-defined content to menu items
   [main.params]
     # add css class to a specific menu item
@@ -33,7 +42,7 @@
   name = "Categories"
   url = "/categories/"
   title = ""
-  weight = 2
+  weight = 3
   [main.params]
     icon = "fa-solid fa-folder-tree"
 [[main]]
@@ -44,6 +53,6 @@
   name = "Tags"
   url = "/tags/"
   title = ""
-  weight = 3
+  weight = 4
   [main.params]
     icon = "fa-solid fa-tags"

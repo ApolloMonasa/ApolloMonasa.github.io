@@ -155,7 +155,7 @@ disableThemeInject = false
   # whether to show the author
   author = true
   # Site creation year
-  since = 2021
+  since = 2025
   # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
   gov = ""
   # ICP info only in China (HTML format is supported)
@@ -556,7 +556,7 @@ disableThemeInject = false
   comment = []
   footer = []
   widgets = []
-  assets = []
+  assets = ['inject/fixitsdoc.html']
   postFooterBefore = []
   postFooterAfter = []
 
