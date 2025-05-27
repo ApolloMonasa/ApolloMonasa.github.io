@@ -5,3 +5,6 @@
 [submodule "themes/shortcode-docs-bookmark"]
 	path = themes/shortcode-docs-bookmark
 	url = https://github.com/hugo-fixit/shortcode-docs-bookmark
+[submodule "themes/FixItsDoc"]
+	path = themes/FixItsDoc
+	url = https://github.com/wmsnp/FixItsDoc.git
