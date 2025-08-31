@@ -3,8 +3,11 @@
 # See: https://gohugo.io/getting-started/configuration/
 # -------------------------------------------------------------------------------------
 
-title = "Hugo FixIt Blog"
-baseURL = "https://hugo-fixit.github.io/hugo-fixit-starter1/"
+# --- 核心配置：根据你的项目修改 ---
+title = "Personal Blog"
+baseURL = "https://ApolloMonasa.github.io/Minecraft-Modding-Tutorial-For-NeoForge/"
+
+# --- 主题和语言配置：保持不变 ---
 theme = [
   "FixIt",
   "shortcode-docs-bookmark",
@@ -13,11 +16,13 @@ theme = [
 defaultContentLanguage = "zh-cn"
 languageCode = "zh-cn"
 hasCJKLanguage = true
+
+# --- 功能开关和构建选项：保持默认推荐值 ---
 enableRobotsTXT = true
 enableEmoji = true
 enableGitInfo = true
 relativeURLs = false
 buildDrafts = false
 summaryLength = 150
-# ignore some build errors
+# 忽略一些不影响构建的小错误
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", 'warning-dev-version']

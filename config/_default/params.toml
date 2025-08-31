@@ -1,99 +1,105 @@
 # -------------------------------------------------------------------------------------
-# Theme Core Configuration
-# See: https://fixit.lruihao.cn/theme-documentation-basics/#site-configuration
+# 主题核心配置文件 (params.toml)
+# 官方文档: https://fixit.lruihao.cn/theme-documentation-basics/#site-configuration
 # -------------------------------------------------------------------------------------
 
-# FixIt 0.2.15 | CHANGED FixIt theme version
+# FixIt 主题版本，建议保持默认，除非您手动升级了主题。
 version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
-# site description
-description = "This is my new Hugo FixIt site"
-# site keywords
-keywords = ["Hugo", "FixIt"]
-# site default theme ["light", "dark", "auto"]
+# 网站描述，非常重要！会显示在浏览器标签页的副标题和搜索引擎结果中。
+description = "个人博客，包括但不限于算法竞赛，Minecraft模组开发，计科相关内容，学习思想日志。"
+# 网站关键词，用逗号分隔，有助于搜索引擎优化 (SEO)。
+keywords = ["Minecraft", "模组开发", "NeoForge", "教程", "中文", "算法竞赛"]
+# 网站默认主题颜色，"auto" 表示跟随操作系统设置，可选 "light", "dark"。
 defaultTheme = "auto"
-# which hash function used for SRI, when empty, no SRI is used
+# 指纹加密算法，用于确保浏览器加载的 CSS/JS 资源未被篡改。留空即可。
 # ["sha256", "sha384", "sha512", "md5"]
 fingerprint = ""
-# NEW date format
+# 日期格式，"2006-01-02" 是 Go 语言的特殊写法，代表 YYYY-MM-DD。
 dateFormat = "2006-01-02"
-# website images for Open Graph and Twitter Cards
+# 网站分享预览图（例如分享到微信、Twitter 时显示的图片）。暂时可以留空。
 images = []
-# FixIt 0.2.12 | NEW enable PWA
+# 是否启用 PWA (渐进式 Web 应用)，允许用户将网站“安装”到桌面。初期可以禁用。
 enablePWA = false
-# FixIt 0.2.14 | NEW whether to add external Icon for external links automatically
+# 是否为外部链接（指向其他网站的链接）自动添加一个特殊图标。
 externalIcon = false
-# FixIt 0.3.13 | NEW whether to capitalize titles
+# 是否自动将文章标题的首字母大写。
 capitalizeTitles = true
-# FixIt 0.3.0 | NEW whether to add site title to the title of every page
-# remember to set up your site title in `hugo.toml` (e.g. title = "title")
+# 是否在每个页面的标题后面都追加上网站的全局标题（在 hugo.toml 中设置的 title）。
 withSiteTitle = true
-# FixIt 0.3.0 | NEW title delimiter when the site title is be added to the title of every page
+# 追加网站标题时使用的分隔符，例如 "页面标题 - 网站标题"。
 titleDelimiter = "-"
-# FixIt 0.3.0 | NEW whether to add site subtitle to the title of index page
-# remember to set up your site subtitle by `params.header.subtitle.name`
+# 是否在首页的标题中也追加副标题。
 indexWithSubtitle = false
-# FixIt 0.3.13 | NEW whether to show summary in plain text
+# 是否将文章摘要显示为纯文本（去掉 Markdown 格式）。
 summaryPlainify = false
-# FixIt 0.2.14 | NEW FixIt will, by default, inject a theme meta tag in the HTML head on the home page only.
-# You can turn it off, but we would really appreciate if you don’t, as this is a good way to watch FixIt's popularity on the rise.
+# 是否在网页头部注入主题信息元标签。建议保留以支持主题作者，设为 false 可关闭。
 disableThemeInject = false
 
-# Author Configuration
+# --- 作者信息配置 ---
 [author]
-  name = "Lruihao"
-  email = "1024@lruihao.cn"
-  link = "https://github.com/Lruihao"
-  avatar = ""
+  # 你的名字或昵称。
+  name = "ApolloMonasa"
+  # 你的联系邮箱。
+  email = "apollomonasa@gmail.com"
+  # 点击名字后跳转的链接，通常是你的 GitHub 主页。
+  link = "https://github.com/ApolloMonasa"
+  # 头像图片地址。如果为空，会尝试使用 Gravatar 获取头像。这里已填好你的链接。
+  avatar = "https://i.ooxx.ooo/i/NTYyY.png"
 
-# FixIt 0.3.0 | NEW public Git repository information only then enableGitInfo is true
+# --- Git 仓库信息 (用于“编辑此页”、“报告问题”等功能) ---
+# 强烈建议配置此项，方便读者贡献和反馈。
 [gitInfo]
-  # e.g. "https://github.com/hugo-fixit/docs"
-  repo = ""
+  # 你的公开Git仓库地址。
+  repo = "https://github.com/ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge"
+  # 你的主分支名称。
   branch = "main"
-  # the content directory path relative to the root of the repository
+  # Markdown 文件所在的目录，相对于仓库根目录。
   dir = "content"
-  # the issue template for reporting issue of the posts
+  # "报告问题" 按钮的链接模板。保持默认即可。
   # available template params: {title} {URL} {sourceURL}
   issueTpl = "title=[BUG]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|URL|{URL}|%0A|Filename|{sourceURL}|"
 
-# App icon config
+# --- App 图标配置 (当网站被添加到手机主屏幕时使用) ---
 [app]
-  # optional site title override for the app when added to an iOS home screen or Android launcher
-  title = "Hugo FixIt Blog"
-  # whether to omit favicon resource links
+  # 添加到主屏幕时显示的名字。
+  title = "Apollo ans wmsnp's Blogs"
+  # 是否不生成 favicon 图标链接。
   noFavicon = false
-  # modern SVG favicon to use in place of older style .png and .ico files
+  # SVG 格式的 favicon。
   svgFavicon = ""
-  # Safari mask icon color
+  # Safari 浏览器标签页固定时的图标颜色。
   iconColor = "#5bbad5"
-  # Windows v8-10 tile color
+  # Windows 磁贴颜色。
   tileColor = "#da532c"
-  # FixIt 0.2.12 | CHANGED Android browser theme color
+  # Android 浏览器顶部的主题颜色。
   [app.themeColor]
     light = "#f8f8f8"
     dark = "#252627"
 
-# Search config
+# --- 网站内搜索配置 ---
+# 默认使用 fuse.js 进行前端本地搜索，效果不错，建议保持默认。
 [search]
   enable = true
-  # type of search engine ["algolia", "fuse"]
+  # 搜索引擎类型 ["algolia", "fuse"]
   type = "fuse"
-  # max index length of the chunked content
+  # 内容分块的最大索引长度。
   contentLength = 4000
-  # placeholder of the search bar
+  # 搜索框的占位文本。
   placeholder = ""
-  # max number of results length
+  # 显示结果的最大数量。
   maxResultLength = 10
-  # snippet length of the result
+  # 搜索结果摘要的长度。
   snippetLength = 30
-  # HTML tag name of the highlight part in results
+  # 搜索结果高亮部分的 HTML 标签。
   highlightTag = "em"
-  # whether to use the absolute URL based on the baseURL in search index
+  # 索引是否使用绝对路径 URL。
   absoluteURL = false
+  # 如果你使用 Algolia 搜索服务，在这里配置。
   [search.algolia]
     index = ""
     appID = ""
     searchKey = ""
+  # Fuse.js 的高级搜索选项，通常无需修改。
   [search.fuse]
     # FixIt 0.2.17 | NEW https://fusejs.io/api/options.html
     isCaseSensitive = false
@@ -106,75 +112,81 @@ disableThemeInject = false
     useExtendedSearch = false
     ignoreFieldNorm = false
 
-# Header config
+# --- 页面顶部导航栏配置 ---
 [header]
-  # FixIt 0.2.13 | CHANGED desktop header mode ["sticky", "normal", "auto"]
+  # 桌面端导航栏模式: "sticky" (吸顶), "normal" (不吸顶), "auto" (自动)。
   desktopMode = "sticky"
-  # FixIt 0.2.13 | CHANGED mobile header mode ["sticky", "normal", "auto"]
+  # 移动端导航栏模式。
   mobileMode = "auto"
-  # Header title config
+  # 导航栏左侧的 Logo 和标题。
   [header.title]
-    # URL of the LOGO
-    logo = "/hugo-fixit-starter1/images/fixit.min.svg"
-    # title name
-    name = ""
-    # you can add extra information before the name (HTML format is supported), such as icons
+    # Logo 图片的路径。建议准备一个，放在项目的 static/images/ 目录下。
+    # 示例: logo = "/images/my-logo.png"
+    # 这里我帮你移除了旧的路径，留空会显示下面的文字标题。
+    logo = "https://i.ooxx.ooo/i/ZDQ0N.png"
+    # 如果没有 Logo，会显示的文字标题。
+    name = "Apollo and wmsnp's Blogs"
+    # 可以在标题前添加额外内容（支持HTML），比如图标。
     pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
+    # 可以在标题后添加额外内容（支持HTML）。
     post = ""
-    # whether to use typeit animation for title name
+    # 是否开启标题的打字机动画效果。
     typeit = false
-  # FixIt 0.2.12 | NEW Header subtitle config
+  # 导航栏副标题。
   [header.subtitle]
-    # subtitle name
+    # 副标题内容。
     name = ""
-    # whether to use typeit animation for subtitle name
+    # 是否开启副标题的打字机动画效果。
     typeit = false
 
-# FixIt 0.2.18 | NEW Breadcrumb config
+# --- 面包屑导航 (显示当前页面路径，如：主页 > 教程 > 第一章) ---
 [breadcrumb]
-  enable = false
+  # 教程类网站强烈建议开启。
+  enable = true
+  # 是否吸顶。
   sticky = false
-  showHome = false
-  # FixIt 0.3.13 | NEW
+  # 是否显示 "主页" 链接。
+  showHome = true
+  # 分隔符。
   separator = "/"
+  # 路径首字母是否大写。
   capitalize = true
 
-# FixIt 0.3.10 | NEW Post navigation config
+# --- 文章底部的“上一篇/下一篇”导航 ---
 [navigation]
-  # whether to show the post navigation in section pages scope
-  inSection = false
-  # whether to reverse the next/previous post navigation order
+  # 是否只在同一分类下显示导航。教程站建议开启。
+  inSection = true
+  # 是否反转“上一篇”和“下一篇”的顺序。
   reverse = false
 
-# Footer config
+# --- 页脚配置 ---
 [footer]
   enable = true
-  # whether to show copyright info
+  # 是否显示版权信息 ©
   copyright = true
-  # whether to show the author
+  # 是否显示作者名字
   author = true
-  # Site creation year
+  # 网站起始年份
   since = 2025
-  # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
+  # 公安备案号（仅中国大陆）。
   gov = ""
-  # ICP info only in China (HTML format is supported)
+  # ICP 备案号（仅中国大陆）。
   icp = ""
-  # license info (HTML format is supported)
+  # 授权协议 (支持 HTML)，默认的 CC BY-NC-SA 4.0 很好，建议保留。
   license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
-  # FixIt 0.3.0 | NEW whether to show Hugo and theme info
+  # 是否显示由 Hugo 和 FixIt 强力驱动。
   [footer.powered]
-    enable = true
-    hugoLogo = true
-    themeLogo = true
-  # FixIt 0.2.17 | CHANGED Site creation time
-  [footer.siteTime]
     enable = false
+    hugoLogo = false
+    themeLogo = false
+  # 网站已运行时间。
+  [footer.siteTime]
+    enable = true
     animate = true
     icon = "fa-solid fa-heartbeat"
     pre = ""
     value = "" # e.g. "2021-12-18T16:15:22+08:00"
-  # FixIt 0.2.17 | NEW footer lines order, optional values: ["first", 0, 1, 2, 3, 4, 5, "last"]
+  # 页脚各元素的显示顺序，数字越小越靠前。
   [footer.order]
     powered = 0
     copyright = 0
@@ -182,85 +194,95 @@ disableThemeInject = false
     visitor = 0
     beian = 0
 
-# FixIt 0.3.0 | NEW Archives page config (all pages of posts type)
+# --- 归档页面配置 (所有文章的列表) ---
 [archives]
-  # special amount of posts in archives page
+  # 每页显示的文章数量。
   paginate = 20
-  # date format (month and day)
+  # 日期格式 (月-日)。
   dateFormat = "01-02"
 
-# Section page config (all pages in section)
+# --- 分类列表页配置 ---
 [section]
-  # special amount of pages in each section page
+  # 每页显示的文章数量。
   paginate = 20
-  # date format (month and day)
+  # 日期格式 (月-日)。
   dateFormat = "01-02"
-  # FixIt 0.3.10 | NEW Section feed config for RSS, Atom and JSON feed.
+  # 分类列表的 RSS 源配置。
   [section.feed]
-    # The number of posts to include in the feed. If set to -1, all posts.
+    # RSS 源中包含的文章数量, -1 表示所有。
     limit = -1
-    # whether to show the full text content in feed.
+    # RSS 源中是否包含全文。
     fullText = false
 
-# Term list (category or tag) page config
+# --- 标签列表页配置 ---
 [list]
-  # special amount of posts in each list page
+  # 每页显示的文章数量。
   paginate = 20
-  # date format (month and day)
+  # 日期格式 (月-日)。
   dateFormat = "01-02"
-  # FixIt 0.3.10 | NEW Term list feed config for RSS, Atom and JSON feed.
+  # 标签列表的 RSS 源配置。
   [list.feed]
-    # The number of posts to include in the feed. If set to -1, all posts.
+    # RSS 源中包含的文章数量, -1 表示所有。
     limit = -1
-    # whether to show the full text content in feed.
+    # RSS 源中是否包含全文。
     fullText = false
 
-# FixIt 0.3.13 | NEW recently updated pages config for archives, section and term list
+# --- “最近更新”标识配置 ---
+# 在指定天数内更新过的文章会显示一个“新”的标记。
 [recentlyUpdated]
   archives = true
   section = true
   list = true
-  days = 30
-  maxCount = 10
+  days = 30 # 30天内更新的会显示
+  maxCount = 10 # 最多显示10个
 
-# FixIt 0.2.17 | NEW TagCloud config for tags page
+# --- 标签云页面配置 ---
 [tagcloud]
-  enable = false
-  min = 14 # Minimum font size in px
-  max = 32 # Maximum font size in px
-  peakCount = 10 # Maximum count of posts per tag
-  orderby = "name" # Order of tags, optional values: ["name", "count"]
+  # 如果你的标签很多，可以开启此功能生成一个标签云页面。
+  enable = true
+  min = 14 # 最小字号 (px)
+  max = 32 # 最大字号 (px)
+  peakCount = 10 # 达到最大字号所需的文章数量
+  orderby = "name" # 标签排序方式 ["name", "count"]
 
-# Home page config
+# --- 首页 (Home Page) 配置 ---
 [home]
-  # Home page profile
+  # 个人信息卡片
   [home.profile]
     enable = true
-    # Gravatar Email for preferred avatar in home page
-    gravatarEmail = "xx@xx.com"
-    # URL of avatar shown in home page
-    avatarURL = ""
-    # FixIt 0.2.17 | NEW identifier of avatar menu link
+    # 用于获取 Gravatar 头像的邮箱（如果下面的 avatarURL 为空）。
+    # gravatarEmail = "apollomonasa@gmail.com"
+    # 直接指定一个头像图片的 URL (优先级不高于 gravatarEmail)。
+    avatarURL = "https://i.ooxx.ooo/i/NTYyY.png"
+    # 头像下方的菜单链接标识符。
     avatarMenu = ""
-    # title shown in home page (HTML format is supported)
+    # 首页大标题，如果留空，会使用 hugo.toml 里的网站标题。
     title = ""
-    # subtitle shown in home page (HTML format is supported)
-    subtitle = "This is my new Hugo FixIt site"
-    # whether to use typeit animation for subtitle
+    # 首页副标题。
+    subtitle = "从零开始，一步步带你进入 Minecraft 模组开发的奇妙世界"
+    # 副标题是否使用打字机动画。
     typeit = true
-    # whether to show social links
+    # 是否显示社交链接图标。
     social = true
-    # disclaimer (HTML format is supported)
+    # 一段免责声明或欢迎语 (支持 HTML)。
     disclaimer = ""
-  # Home page posts
+  # 首页的文章列表。
   [home.posts]
     enable = true
-    # special amount of posts in each home posts page
-    paginate = 6
+    # 每页显示多少篇文章。
+    paginate = 10
 
-# FixIt 0.2.16 | CHANGED Social config about the author
+# --- 社交链接配置 ---
+# 在下方填入你的社交媒体用户名或完整链接。留空则该图标不显示。
 [social]
-  GitHub = ""
+  GitHub = "ApolloMonasa"
+  Bilibili = "1029459856" # 你的 Bilibili 用户 ID
+  Zhihu = ""
+  Discord = ""
+  QQGroup = "" # 你的 QQ 群号或加群链接
+  Email = "apollomonasa@gmail.com"
+  RSS = true # 保持 true 以便订阅
+  # --- 其他社交媒体 ---
   Linkedin = ""
   Twitter = ""
   Instagram = ""
@@ -303,7 +325,6 @@ disableThemeInject = false
   Strava = ""
   Skype = ""
   Whatsapp = ""
-  Zhihu = ""
   Douban = ""
   Angellist = ""
   Slidershare = ""
@@ -321,17 +342,14 @@ disableThemeInject = false
   Gitea = ""
   XMPP = ""
   Matrix = ""
-  Bilibili = ""
   ORCID = ""
   Liberapay = ""
   Ko-Fi = ""
   BuyMeaCoffee = ""
   Linktree = ""
   QQ = ""
-  QQGroup = "" # https://qun.qq.com/join.html
   Diaspora = ""
   CSDN = ""
-  Discord = ""
   DiscordInvite = ""
   Lichess = ""
   Pleroma = ""
@@ -346,9 +364,7 @@ disableThemeInject = false
   TikTok = ""
   Credly = ""
   Phone = ""
-  Email = ""
-  RSS = true
-  # custom social links like the following
+  # 自定义社交链接的示例
   # [social.twitter]
   #   id = "lruihao"
   #   weight = 3
@@ -357,84 +373,71 @@ disableThemeInject = false
   #   [social.twitter.icon]
   #     class = "fa-brands fa-x-twitter fa-fw"
 
-# TypeIt config
+# --- 打字机动画效果的全局配置 ---
 [typeit]
-  # typing speed between each step (measured in milliseconds)
+  # 打字速度 (毫秒)
   speed = 100
-  # blinking speed of the cursor (measured in milliseconds)
+  # 光标闪烁速度 (毫秒)
   cursorSpeed = 1000
-  # character used for the cursor (HTML format is supported)
+  # 光标字符 (支持HTML)
   cursorChar = "|"
-  # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+  # 打字结束后光标停留时间, -1 表示无限
   duration = -1
-  # FixIt 0.2.18 | NEW whether your strings will continuously loop after completing
+  # 是否循环播放动画
   loop = false
 
-# FixIt 0.2.15 | NEW Mermaid config
+# --- Mermaid 图表配置 ---
 [mermaid]
-  # For values, see https://mermaid.js.org/config/theming.html#available-themes
+  # 可用的主题，详见 Mermaid.js 官网
   themes = ["default", "dark"]
 
-# FixIt 0.3.13 | NEW Admonitions custom config
-# See https://fixit.lruihao.cn/documentation/content-management/shortcodes/extended/admonition/#custom-admonitions
-# syntax: <type> = <icon>
+# --- Admonition (提示框) 短代码的自定义图标 ---
+# 语法: <类型> = "<FontAwesome 图标 class>"
 [admonition]
   # ban = "fa-solid fa-ban"
 
-# FixIt 0.3.14 | NEW Task lists custom config
-# See https://fixit.lruihao.cn/documentation/content-management/advanced/#custom-task-lists
-# syntax: <sign> = <icon>
+# --- 任务列表的自定义图标 ---
+# 语法: <符号> = "<FontAwesome 图标 class>"
 [taskList]
   # tip = "fa-regular fa-lightbulb"
 
-# FixIt 0.3.15 | NEW version shortcode config
+# --- [version] 短代码配置 ---
 [repoVersion]
-  # url prefix for the release tag
+  # 发布版本的 URL 前缀
   url = "https://github.com/hugo-fixit/FixIt/releases/tag/v"
-  # project name
+  # 项目名称
   name = "FixIt"
 
-# FixIt 0.2.12 | NEW PanguJS config
+# --- 中文排版优化工具 PanguJS ---
+# 自动在中文和英文/数字之间添加空格，强烈建议开启。
 [pangu]
-  # For Chinese writing
-  enable = false
-  selector = "article" # FixIt 0.2.17 | NEW
+  # 是否启用
+  enable = true
+  # 生效的 HTML 元素选择器
+  selector = "article"
 
-# FixIt 0.2.12 | NEW Watermark config
-# Detail config see https://github.com/Lruihao/watermark#readme
+# --- 水印功能 ---
 [watermark]
   enable = false
-  # watermark's text (HTML format is supported)
+  # 水印文字 (支持HTML)
   content = ""
-  # watermark's transparency
+  # 透明度
   opacity = 0.1
-  # watermark's width. unit: px
-  width = 150
-  # watermark's height. unit: px
-  height = 20
-  # row spacing of watermarks. unit: px
-  rowSpacing = 60
-  # col spacing of watermarks. unit: px
-  colSpacing = 30
-  # watermark's tangent angle. unit: deg
-  rotate = 15
-  # watermark's fontSize. unit: rem
-  fontSize = 0.85
-  # FixIt 0.2.13 | NEW watermark's fontFamily
-  fontFamily = "inherit"
+  # ... 其他水印样式设置
 
-# FixIt 0.3.10 | NEW Busuanzi count
+# --- 网站访问量统计 (Busuanzi) ---
 [busuanzi]
-  # whether to enable busuanzi count
+  # 是否启用。如果启用，页脚会显示网站总访问量和页面阅读量。
   enable = false
-  # busuanzi count core script source. Default is https://vercount.one/js
+  # Busuanzi 的 JS 文件源，国内可以用下面的镜像。
+  # source = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
   source = "https://vercount.one/js"
-  # whether to show the site views
+  # 是否显示网站总访问量
   siteViews = true
-  # whether to show the page views
+  # 是否显示当前页面阅读量
   pageViews = true
 
-# Site verification code config for Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
+# --- 各种搜索引擎的网站所有权验证 ---
 [verification]
   google = ""
   bing = ""
@@ -444,109 +447,114 @@ disableThemeInject = false
   so = ""
   sogou = ""
 
-# Site SEO config
+# --- SEO 优化配置 ---
 [seo]
-  # image URL
+  # 默认的分享图片 URL
   image = ""
-  # thumbnail URL
+  # 默认的缩略图 URL
   thumbnailUrl = ""
 
-# Analytics config
+# --- 网站分析工具 (如 Google Analytics) ---
 [analytics]
   enable = false
   # Google Analytics
   [analytics.google]
-    id = ""
-    # whether to anonymize IP
+    id = "" # 你的 GA ID
+    # 是否匿名化 IP 地址
     anonymizeIP = true
   # Fathom Analytics
   [analytics.fathom]
     id = ""
-    # server url for your tracker if you're self hosting
     server = ""
 
-# Cookie consent config
+# --- Cookie 授权弹窗 (GDPR 合规) ---
 [cookieconsent]
-  enable = true
-  # text strings used for Cookie consent banner
+  enable = false
+  # 弹窗的文字内容
   [cookieconsent.content]
     message = ""
     dismiss = ""
     link = ""
 
-# CDN config for third-party library files
+# --- CDN 配置 ---
+# 用于加载第三方库的 CDN 源
 [cdn]
-  # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
-  # located in "themes/FixIt/assets/data/cdn/" directory
-  # you can store your own data files in the same path under your project: "assets/data/cdn/"
+  # CDN 数据文件名，默认为空。可选 "jsdelivr.yml", "unpkg.yml" 等。
+  # 可以在 "themes/FixIt/assets/data/cdn/" 目录下查看可用的 CDN 配置。
   data = ""
 
-# Compatibility config
+# --- 旧浏览器兼容性配置 ---
 [compatibility]
-  # whether to use Polyfill.io to be compatible with older browsers
+  # 是否使用 Polyfill.io 兼容旧浏览器
   polyfill = false
-  # whether to use object-fit-images to be compatible with older browsers
+  # 是否使用 object-fit-images 兼容旧浏览器
   objectFit = false
 
-# FixIt 0.2.14 | NEW GitHub banner in the top-right or top-left corner
+# --- GitHub 角标 ---
 [githubCorner]
-  enable = false
-  permalink = "https://github.com/hugo-fixit/FixIt"
-  title = "View source on GitHub"
-  position = "right" # ["left", "right"]
-
-# FixIt 0.2.14 | NEW Gravatar config
-[gravatar]
-  # FixIt 0.2.18 | NEW Depends on the author's email, if the author's email is not set, the local avatar will be used
+  # 是否在右上角显示一个指向 GitHub 仓库的角标。教程站强烈建议开启。
   enable = true
-  # Gravatar host, default: "www.gravatar.com"
-  host = "www.gravatar.com" # ["cravatar.cn", "gravatar.loli.net", ...]
+  # 你的 GitHub 仓库链接
+  permalink = "https://github.com/ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge"
+  # 鼠标悬停时显示的文字
+  title = "在 GitHub 上查看源码"
+  # 显示位置 ["left", "right"]
+  position = "right"
+
+# --- Gravatar 头像配置 ---
+[gravatar]
+  # 是否启用 Gravatar 头像
+  enable = true
+  # Gravatar 服务器地址，建议使用国内镜像以加快加载速度。
+  host = "cravatar.cn" # 可选: "gravatar.loli.net"
+  # 默认头像样式，当邮箱没有注册 Gravatar 时显示
   style = "" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
 
-# FixIt 0.2.16 | NEW Back to top
+# --- "返回顶部" 按钮 ---
 [backToTop]
   enable = true
-  # Scroll percent label in b2t button
-  scrollpercent = false
+  # 是否在按钮上显示滚动百分比
+  scrollpercent = true
 
-# FixIt 0.2.16 | NEW Reading progress bar
+# --- 页面顶部阅读进度条 ---
 [readingProgress]
-  enable = false
-  # Available values: ["left", "right"]
+  enable = true
+  # 起始位置 ["left", "right"]
   start = "left"
-  # Available values: ["top", "bottom"]
+  # 显示位置 ["top", "bottom"]
   position = "top"
+  # 是否反向
   reversed = false
+  # 亮色主题下的颜色
   light = ""
+  # 暗色主题下的颜色
   dark = ""
-  height = "2px"
+  # 进度条高度
+  height = "3px"
 
-# FixIt 0.2.17 | NEW Progress bar in the top during page loading.
-# For more information: https://github.com/CodeByZach/pace
+# --- 页面加载时的动画进度条 (Pace.js) ---
 [pace]
-  enable = false
-  # All available colors:
+  enable = true
+  # 可用颜色
   # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
   color = "blue"
-  # All available themes:
-  # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
-  # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
+  # 可用主题样式
+  # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", ... ]
   theme = "minimal"
 
-# FixIt 0.3.10 | NEW Global Feed config for RSS, Atom and JSON feed.
+# --- RSS 订阅源全局配置 ---
 [feed]
-  # The number of posts to include in the feed. If set to -1, all posts.
+  # RSS 源中包含的文章数量, -1 表示所有
   limit = 10
-  # whether to show the full text content in feed.
+  # RSS 源中是否包含全文
   fullText = true
-  # Site Challenge for Follow: https://follow.is/
+  # Follow.is 挑战
   [feed.follow]
     feedId = ""
     userId = ""
 
-# FixIt 0.3.12 | NEW Custom partials config
-# Custom partials must be stored in the /layouts/partials/ directory.
-# Depends on open custom blocks https://fixit.lruihao.cn/references/blocks/
+# --- 自定义 Partial (高级功能) ---
+# 可以在网站的特定位置注入你自己的 HTML 代码片段。
 [customPartials]
   head = [
     "inject/fixit-docs-bookmark.html",
@@ -560,103 +568,104 @@ disableThemeInject = false
   postFooterBefore = []
   postFooterAfter = []
 
-# FixIt 0.2.15 | NEW Developer options
-# Select the scope named `public_repo` to generate personal access token,
-# Configure with environment variable `HUGO_PARAMS_GHTOKEN=xxx`, see https://gohugo.io/functions/os/getenv/#examples
+# --- 开发者选项 ---
 [dev]
   enable = false
-  # Check for updates
+  # 检查主题更新
   c4u = false
 
-# Page config
+# --- 文章页面 (Page) 的默认配置 ---
+# 这里设置的值，可以在单篇文章的 Front Matter 中被覆盖。
 [page]
-  # FixIt 0.2.18 | NEW whether to enable the author's avatar of the post
+  # 是否在文章作者旁显示头像。
   authorAvatar = true
-  # whether to hide a page from home page
+  # 是否从首页的文章列表中隐藏此页面。
   hiddenFromHomePage = false
-  # whether to hide a page from search results
+  # 是否从搜索结果中隐藏此页面。
   hiddenFromSearch = false
-  # FixIt 0.3.0 | NEW whether to hide a page from related posts
+  # 是否从相关文章推荐中隐藏此页面。
   hiddenFromRelated = false
-  # FixIt 0.3.10 | NEW whether to hide a page from RSS, Atom and JSON feed
+  # 是否从 RSS 源中隐藏此页面。
   hiddenFromFeed = false
-  # whether to enable twemoji
+  # 是否将 emoji 转换为 twemoji 图片。
   twemoji = false
-  # FixIt 0.2.18 | CHANGED whether to enable lightgallery
-  # set to true, images in the content will be shown as the gallery if the image has a title, e.g. ![alt](src "title")
-  # set to "force", images in the content will be forced to shown as the gallery regardless of the image has a title or not, e.g. ![alt](src)
-  lightgallery = false
-  # whether to enable the ruby extended syntax
+  # 是否启用 lightgallery 图片灯箱效果（点击图片放大）。
+  # 设置为 true, 图片需要有标题才能触发，如 ![alt](src "title")
+  # 设置为 "force", 所有图片都会触发。教程站建议设为 true 或 "force"。
+  lightgallery = true
+  # 是否启用 Ruby 注音 (e.g. {ruby|furigana}) 扩展语法。
   ruby = true
-  # whether to enable the fraction extended syntax
+  # 是否启用分数 (e.g. {1/2}) 扩展语法。
   fraction = true
-  # whether to enable the fontawesome extended syntax
+  # 是否启用 Fontawesome (e.g. :fa-solid fa-fire:) 扩展语法。
   fontawesome = true
-  # license info (HTML format is supported)
+  # 文章底部的默认授权协议。
   license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
-  # whether to show link to Raw Markdown content of the post
+  # 是否显示“查看 Markdown 原文”的链接。
   linkToMarkdown = true
-  # FixIt 0.3.0 | NEW whether to show link to view source code of the post
+  # 是否显示“查看源码”链接（需要已配置 [gitInfo]）。
   linkToSource = true
-  # FixIt 0.3.0 | NEW whether to show link to edit the post
+  # 是否显示“编辑此页”链接（需要已配置 [gitInfo]）。
   linkToEdit = true
-  # FixIt 0.3.0 | NEW whether to show link to report issue for the post
+  # 是否显示“报告问题”链接（需要已配置 [gitInfo]）。
   linkToReport = true
-  # FixIt 0.3.10 | CHANGED Page style ["narrow", "normal", "wide", ...]
+  # 页面样式: "narrow" (窄), "normal" (普通), "wide" (宽)。
   pageStyle = "normal"
-  # FixIt 0.2.17 | CHANGED Auto Bookmark Support
-  # If true, save the reading progress when closing the page.
-  autoBookmark = false
-  # FixIt 0.2.17 | NEW whether to enable wordCount
+  # 是否自动记录并恢复阅读进度。
+  autoBookmark = true
+  # 是否显示字数统计。
   wordCount = true
-  # FixIt 0.2.17 | NEW whether to enable readingTime
+  # 是否显示预计阅读时间。
   readingTime = true
-  # FixIt 0.2.17 | NEW end of post flag
-  endFlag = ""
-  # FixIt 0.2.18 | NEW whether to enable instant.page
+  # 文章结束标记，会在文章末尾显示。
+  endFlag = "---"
+  # 是否启用 instant.page 预加载技术，加快页面跳转速度。
   instantPage = false
-  # FixIt 0.3.0 | NEW whether to enable collection list at the sidebar
+  # 是否在侧边栏显示系列文章列表。
   collectionList = false
-  # FixIt 0.3.0 | NEW whether to enable collection navigation at the end of the post
+  # 是否在文章末尾显示系列文章导航。
   collectionNavigation = false
 
-  # FixIt 0.2.15 | NEW Repost config
+  # 文章转载信息配置。
   [page.repost]
     enable = false
     url = ""
-  # Table of the contents config
+  # 文章目录 (TOC) 的默认设置。
   [page.toc]
-    # whether to enable the table of the contents
+    # 是否默认启用目录。
     enable = true
-    # whether to keep the static table of the contents in front of the post
+    # 是否在正文前也保留一份静态目录。
     keepStatic = false
-    # whether to make the table of the contents in the sidebar automatically collapsed
+    # 是否自动折叠侧边栏目录。
     auto = true
-    # FixIt 0.2.13 | NEW position of TOC ["left", "right"]
+    # 目录显示在页面的哪个位置 ["left", "right"]。
     position = "right"
-    # FixIt 0.3.12 | NEW supersede `markup.tableOfContents` settings
+    # 是否给目录条目自动编号。
     ordered = false
+    # 目录包含的标题起始级别 (e.g. h2)。
     startLevel = 2
+    # 目录包含的标题结束级别 (e.g. h6)。
     endLevel = 6
-  # FixIt 0.2.13 | NEW Display a message at the beginning of an article to warn the reader that its content might be expired
+  # 文章过期提醒。
   [page.expirationReminder]
-    enable = false
-    # Display the reminder if the last modified time is more than 90 days ago
+    enable = true
+    # 最后修改超过90天，显示提示。
     reminder = 90
-    # Display warning if the last modified time is more than 180 days ago
+    # 最后修改超过180天，显示警告。
     warning = 180
-    # If the article expires, close the comment or not
+    # 如果文章过期，是否自动关闭评论。
     closeComment = false
-  # FixIt 0.3.0 | NEW page heading config
+  # 页面标题自动编号配置。
   [page.heading]
-    # FixIt 0.3.3 | NEW whether to capitalize automatic text of headings
+    # 是否将自动生成的文本（如章节号）首字母大写。
     capitalize = false
-    # FixIt 0.3.12 | CHANGED must set `params.page.toc.ordered` to true
+    # 必须将 page.toc.ordered 设置为 true 才生效。
     [page.heading.number]
-      # whether to enable auto heading numbering
+      # 是否启用标题自动编号。
       enable = false
-      # FixIt 0.3.3 | NEW only enable in main section pages (default is posts)
+      # 是否只在主内容区（默认是 posts 目录）启用。
       onlyMainSection = true
+      # 编号格式。
       [page.heading.number.format]
         h1 = "{title}"
         h2 = "{h2} {title}"
@@ -664,69 +673,60 @@ disableThemeInject = false
         h4 = "{h2}.{h3}.{h4} {title}"
         h5 = "{h2}.{h3}.{h4}.{h5} {title}"
         h6 = "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
-  # FixIt 0.2.16 | CHANGED KaTeX mathematical formulas (https://katex.org)
+  # KaTeX 数学公式支持。
   [page.math]
     enable = true
-    # default inline delimiter is $ ... $ and \( ... \)
+    # 行内公式的左右定界符。
     inlineLeftDelimiter = ""
     inlineRightDelimiter = ""
-    # default block delimiter is $$ ... $$, \[ ... \], \begin{equation} ... \end{equation} and some other functions
+    # 块级公式的左右定界符。
     blockLeftDelimiter = ""
     blockRightDelimiter = ""
-    # KaTeX extension copy_tex
+    # 是否启用 "复制公式" 功能。
     copyTex = true
-    # KaTeX extension mhchem
+    # 是否启用 mhchem 化学公式扩展。
     mhchem = true
-  # Code wrapper config
+  # 代码块的默认设置。
   [page.code]
-    # FixIt 0.3.9 | NEW whether to enable the code wrapper
+    # 是否启用代码块的额外功能（复制按钮等）。
     enable = true
-    # whether to show the copy button of the code wrapper
+    # 是否显示“复制”按钮。
     copy = true
-    # FixIt 0.2.13 | NEW whether to show the edit button of the code wrapper
+    # 是否显示“编辑”按钮，通常用于可交互的代码块，教程站可设为 false。
     edit = true
-    # the maximum number of lines of displayed code by default
+    # 默认最多显示多少行代码，超过的会折叠。
     maxShownLines = 10
-  # Mapbox GL JS config (https://docs.mapbox.com/mapbox-gl-js)
+  # Mapbox GL JS 地图配置。
   [page.mapbox]
-    # access token of Mapbox GL JS
+    # Mapbox 的 access token。
     accessToken = ""
-    # style for the light theme
+    # 亮色主题的地图样式。
     lightStyle = "mapbox://styles/mapbox/light-v11"
-    # style for the dark theme
+    # 暗色主题的地图样式。
     darkStyle = "mapbox://styles/mapbox/dark-v11"
-    # whether to add NavigationControl
-    navigation = true
-    # whether to add GeolocateControl
-    geolocate = true
-    # whether to add ScaleControl
-    scale = true
-    # whether to add FullscreenControl
-    fullscreen = true
-  # FixIt 0.3.0 | NEW [Experimental] cache remote images locally, see: https://github.com/hugo-fixit/FixIt/pull/362
+    # ... 其他地图控件
+
+  # [实验性功能] 缓存远程图片到本地。
   [page.cacheRemoteImages]
     enable = false
-    # replace remote image url with local image url (place in public/images/remote/)
+    # 是否将远程图片URL替换为本地URL。
     replace = false
-  # FixIt 0.3.0 | NEW Related content config (https://gohugo.io/content-management/related/)
+  # 相关文章推荐。
   [page.related]
-    enable = false
+    enable = true
     count = 5
-  # FixIt 0.2.17 | NEW Donate (Sponsor) settings
+  # 文章底部的打赏功能。
   [page.reward]
     enable = false
     animation = false
-    # position relative to post footer, optional values: ["before", "after"]
     position = "after"
     # comment = "Buy me a coffee"
-    # FixIt 0.2.18 | NEW display mode of QR code images, optional values: ["static", "fixed"], default: `static`
     mode = "static"
-    [page.reward.ways]
-      # wechatpay = "/images/wechatpay.png"
-      # alipay = "/images/alipay.png"
-      # paypal = "/images/paypal.png"
-      # bitcoin = "/images/bitcoin.png"
-  # social share links in post page
+    # [page.reward.ways]
+    #   wechatpay = "/images/wechatpay.png"
+    #   alipay = "/images/alipay.png"
+
+  # 文章底部的分享按钮。
   [page.share]
     enable = true
     Twitter = true
@@ -753,165 +753,100 @@ disableThemeInject = false
     Skype = false
     Trello = false
     Mix = false
-  # FixIt 0.2.15 | CHANGED Comment config
+  # --- 评论系统总开关 ---
   [page.comment]
-    enable = false
-    # FixIt 0.2.13 | NEW Artalk comment config (https://artalk.js.org/)
+    enable = false # 设为 true 以启用评论，并配置下面的具体服务。
+    # Artalk 评论系统配置。
     [page.comment.artalk]
       enable = false
       server = "https://yourdomain"
       site = "默认站点"
-      # FixIt 0.3.3 | NEW whether use backend configuration
-      useBackendConf = false
-      placeholder = ""
-      noComment = ""
-      sendBtn = ""
-      editorTravel = true
-      flatMode = "auto"
-      # FixIt 0.2.17 | CHANGED enable lightgallery support
-      lightgallery = false
-      locale = "" # FixIt 0.2.15 | NEW
-      # FixIt 0.2.18 | NEW
-      emoticons = ""
-      nestMax = 2
-      nestSort = "DATE_ASC" # ["DATE_ASC", "DATE_DESC", "VOTE_UP_DESC"]
-      vote = true
-      voteDown = false
-      uaBadge = true
-      listSort = true
-      imgUpload = true
-      preview = true
-      versionCheck = true
-    # Disqus comment config (https://disqus.com)
+      # ...
+    # Disqus 评论系统配置。
     [page.comment.disqus]
       enable = false
-      # Disqus shortname to use Disqus in posts
       shortname = ""
-    # Gitalk comment config (https://github.com/gitalk/gitalk)
+    # Gitalk 评论系统配置。
     [page.comment.gitalk]
       enable = false
       owner = ""
       repo = ""
       clientId = ""
       clientSecret = ""
-    # Valine comment config (https://github.com/xCss/Valine)
+    # Valine 评论系统配置。
     [page.comment.valine]
       enable = false
       appId = ""
       appKey = ""
-      placeholder = ""
-      avatar = "mp"
-      meta = ""
-      requiredFields = ""
-      pageSize = 10
-      lang = ""
-      visitor = true
-      recordIP = true
-      highlight = true
-      enableQQ = false
-      serverURLs = ""
-      # emoji data file name, default is "google.yml"
-      # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
-      # located in "themes/FixIt/assets/lib/valine/emoji/" directory
-      # you can store your own data files in the same path under your project:
-      # "assets/lib/valine/emoji/"
-      emoji = ""
-      commentCount = true # FixIt 0.2.13 | NEW
-    # FixIt 0.2.16 | CHANGED Waline comment config (https://waline.js.org)
+      # ...
+    # Waline 评论系统配置。
     [page.comment.waline]
       enable = false
       serverURL = ""
-      pageview = false # FixIt 0.2.15 | NEW
-      emoji = ["//unpkg.com/@waline/emojis@1.1.0/weibo"]
-      meta = ["nick", "mail", "link"]
-      requiredMeta = []
-      login = "enable"
-      wordLimit = 0
-      pageSize = 10
-      imageUploader = false # FixIt 0.2.15 | NEW
-      highlighter = false # FixIt 0.2.15 | NEW
-      comment = false # FixIt 0.2.15 | NEW
-      texRenderer = false # FixIt 0.2.16 | NEW
-      search = false # FixIt 0.2.16 | NEW
-      recaptchaV3Key = "" # FixIt 0.2.16 | NEW
-      turnstileKey = "" # FixIt 0.3.8 | NEW
-      reaction = false # FixIt 0.2.18 | NEW
-    # Facebook comment config (https://developers.facebook.com/docs/plugins/comments)
+      # ...
+    # Facebook 评论插件配置。
     [page.comment.facebook]
       enable = false
       width = "100%"
       numPosts = 10
       appId = ""
       languageCode = ""
-    # Telegram comments config (https://comments.app)
+    # Telegram 评论插件配置。
     [page.comment.telegram]
       enable = false
       siteID = ""
       limit = 5
-      height = ""
-      color = ""
-      colorful = true
-      dislikes = false
-      outlined = false
-    # Commento comment config (https://commento.io)
+      # ...
+    # Commento 评论系统配置。
     [page.comment.commento]
       enable = false
-    # Utterances comment config (https://utteranc.es)
+    # Utterances 评论系统配置。
     [page.comment.utterances]
       enable = false
-      # owner/repo
       repo = ""
       issueTerm = "pathname"
-      label = ""
-      lightTheme = "github-light"
-      darkTheme = "github-dark"
-    # FixIt 0.2.13 | NEW Twikoo comment config (https://twikoo.js.org/)
+      # ...
+    # Twikoo 评论系统配置。
     [page.comment.twikoo]
       enable = false
       envId = ""
-      region = ""
-      path = ""
-      visitor = true
-      commentCount = true
-      # FixIt 0.2.17 | CHANGED enable lightgallery support
-      lightgallery = false
-      # FixIt 0.2.17 | NEW enable Katex support
-      katex = false
-    # FixIt 0.2.14 | NEW Giscus comments config
+      # ...
+    # --- Giscus 评论配置 (推荐！基于 GitHub Discussions) ---
     [page.comment.giscus]
-      enable = false
-      repo = ""
+      enable = false # 如果要用 Giscus，把这里设为 true
+      # 你的 GitHub "用户名/仓库名"
+      repo = "ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge"
+      # 从 Giscus 官网获取
       repoId = ""
-      category = ""
+      # 你在仓库 Discussions 中用于存放评论的分类名
+      category = "Announcements"
+      # 从 Giscus 官网获取
       categoryId = ""
-      mapping = ""
-      origin = "https://giscus.app" # FixIt NEW | 0.3.7 Or set it to your self-hosted domain
-      strict = "0" # FixIt NEW | 0.2.18
-      term = ""
+      # 页面与 discussion 的映射方式
+      mapping = "pathname"
+      # 启用 Giscus 的 "Reactions" 功能
       reactionsEnabled = "1"
       emitMetadata = "0"
-      inputPosition = "bottom" # ["top", "bottom"]
-      lang = ""
+      # 评论框位置 ["top", "bottom"]
+      inputPosition = "bottom"
+      # 语言
+      lang = "zh-CN"
+      # 主题
       lightTheme = "light"
       darkTheme = "dark"
+      # 是否延迟加载
       lazyLoad = true
-  # Third-party library config
+  # 加载自定义的第三方库。
   [page.library]
     [page.library.css]
       # someCSS = "some.css"
-      # located in "assets/"
-      # Or
-      # someCSS = "https://cdn.example.com/some.css"
     [page.library.js]
       # someJavascript = "some.js"
-      # located in "assets/"
-      # Or
-      # someJavascript = "https://cdn.example.com/some.js"
-  # Page SEO config
+  # 单个页面的 SEO 优化。
   [page.seo]
-    # image URL
+    # 此页面的分享图片。
     images = []
-    # Publisher info
+    # 发布者信息。
     [page.seo.publisher]
       name = ""
       logoUrl = ""
