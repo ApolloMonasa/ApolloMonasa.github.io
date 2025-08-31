@@ -5,7 +5,7 @@
 
 # --- 核心配置：根据你的项目修改 ---
 title = "Personal Blog"
-baseURL = "https://ApolloMonasa.github.io/Minecraft-Modding-Tutorial-For-NeoForge/"
+baseURL = "https://ApolloMonasa.github.io/"
 
 # --- 主题和语言配置：保持不变 ---
 theme = [
