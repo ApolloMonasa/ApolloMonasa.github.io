@@ -66,7 +66,7 @@ disableThemeInject = false
   # 是否不生成 favicon 图标链接。
   noFavicon = false
   # SVG 格式的 favicon。
-  svgFavicon = ""
+  svgFavicon = "https://i.ooxx.ooo/i/ZDQ0N.png"
   # Safari 浏览器标签页固定时的图标颜色。
   iconColor = "#5bbad5"
   # Windows 磁贴颜色。
