@@ -259,7 +259,7 @@ disableThemeInject = false
     # 首页大标题，如果留空，会使用 hugo.toml 里的网站标题。
     title = ""
     # 首页副标题。
-    subtitle = "从零开始，一步步带你进入 Minecraft 模组开发的奇妙世界"
+    subtitle = "Welcome To My Blog Site!"
     # 副标题是否使用打字机动画。
     typeit = true
     # 是否显示社交链接图标。
@@ -755,7 +755,7 @@ disableThemeInject = false
     Mix = false
   # --- 评论系统总开关 ---
   [page.comment]
-    enable = false # 设为 true 以启用评论，并配置下面的具体服务。
+    enable = true # 设为 true 以启用评论，并配置下面的具体服务。
     # Artalk 评论系统配置。
     [page.comment.artalk]
       enable = false
@@ -797,14 +797,16 @@ disableThemeInject = false
       siteID = ""
       limit = 5
       # ...
-    # Commento 评论系统配置。
-    [page.comment.commento]
+    # Comment 评论系统配置。
+    [page.comment.comment]
       enable = false
     # Utterances 评论系统配置。
     [page.comment.utterances]
-      enable = false
-      repo = ""
+      enable = true
+      repo = "ApolloMonasa/MyBlogComments"
       issueTerm = "pathname"
+      theme = "github-light"
+      label = "Comment"
       # ...
     # Twikoo 评论系统配置。
     [page.comment.twikoo]
