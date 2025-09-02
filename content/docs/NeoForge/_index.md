@@ -5,5 +5,4 @@ cascade:
   params:
     type: docs
 isTopLevel: true
-comment: true
 ---

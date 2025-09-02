@@ -270,7 +270,7 @@ disableThemeInject = false
   [home.posts]
     enable = true
     # 每页显示多少篇文章。
-    paginate = 10
+    paginate = 3
 
 # --- 社交链接配置 ---
 # 在下方填入你的社交媒体用户名或完整链接。留空则该图标不显示。

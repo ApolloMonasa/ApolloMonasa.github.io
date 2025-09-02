@@ -1,59 +1,56 @@
 # -------------------------------------------------------------------------------------
 # Menu Configuration
-# See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
+# 优化后的版本
 # -------------------------------------------------------------------------------------
 
 [[main]]
   identifier = "neoforge"
-  parent = ""
-  pre = ""
-  post = ""
   name = "NeoForge开发教程"
-  url = "/docs/neoforge/简介/"
-  title = ""
-  weight = 1
+  url = "/docs/neoforge/"  # [修正] 指向教程的根目录，而不是具体页面
+  title = "NeoForge 模组开发教程"
+  weight = 10              # [修正] 使用唯一的 weight，并留出间隔
+
+[[main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/posts/"
+  title = "浏览所有文章"
+  weight = 20              # [修正] 唯一的 weight
+  [main.params]
+    icon = "fa-solid fa-pen-nib" # [建议] 为“文章”添加图标
 
 [[main]]
   identifier = "archives"
-  parent = ""
-  # you can add extra information before the name (HTML format is supported), such as icons
-  pre = ""
-  # you can add extra information after the name (HTML format is supported), such as icons
-  post = ""
   name = "归档"
   url = "/archives/"
-  # title will be shown when you hover on this menu link
-  title = ""
-  weight = 2
-  # FixIt 0.2.14 | NEW add user-defined content to menu items
+  title = "按时间归档"
+  weight = 30              # [修正] 唯一的 weight
   [main.params]
-    # add css class to a specific menu item
-    class = ""
-    # whether set as a draft menu item whose function is similar to a draft post/page
-    draft = false
-    # FixIt 0.2.16 | NEW add fontawesome icon to a specific menu item
     icon = "fa-solid fa-archive"
-    # FixIt 0.2.16 | NEW set menu item type, optional values: ["mobile", "desktop"]
-    type = ""
+
 [[main]]
   identifier = "categories"
-  parent = ""
-  pre = ""
-  post = ""
   name = "分类"
   url = "/categories/"
-  title = ""
-  weight = 3
+  title = "按分类浏览"
+  weight = 40              # [修正] 唯一的 weight
   [main.params]
     icon = "fa-solid fa-folder-tree"
+
 [[main]]
   identifier = "tags"
-  parent = ""
-  pre = ""
-  post = ""
   name = "标签"
   url = "/tags/"
-  title = ""
-  weight = 4
+  title = "按标签浏览"
+  weight = 50              # [修正] 唯一的 weight
   [main.params]
     icon = "fa-solid fa-tags"
+
+[[main]]
+  identifier = "portfolio"
+  name = "作品集"
+  url = "/portfolio/"
+  title = "查看我的作品集"
+  weight = 60              # [修正] 唯一的 weight
+  [main.params]
+    icon = "fa-solid fa-folder-open" # [建议] 为“作品集”添加图标
