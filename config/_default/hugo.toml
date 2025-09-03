@@ -9,9 +9,9 @@ baseURL = "https://ApolloMonasa.github.io/"
 
 # --- 主题和语言配置：保持不变 ---
 theme = [
+  "FixItsDoc",
   "FixIt",
-  "shortcode-docs-bookmark",
-  "FixItsDoc"
+  "shortcode-docs-bookmark"
 ]
 defaultContentLanguage = "zh-cn"
 languageCode = "zh-cn"
