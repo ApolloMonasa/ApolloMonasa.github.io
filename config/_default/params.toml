@@ -40,7 +40,7 @@ disableThemeInject = false
   # 你的名字或昵称。
   name = "ApolloMonasa"
   # 你的联系邮箱。
-  email = "apollomonasa@gmail.com"
+  # email = "apollomonasa@gmail.com"
   # 点击名字后跳转的链接，通常是你的 GitHub 主页。
   link = "https://github.com/ApolloMonasa"
   # 头像图片地址。如果为空，会尝试使用 Gravatar 获取头像。这里已填好你的链接。
@@ -279,9 +279,9 @@ disableThemeInject = false
   Bilibili = "1029459856" # 你的 Bilibili 用户 ID
   Zhihu = ""
   Discord = ""
-  QQGroup = "" # 你的 QQ 群号或加群链接
+  QQGroup = "1062064369" # 你的 QQ 群号或加群链接
   Email = "apollomonasa@gmail.com"
-  RSS = true # 保持 true 以便订阅
+  RSS = false # 保持 true 以便订阅
   # --- 其他社交媒体 ---
   Linkedin = ""
   Twitter = ""
@@ -349,7 +349,7 @@ disableThemeInject = false
   Linktree = ""
   QQ = ""
   Diaspora = ""
-  CSDN = ""
+  CSDN = "xyl6716"
   DiscordInvite = ""
   Lichess = ""
   Pleroma = ""
