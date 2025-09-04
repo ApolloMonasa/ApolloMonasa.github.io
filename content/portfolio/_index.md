@@ -1,6 +1,6 @@
 ---
-title: "博客"
-weight: 1
+title: 作品集
+weight: 2
 cascade:
   params:
     type: docs

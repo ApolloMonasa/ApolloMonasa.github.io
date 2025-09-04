@@ -2,7 +2,7 @@
 # 主题核心配置文件 (params.toml)
 # 官方文档: https://fixit.lruihao.cn/theme-documentation-basics/#site-configuration
 # -------------------------------------------------------------------------------------
-
+customJS = ["/js/custom.js"]
 # FixIt 主题版本，建议保持默认，除非您手动升级了主题。
 version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
 # 网站描述，非常重要！会显示在浏览器标签页的副标题和搜索引擎结果中。
@@ -841,9 +841,9 @@ disableThemeInject = false
   # 加载自定义的第三方库。
   [page.library]
     [page.library.css]
-      # someCSS = "some.css"
+      # someCSS = "assets/css/_custom.scss"
     [page.library.js]
-      # someJavascript = "some.js"
+      #someJavascript = "/assets/js/custom.js"
   # 单个页面的 SEO 优化。
   [page.seo]
     # 此页面的分享图片。

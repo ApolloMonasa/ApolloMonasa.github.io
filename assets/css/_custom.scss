@@ -1,4 +1,85 @@
-// ==============================
-// Custom style
-// 自定义样式
-// ==============================
+/*
+ * 文件路径: assets/css/_custom.scss
+ * 作用: 为 marked text 提供在亮色和暗色主题下的所有样式。
+ * 这是最终的、无依赖的、精心设计的版本。
+ */
+
+/* --- 1. 基础 .mark 样式和默认高亮 (黄色) --- */
+/* 这是当你不指定类型时 (例如 ==text==) 的样式 */
+.mark {
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  font-weight: 600;
+  /* 亮色模式下的默认颜色 */
+  background-color: #fef3c7; /* 非常浅的黄色背景 */
+  color: #92400e;            /* 深琥珀色文字 */
+}
+/* 暗色模式下的默认颜色 */
+[data-scheme="dark"] .mark {
+  background-color: #78350f; /* 深琥珀色背景 */
+  color: #fef3c7;            /* 非常浅的黄色文字 */
+}
+
+
+/* --- 2. 特定类型的高亮样式 --- */
+
+/* Primary (蓝色) - 用于主要信息 */
+.mark-primary {
+  background-color: #dbeafe; color: #3153c4;
+}
+[data-scheme="dark"] .mark-primary {
+  background-color: #1e40af; color: #dbeafe;
+}
+
+/* Secondary (灰色) - 用于次要信息 */
+.mark-secondary {
+  background-color: #e5e7eb; color: #374151;
+}
+[data-scheme="dark"] .mark-secondary {
+  background-color: #4b5563; color: #e5e7eb;
+}
+
+/* Success (绿色) - 用于成功提示 */
+.mark-success {
+  background-color: #d1fae5; color: #065f46;
+}
+[data-scheme="dark"] .mark-success {
+  background-color: #065f46; color: #d1fae5;
+}
+
+/* Info (青色) - 用于补充信息 */
+.mark-info {
+  background-color: #cffafe; color: #0e7490;
+}
+[data-scheme="dark"] .mark-info {
+  background-color: #0e7490; color: #cffafe;
+}
+
+/* Warning (橘色) - 用于警告信息 */
+.mark-warning {
+  background-color: #ffedd5; color: #9a3412;
+}
+[data-scheme="dark"] .mark-warning {
+  background-color: #9a3412; color: #ffedd5;
+}
+
+/* Danger (红色) - 用于危险/错误信息 */
+.mark-danger {
+  background-color: #fee2e2; color: #991b1b;
+}
+[data-scheme="dark"] .mark-danger {
+  background-color: #991b1b; color: #fee2e2;
+}
+
+
+/* --- 3. (可选) 添加您自己的自定义类型 --- */
+/* 
+   例如，您之前想要的粉色 (pink)
+   您可以按照这个格式，添加任意多的自定义类型
+*/
+.mark-pink {
+  background-color: #fce7f3; color: #dd578d;
+}
+[data-scheme="dark"] .mark-pink {
+  background-color: #e74988; color: #fce7f3;
+}

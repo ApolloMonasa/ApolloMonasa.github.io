@@ -1,6 +1,6 @@
 ---
 title: NeoForge开发教程
-weight: 1
+weight: 0
 cascade:
   params:
     type: docs

@@ -26,3 +26,4 @@ buildDrafts = false
 summaryLength = 150
 # 忽略一些不影响构建的小错误
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", 'warning-dev-version']
+
