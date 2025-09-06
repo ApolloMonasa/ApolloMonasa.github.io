@@ -1,5 +1,5 @@
 ---
-title: "泛型与集合"
+title: "泛型与约束"
 subtitle: ""
 date: 2025-09-03T16:10:10+08:00
 categories:
