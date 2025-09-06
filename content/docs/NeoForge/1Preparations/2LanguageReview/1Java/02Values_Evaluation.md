@@ -27,9 +27,9 @@ author: {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.oox
 
 | 字面量类型 | 写法实例                    | 对应的值              |
 | ----- | ----------------------- | ----------------- |
-| 整数    | 42, -7, 0x12, 10E5, 10L | 整数（int、long）      |
-| 浮点数   | 3.14, 2.5F              | 浮点数（double、float） |
-| 布尔    | true, false             | 布尔值：真、假           |
+| 整数    | 42, -7, 0x12, 10L | 整数（byte、short、int、long）      |
+| 浮点数   | 3.14, 2.5F, 10E5,            | 浮点数（double、float） |
+| 布尔    | true, false             | 布尔值（boolean）：真、假           |
 | 字符    | 'A', '?', '\n', '你'  | 单个字符（char）        |
 | 字符串   | "Hello"                 | 一串字符（String）      |
 
@@ -44,7 +44,6 @@ author: {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.oox
 ```Java {title="int的用法"}
 System.out.println(1); // 这里的1对应了int类型
 System.out.println(-1); // int可以是负数
-System.out.println(2E3); // 支持科学计数法，表示2×10³
 System.out.println(0x1A); // 16进制数
 ```
 
