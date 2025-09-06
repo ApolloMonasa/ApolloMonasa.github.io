@@ -6,7 +6,7 @@
 [[main]]
   identifier = "neoforge"
   name = "NeoForge开发教程"
-  url = "/docs/neoforge/简介"  # [修正] 指向教程的根目录，而不是具体页面
+  url = "/docs/neoforge/0Introduction"  # [修正] 指向教程的根目录，而不是具体页面
   title = "NeoForge 模组开发教程"
   weight = 10              # [修正] 使用唯一的 weight，并留出间隔
 
