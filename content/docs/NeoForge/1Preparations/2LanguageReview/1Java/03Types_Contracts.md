@@ -40,7 +40,7 @@ Java 规定，`+` 运算符可以在字符串之间工作，用于拼接字符�
 + 变量声明：`int x`
 + 类型转换或标注：`(float) x`（你马上会学到）
 + 函数的参数和返回值：在下面这段你已经无比熟悉的代码中，`void`和`String[]`都类型标识。\
-其中，`void`表示`main`函数没有返回值；`String[]`是指`main`函数以一个字符串列表为参数。（不太理解？没关系，我们在下一章将会详细学到）
+其中，`void`表示`main`函数没有返回值；`String[]`是指`main`函数以一个字符串数组为参数。（不太理解？没关系，我们在下一章将会详细学到）
 ```Java
 public static void main(String[] args) { ... }
 ```
@@ -54,14 +54,16 @@ enum Material { WOOD, STONE, IRON }
 
 为了方便理解，Java 把常用类型分为两类：
 + **基本类型**：表示简单的数值或逻辑值。\
-包括：`int`, `long`, `float`, `double`, `boolean`, `char`
+包括：`byte` , `short`, `int`, `long`, `float`, `double`, `boolean`, `char`
 + **引用类型**：表示更复杂的对象或数据结构，它们往往是由基本类型组合而成。\
 包括：类、接口、枚举、记录等等（例如我们曾经看到的`String`，在 Mod开发中经常用到的 `Block`, `Item`等等）
 
 ```Java
 // 基本类型
 float level = 5F; // 玩家等级
-level = level + 0.5; // 绑定到新值
+// level = level + 0.5; // float + double = double，报错！
+level = level + 0.5F; // 绑定到新指
+level = (float) (level + 0.5); // 强制类型转换
 
 // 引用类型
 String playerName = "Alex";
@@ -88,6 +90,21 @@ dirt = Blocks.STONE; // 绑定到新的方块对象
 var a = 1;
 int a = 1;
 ```
+
+> [!ERROR] 相等判断
+> 
+> 你可能注意到，`==` 和 `equals()` 的区别。
+>
+> `==` 比较绑定的对象，而 `equals()` 比较绑定对象的内容
+> + 对于基本类型，没有`equals()`方法，`==` 能达到同样的效果；
+> + 否则，你应该永远使用 `equals()`，因为在值的世界中，可能存在多个内容相同的对象，而 `==` 将会认为它们不同：
+> ```Java
+> String s1 = new String("hello");
+> String s2 = new String("hello");
+> System.out.println(s1 == s2); // false
+> System.out.println(s1.equals(s2)); // true
+> ```
+
 
 ## 类型转换
 
@@ -188,10 +205,11 @@ System.out.println(players.size()); // 获取列表长度
 > 
 > 由于在声明时`List<String>`已经表明`<>`中的类型是`String`，因此右边的`T`可以省略
 
-还有一种更简单的初始化列表的写法：
+还有一种更简单的初始化列表的写法，但是只能得到不可变的列表：
 
 ```Java
 List<String> players = List.of("Alex", "Steve");
+// players.add("Bob"); // 报错：列表不可变
 ```
 
 ### 集合
@@ -227,14 +245,21 @@ playerLevels.put("Steve", 5);
 // 取值
 int a = playerLevels.get("Alex"); // 10
 
+// int b = playerLevels.get("Bob"); // 报错：找不到键
+int b = playerLevels.getOrDefault("Bob", 0); // 0，如果不存在则返回默认值
+
 // 判断是否存在
-boolean b = playerLevels.containsKey("Steve"); // true
+boolean c = playerLevels.containsKey("Steve"); // true
 ```
+
+> [!TIPS] 安全的默认值
+> 我们推荐使用 `getOrDefault` 方法来获取映射的键值对，而不是直接用 `get` 方法。
+
 
 在 Mod 开发中，Map 特别常见：记录某个玩家对应的等级、生命值；保存方块到掉落物的映射关系；保存物品 ID 到物品对象的对应关系等等。
 
 > [!TIPS] 
-> 每种集合类型都包含一些共有的，或独特的方法。如果你不确定获取元素个数是`length`还是`size`，在使用的时候再向AI询问吧！
+> 每种集合类型都包含一些共有的，或独特的方法。如果你不确定获取元素个数是`length`还是`size()`，在使用的时候再向AI询问吧！
 
 ## Optional
 

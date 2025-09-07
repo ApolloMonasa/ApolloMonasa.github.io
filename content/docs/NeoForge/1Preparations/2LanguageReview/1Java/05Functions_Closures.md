@@ -82,6 +82,102 @@ static void greet(String name) {
 greet("Alex"); // 输出: Hello, Alex!
 ```
 
+```Java
+void modify(List<String> lst) {
+    lst.add("Bob"); // 修改对象内容
+}
+
+void anotherModify(List<String> lst) {
+    lst = List.of("Steve"); // 绑定一个新的对象
+}
+
+public static void main(String[] args) {
+    List<String> names = new ArrayList<>();
+    names.add("Alice");
+    modify(a);
+}
+```
+
+函数调用时传递参数：绑定到同一个对象
+
+```mermaid
+graph TD
+
+    listObj["[Alice]"]
+    style listObj fill:#c6efce
+
+    subgraph main
+        names["names"]
+    end
+
+    subgraph modify
+        lst["lst"]
+    end
+
+    names --> listObj
+    lst --> listObj
+```
+
+使用`.add()`修改后：
+```mermaid
+graph TD
+
+    listObj["[Alice, Bob]"]
+    style listObj fill:#c6efce
+
+    subgraph main
+        names["names"]
+    end
+
+    subgraph modify
+        lst["lst"]
+    end
+
+    names --> listObj
+    lst --> listObj
+```
+
+调用`anotherModify`时：
+
+```mermaid
+graph TD
+
+    listObj["[Alice, Bob]"]
+    style listObj fill:#c6efce
+
+    subgraph main
+        names["names"]
+    end
+
+    subgraph anotherModify
+        lst["lst"]
+    end
+
+    names --> listObj
+    lst --> listObj
+```
+
+`lst`绑定到新的对象上，不影响`names`：
+
+```mermaid
+graph TD
+
+    listObj["[Alice, Bob]"]
+    listObj2["[Steve]"]
+    style listObj fill:#c6efce
+    style listObj2 fill:#c6efce
+
+    subgraph main
+        names["names"]
+    end
+
+    subgraph anotherModify
+        lst["lst"]
+    end
+
+    names --> listObj
+    lst --> listObj2
+```
 
 ## Lambda：将函数作为值
 
@@ -117,7 +213,7 @@ name -> {
 }
 ```
 
-然而，由于Java沉重的历史包袱，单单是这么写，Java无法判断其类型，必须手动注明。最简单的方法当然是将它与特定类型的变量绑定。
+然而，单这么写，Java无法判断其类型，必须手动注明或从上下文推断。最简单的方法当然是将它与特定类型的变量绑定。
 
 那么，对于不同参数和返回值的函数，它的类型是什么呢？常见的有下面几种：
 
@@ -144,8 +240,8 @@ sayHi.run(); // 输出: Hi！
 ```Java
 import java.util.function.Supplier
 
-Supplier<Integer> randomNumber = () -> (int)(Math.random() * 100);
-System.out.println(randomNumber.get()); // 产生一个 1 至 100 的随机数
+Supplier<Integer> randomNumber = () -> (int)(Math.random() * 100); // Java可以自动将 int 类型包装成 Integer
+System.out.println(randomNumber.get()); // 产生一个 1 至 99 的随机数
 ```
 
 > [!NOTE]
@@ -374,10 +470,10 @@ public class Main {
             r.run();
         }
 
-        // 使用方法引用（System.out 是已有对象）
+        // 使用方法引用（System.out 是 Java 内置对象，println 是它的一个方法）
         for (String item : items) {
-            Runnable r = System.out::println;
-            r.run(); // 这里会打印 item 对象本身
+            Consumer<String> r = System.out::println;
+            r.accept(item);
         }
     }
 }
@@ -519,7 +615,7 @@ int sum = numbers.reduce(0, (a, b) -> a + b); // 15
 ```
 ### 中间操作
 
-中间操作会返回一个新的 `Stream`，可以链式组合，常用操作如下：
+中间操作会返回一个新的 `Stream`（不会执行计算），可以链式组合，常用操作如下：
 #### 截取
 
 + `.limit(n)`：取前`n`个元素
@@ -636,6 +732,9 @@ Ingredient.fromValues(先前的结果.map(Ingredient::getValues))
 ```Java {.no-header}
 Ingredient.fromValues(先前的结果.map(Ingredient::getValues).flatMap(Stream::of))
 ```
+
+> [!INFO] 扁平化
+> `flatMap` 用于将嵌套流“展平”为单一流
 
 完整的代码如下：
 

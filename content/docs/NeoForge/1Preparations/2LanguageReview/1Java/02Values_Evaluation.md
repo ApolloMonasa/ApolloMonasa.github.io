@@ -50,7 +50,7 @@ System.out.println(0x1A); // 16进制数
 然而，int只能存储从$-2^{31}$到$2^{31}-1$范围的整数，用来应付常规的Mod开发通常是足够的，但是Java也提供了更大范围的类型：**long**
 
 ```Java {title="long的用法"}
-System.out.println(1E50L); // 在结尾加L的字面量将会被Java理解为long
+System.out.println(1000000000000000000L); // 在结尾加L的字面量将会被Java理解为long
 ```
 
 ### 浮点数
@@ -144,6 +144,60 @@ health = 15; // health 现在绑定新值 15.0（int类型可以自动被转化�
 System.out.println(health); // 15.0
 ```
 
+最简单的绑定`int x = 42;`：
+```mermaid
+graph LR
+    x["变量 x"] --> v42["值 42"]
+```
+
+重新绑定`x = 10;`：
+```mermaid
+graph LR
+    x["变量 x"] --> v10["值 10"]
+    style 值42 fill:#eee,stroke:#999,stroke-dasharray: 3 3
+```
+---
+
+多个变量绑定到同一个值 `int a = 5; int b = a;`：
+```mermaid
+graph LR
+    a["变量 a"] --> v5["值 5"]
+    b["变量 b"] --> v5
+```
+
+然后修改：`b = 10`:
+
+```mermaid
+graph LR
+    a["变量 a"] --> v5["值 5"]
+    b["变量 b"] --> v10["值 10"]
+```
+---
+
+引用类型的绑定： 
+```Java
+List<String> list1 = new ArrayList<>();
+List<String> list2 = list1; // 假如是 new ArrayList<>()，会发生什么？
+list1.add("Alex");
+list1.add("Steve");
+```
+
+```mermaid
+graph LR
+    list1["变量 list1"] --> L["值 [Alex, Steve]"]
+    list2["变量 list2"] --> L
+```
+修改`list1`后：
+```Java
+list1.add("Tom");
+System.out.println(list2); // 输出结果为[Alex, Steve, Tom]
+```
+```mermaid
+graph LR
+    list1["变量 list1"] --> L["值 [Alex, Steve, Tom]"]
+    list2["变量 list2"] --> L
+```
+
 ### 作用域
 
 变量的有效范围叫做作用域。在 Java 中，作用域决定了你在哪些地方可以使用某个变量，通常情况下，作用域由变量周围的`{ ... }`确定。
@@ -217,10 +271,10 @@ boolean needWarning = !hasTool || !canBreak; // true，逻辑非(!, 取反) + �
 ```
 
 > [!NOTE] 短路运算符
-> `&&` 和 `||` 是短路运算符：如果左边的值已经能决定结果，右边就不会再计算
+> `&&` 和 `||` 是短路运算符：如果左边的值已经能决定结果，右边就不会再计算（尤其注意右边的表达式是否会带来副作用）。
 ### 一些运算符带有副作用
 
-通常情况下，表达式的求值不会改变其中涉及的变量本身的值。然而，有一些带副作用的表达式（例如 `++`、`--`等）会在求值时顺带改变表达式中变量的值，这种副作用往往会带来意想不到的结果。**不要使用它们**，除非你就是如此设计的。
+通常情况下，表达式的求值不会改变其中涉及的变量本身的值。然而，有一些带副作用的表达式（例如 `++`、`--`等）会在求值时顺带改变表达式中变量的值，这种副作用往往会带来意想不到的结果。**不要在赋值语句中使用它们**，除非你就是如此设计的。
 
 ```Java
 int x = 5;
