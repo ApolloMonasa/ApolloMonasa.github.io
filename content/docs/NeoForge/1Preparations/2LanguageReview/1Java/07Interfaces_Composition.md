@@ -122,7 +122,7 @@ interface SimpleWaterloggedBlock extends BucketPickup, LiquidBlockContainer {
 
 ```Java {data-open=true}
 // 示例方块类，实现 SimpleWaterloggedBlock
-public class SlabBlock implements SimpleWaterloggedBlock {
+class SlabBlock implements SimpleWaterloggedBlock {
 
     private boolean waterlogged;
     private boolean isDouble;
@@ -246,8 +246,8 @@ protected void registerModels() {
 }
 ```
 在这里，`modItem` 变量可能是普通物品，也可能是实现了 `ModCustomModel` 的特殊物品，我们用 `instanceof` 判断；
-+ 对普通物品：调用 basicItem()；
-+ 对自定义物品：调用它的 registerModel()。
++ 对普通物品：调用 `basicItem()`；
++ 对自定义物品：调用它的 `registerModel()`。
 
 ## 函数式接口
 
@@ -292,7 +292,7 @@ public interface Comparator<T> {
 
 ```Java {.no-header}
 @FunctionalInterface
-public interface BlockUpdateHandler {
+interface BlockUpdateHandler {
     void onUpdate(int x, int y, int z);
 }
 ```
