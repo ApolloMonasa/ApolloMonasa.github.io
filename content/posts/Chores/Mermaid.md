@@ -66,6 +66,15 @@ Mermaid 是一种基于 JavaScript 的图表和图表绘制工具。它使用一
 
 让我们来创建一个经典的 "Hello World" 流程图。在编辑器中输入以下代码：
 
+```markdown
+graph TD;
+    A[开始] --> B(处理);
+    B --> C{判断};
+    C -- Yes --> D[结束];
+    C -- No --> B;
+```
+
+
 ```mermaid
 graph TD;
     A[开始] --> B(处理);
@@ -97,6 +106,16 @@ graph TD;
 
 *   **不同节点形状**
 
+```markdown
+graph LR;
+    A[矩形]
+    B(圆角矩形)
+    C((圆形))
+    D{菱形}
+    E>右向旗帜]
+    F{{六边形}}
+```
+
 ```mermaid
 graph LR;
     A[矩形]
@@ -108,6 +127,15 @@ graph LR;
 ```
 
 *   **不同连接线样式**
+
+```markdown
+graph TD;
+        A -- 普通线 --- B;
+        C --带箭头--> D;
+        E -. 虚线 .-> F;
+        G == 粗线 ==> H;
+        I -- 带文字 --> J;
+```
 
 ```mermaid
 graph TD;
@@ -134,6 +162,18 @@ sequenceDiagram
     Alice ->> Bob: 我也很好，谢谢！
 ```
 
+```markdown
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice ->> Bob: 你好，Bob，最近怎么样?
+    activate Bob
+    Bob -->> Alice: 嗨，Alice！我很好，你呢？
+    deactivate Bob
+    Note right of Bob: Bob 思考了一下
+    Alice ->> Bob: 我也很好，谢谢！
+```
+
 **代码解析：**
 
 *   `sequenceDiagram`: 声明这是一个时序图。
@@ -148,6 +188,20 @@ sequenceDiagram
 甘特图是项目管理的利器，用于展示任务的时间安排。
 
 ```mermaid
+gantt
+    title 项目开发计划
+    dateFormat YYYY-MM-DD
+    section 设计阶段
+    UI/UX 设计     :done, des1, 2023-10-01, 7d
+    数据库设计     :active, des2, after des1, 5d
+    section 开发阶段
+    前端开发       :crit, dev1, after des2, 20d
+    后端开发       :crit, dev2, after des2, 20d
+    section 测试阶段
+    功能测试       :       test1, after dev1, 5d
+```
+
+```markdown
 gantt
     title 项目开发计划
     dateFormat YYYY-MM-DD
@@ -187,6 +241,16 @@ pie
     "Other" : 5
 ```
 
+```markdown
+pie
+    title 编程语言市场份额
+    "JavaScript" : 45
+    "Python" : 25
+    "Java" : 15
+    "C++" : 10
+    "Other" : 5
+```
+
 **代码解析：**
 
 *   `pie`: 声明是饼图。
@@ -198,6 +262,29 @@ pie
 对于软件开发者，类图是描述系统结构的重要工具。
 
 ```mermaid
+classDiagram
+    class Animal {
+      +String name
+      +int age
+      +eat()
+      +sleep()
+    }
+    class Dog {
+      +bark()
+    }
+    class Cat {
+      +meow()
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat
+    
+    class Car {
+        -Engine engine
+    }
+    Car *-- Engine
+```
+
+```markdown
 classDiagram
     class Animal {
       +String name
