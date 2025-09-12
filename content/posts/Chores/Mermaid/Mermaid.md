@@ -327,6 +327,22 @@ classDiagram
 
 你可以使用 `classDef` 和 `class` 来为节点定义和应用 CSS 样式。
 
+```markdown
+graph TD;
+    A[开始] --> B{条件判断};
+    B -- Yes --> C[成功];
+    B -- No --> D[失败];
+
+    %% 定义一个名为 'success' 的样式类
+    classDef success fill:#9f9,stroke:#333,stroke-width:2px;
+    %% 定义一个名为 'fail' 的样式类
+    classDef fail fill:#f99,stroke:#333,stroke-width:2px;
+
+    %% 将样式应用到节点
+    class C success;
+    class D fail;
+```
+
 ```mermaid
 graph TD;
     A[开始] --> B{条件判断};
@@ -346,6 +362,21 @@ graph TD;
 **4.2 子图 (Subgraphs)**
 
 使用 `subgraph` 将一组节点组织在一起，使复杂图表更有条理。
+
+```markdown
+graph TD;
+    subgraph "核心处理流程"
+        A[输入] --> B(处理);
+        B --> C[输出];
+    end
+
+    subgraph "外部系统"
+        D[数据库]
+        E[API接口]
+    end
+
+    C --> D;
+```
 
 ```mermaid
 graph TD;
