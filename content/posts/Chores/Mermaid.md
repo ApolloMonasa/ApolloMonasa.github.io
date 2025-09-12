@@ -2,7 +2,7 @@
 title: "Mermaid全面教程"
 weight: 0
 date: 2025-09-12T12:36:18+08:00
-draft: true
+draft: false
 authors: "ApolloMonasa" # 在这里填上你的默认作者名
 tags: ["Tool", "Flow chart"] # 预设一个空标签，方便后续填写
 categories: ["Blogs"] # 预设一个空分类
