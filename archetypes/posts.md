@@ -14,10 +14,9 @@ featuredImage: "" # 文章的特色图片（封面图）的路径
 # 例如: featuredImage: "/images/featured-image.jpg"
 ---
 
-**摘要：** 在这里写下文章的摘要，它会显示在文章列表页面。
+**摘要：** 
 
 <!--more-->
 
 ## 引言
 
-从这里开始你的正文...
