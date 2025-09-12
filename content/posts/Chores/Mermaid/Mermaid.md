@@ -1,5 +1,5 @@
 ---
-title: "Mermaid入门教程"
+title: "BasicMermaid"
 weight: 10
 date: 2025-09-12T12:36:18+08:00
 draft: false
