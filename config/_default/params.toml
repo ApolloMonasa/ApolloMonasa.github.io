@@ -251,7 +251,7 @@ disableThemeInject = false
   [home.profile]
     enable = true
     # 用于获取 Gravatar 头像的邮箱（如果下面的 avatarURL 为空）。
-    # gravatarEmail = "apollomonasa@gmail.com"
+    gravatarEmail = "apollomonasa@gmail.com"
     # 直接指定一个头像图片的 URL (优先级不高于 gravatarEmail)。
     avatarURL = "https://i.ooxx.ooo/i/NTYyY.png"
     # 头像下方的菜单链接标识符。
