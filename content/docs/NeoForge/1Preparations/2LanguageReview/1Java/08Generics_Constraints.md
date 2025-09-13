@@ -7,7 +7,7 @@ weight: 80
 description: ""
 keywords: ""
 draft: true
-author: {name: "wmsnp", link: "https://github.com/wmsnp"}
+author: {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
 ---
 
 在前面几节，我们学习了类、接口，对 Java 中的多态行为有了很深刻的理解：
