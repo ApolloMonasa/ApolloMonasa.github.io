@@ -40,7 +40,7 @@ disableThemeInject = false
   # 你的名字或昵称。
   name = "ApolloMonasa"
   # 你的联系邮箱。
-  # email = "apollomonasa@gmail.com"
+  email = "apollomonasa@gmail.com"
   # 点击名字后跳转的链接，通常是你的 GitHub 主页。
   link = "https://github.com/ApolloMonasa"
   # 头像图片地址。如果为空，会尝试使用 Gravatar 获取头像。这里已填好你的链接。
@@ -504,7 +504,7 @@ disableThemeInject = false
 # --- Gravatar 头像配置 ---
 [gravatar]
   # 是否启用 Gravatar 头像
-  enable = true
+  enable = false
   # Gravatar 服务器地址，建议使用国内镜像以加快加载速度。
   host = "cravatar.cn" # 可选: "gravatar.loli.net"
   # 默认头像样式，当邮箱没有注册 Gravatar 时显示
