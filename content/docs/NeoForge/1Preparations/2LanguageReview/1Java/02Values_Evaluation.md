@@ -48,7 +48,7 @@ System.out.println(-1); // int可以是负数
 System.out.println(0x1A); // 16进制数
 ```
 
-然而，int只能存储从$-2^{31}$ 到$2^{31}-1$ 范围的整数，用来应付常规的Mod开发通常是足够的，但是Java也提供了更大范围的类型：**long**
+然而，int只能存储从 $-2^{31}$ 到 $2^{31}-1$ 范围的整数，用来应付常规的Mod开发通常是足够的，但是Java也提供了更大范围的类型：**long**
 
 ```Java {title="long的用法"}
 System.out.println(1000000000000000000L); // 在结尾加L的字面量将会被Java理解为long
