@@ -7,8 +7,9 @@ weight: 20
 description: ""
 keywords: ""
 draft: true
-author: {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-
+author: 
+    - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
+    - ApolloMonasa  
 ---
 ## 值、字面量
 
