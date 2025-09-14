@@ -120,8 +120,19 @@ public class Main {
 ```
 
 尽管你可能不理解这些英文单词的含义，或许还被一个简单的输出指令需要变写这么长代码而吓到，但没有关系，你现在只需要知道下面几点规则：
-+ 在每一个`xxx.java`文件中，最外层都需要写 ==`public class xxx { ... }`，这里的xxx需要和文件名一致。==[pink]这一点不必担忧，因为当你创建文件时，你的IDE将会**自动**帮你生成它
-+ 在你想直接运行的Java文件中，你还必须要定义一个 `main` 方法，也就是`public static void main(String[] args) { ... }`，程序将从这里开始执行。事实上，这一点也不必担忧，因为你最后编写的Mod并不需要直接运行，而是被NeoForge加载进游戏里，因此，在真正的Mod开发中，你**并不需要**这个东西
++ 在每一个`xxx.java`文件中，最外层都需要写 ==`public class xxx { ... }`，这里的xxx需要和文件名一致，并且只能有一个。==[pink]这一点不必担忧，因为当你创建文件时，你的IDE将会**自动**帮你生成它
++ ==class==代表类，后面的Main代表类名，关于类是什么，现在不重要，之后我们会详细讨论，现在只需要知道有这个概念。
++ 在你想直接运行的Java文件中，你还必须要定义一个 `main` 方法，也就是`public static void main(String[] args) { ... }`，这是**main方法的标准格式**，程序将从这里开始执行。事实上，这一点也不必担忧，因为你最后编写的Mod并不需要直接运行，而是被NeoForge加载进游戏里，因此，在真正的Mod开发中，你**并不需要**这个东西。**简而言之，每一个Java类中最多有一个符合标准格式的main方法，这意味着理论上一个Java项目中说多可以有无数个，说少可以没有main方法。**
++ 此外，如果你没学过其他编程语言，你也会问main方法前面的几个单词是什么意思：
+    + ==public==[primary] 是访问权限修饰限定符，形象的说是管理其他类能否调用这个方法的。
+    + ==static==[success] 是静态方法限定符，表示这个方法属于类而不是类的对象，关于类和对象，这里简单地说就是：==类是对象的蓝图，对象是类的实例==，有了这个限定符，我们无需创建对象就能使用这个方法。
+    + ==void== 是方法的**返回值类型**，void就表示这个方法并**不返回任何东西**。
++ 如上展示的就是最简单的一个Java程序，可能会让读者一头雾水，可以说，Java的main方法是当前主流编程语言中最“长”的。但是无论如何，通过上述代码，我们已经可以看到一个完整的Java程序的结构，Java程序由如下三个部分组成：
+    1. **源文件**(拓展名为*.java)：源文件带有类的定义。类用来表示程序的一个组件，小程序或许只会有一个类。类的内容必须包含在花括号之内。
+    2. **类**：类中带有一些**方法** ，方法**必须在类的内部声明**。
+    3. **方法**：在方法的花括号中编写方法应该执行的语句。
+    
+    总之：**类存在于源文件中，方法存于类中，语句存在于方法中**。
 
 既然程序从main包裹的地方开始运行，现在让我们仔细来看这行被包裹住的代码：
 ```Java
@@ -145,8 +156,8 @@ System.out.println(1 + 2);
 
 ```Java
 public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!"); // 这是一条单行注释，从//开始，到这行末尾，你可以随便写
+    public static void main(String[] args) {//输入main就能自动补全
+        System.out.println("Hello, World!"); // 这是一条单行注释，从//开始，到这行末尾，你可以随便写，输入sout就能自动补全出这一行
         System.out.println(123);
         /* 这是多行注释
            位于这里的内容可以换行
@@ -161,3 +172,278 @@ public class HelloWorld {
 ```
 
 学会合理地为你的代码添加注释，可以预防你看不懂你昨天写的代码。
+
+---
+{.awesome-hr}
+
+## 进阶：编写高质量的 Javadoc 注释
+
+Javadoc 不仅仅是为代码生成文档的工具，它更是代码本身不可或缺的一部分，是开发者之间沟通的桥梁。一份优秀的 Javadoc 注释能够极大地提升代码的可读性、可维护性和易用性。
+
+本指南将从基础出发，逐步深入到高级用法和最佳实践，帮助你编写出专业、清晰的 API 文档。
+
+当然，如果读者对此没有追求，可以直接跳到下一节。
+
+### 1. Javadoc 基础
+
+一个标准的 Javadoc 注释块以 `/**` 开始，以 `*/` 结束。它包含两部分：
+1.  **主要描述 (Main Description)**：通常是第一段，用简洁的语言概括该元素（类、方法、字段）的功能。
+2.  **标签段 (Tag Section)**：以 `@` 符号开头，用于提供更具体的元数据信息。
+
+**一个良好的基础示例：**
+
+```java
+/**
+ * 一个用于处理字符串的实用工具类。
+ * <p>
+ * 这个类提供了多种静态方法，用于检查、转换和操作字符串。
+ * 所有方法都对 null 输入是安全的。
+ *
+ * @author Your Name
+ * @version 1.0
+ * @since 2023-10-27
+ */
+public class StringUtils {
+
+    /**
+     * 检查给定的字符串是否为空、null或仅由空白字符组成。
+     *
+     * @param str 要检查的字符串
+     * @return 如果字符串为空，则返回 {@code true}，否则返回 {@code false}
+     */
+    public static boolean isBlank(String str) {
+        // ... 实现 ...
+        return str == null || str.trim().isEmpty();
+    }
+}
+```
+
+### 2. 常用标签详解
+
+掌握这些标签是写出专业文档的关键。
+
+#### 2.1. 链接与引用：`@see` vs `{@link}`
+
+这两个标签都用于创建到其他代码元素的链接，但用法和显示效果不同。
+
+*   `{@link package.class#member label}`: **行内标签**，它会在注释文本中直接生成一个超链接。这是最常用的方式。
+*   `@see package.class#member label`: **块标签**，它会在 Javadoc 的末尾创建一个独立的 "See Also"（另请参阅）区域，并将链接放在那里。
+
+**示例：**
+
+```java
+/**
+ * 处理用户订单。
+ * <p>
+ * 这个方法会验证用户的购物车，然后创建一条新的订单记录。
+ * 如果购物车为空，请参考 {@link #cancelOrder(long)} 方法来取消。
+ *
+ * @param userId 用户的唯一标识符
+ * @return 创建的订单对象
+ * @see com.example.service.CartService#getCart(long)
+ * @see #cancelOrder(long)
+ */
+public Order processOrder(long userId) {
+    // ...
+}
+
+/**
+ * 取消一个指定的订单。
+ * @param orderId 订单的唯一标识符
+ */
+public void cancelOrder(long orderId) {
+    // ...
+}
+```
+**生成效果：**
+*   `{@link #cancelOrder(long)}` 会在描述文本中直接变成一个可点击的链接 `cancelOrder(long)`。
+*   `@see ...` 会在文档末尾生成一个 "See Also" 部分，包含指向 `CartService.getCart` 和 `cancelOrder` 的链接。
+
+#### 2.2. 代码片段：`{@code}` vs `{@literal}`
+
+*   `{@code text}`: 用于将文本格式化为代码样式（通常是等宽字体）。它会自动转义 HTML 标签和注解，所以你不需要手动处理 `<` 或 `>`。这是**推荐**的方式。
+*   `{@literal text}`: 用于显示纯文本。它也会转义 HTML 标签，但不会将文本格式化为代码样式。当你需要显示含有 `<` 或 `>` 的普通文本时很有用。
+
+**示例：**
+
+```java
+/**
+ * 一个泛型方法示例。
+ * <p>
+ * 此方法接受一个类型为 {@code List<T>} 的列表。
+ * 注意：返回值永远不会是 {@code null}。
+ * 对于泛型语法 {@literal List<T>}，尖括号不会被解析为HTML标签。
+ *
+ * @param <T> 列表元素的类型
+ * @param list 输入的列表
+ * @return 处理后的列表
+ */
+public <T> List<T> processList(List<T> list) {
+    // ...
+}
+```
+
+#### 2.3. 版本与废弃：`@since` & `@deprecated`
+
+*   `@since version`: 表明这个元素（类、方法等）是从哪个版本开始引入的。这对于库的维护者和使用者都非常重要。
+*   `@deprecated description`: 标记一个元素为“已废弃”。编译器会对此发出警告。**关键是**，在描述中必须说明废弃的原因，并使用 `{@link}` 提供替代方案。
+
+**示例：**
+
+```java
+/**
+ * @deprecated 从版本 2.0 开始废弃。请使用 {@link #newUser(String, String)} 替代。
+ *             此方法不支持密码加密。
+ */
+@Deprecated
+public User createUser(String username) {
+    // ...
+}
+
+/**
+ * 创建一个新用户，并使用安全的哈希算法加密密码。
+ *
+ * @param username 用户名
+ * @param password 原始密码
+ * @return 创建好的用户对象
+ * @since 2.0
+ */
+public User newUser(String username, String password) {
+    // ...
+}
+```
+
+#### 2.4. 继承文档：`{@inheritDoc}`
+
+当一个子类或实现类的方法重写（override）或实现（implement）父类或接口的方法时，可以使用 `{@inheritDoc}` 来自动继承父方法中的 Javadoc。
+
+*   它可以完全继承所有内容。
+*   也可以只继承部分内容，并添加自己的描述。
+
+**示例：**
+
+```java
+// 接口
+public interface StorageService {
+    /**
+     * 将数据保存到存储系统中。
+     * @param key 数据的键
+     * @param data 要保存的数据
+     * @throws IOException 如果保存失败
+     */
+    void save(String key, byte[] data) throws IOException;
+}
+
+// 实现类
+public class FileStorageService implements StorageService {
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 这个实现将数据保存到本地文件系统。
+     * 文件将存储在配置的根目录下。
+     */
+    @Override
+    public void save(String key, byte[] data) throws IOException {
+        // ...
+    }
+}
+```
+**生成效果：** `FileStorageService.save` 方法的文档会自动包含 `StorageService.save` 的描述、`@param` 和 `@throws` 标签，并在其后附加自己的特定描述。
+
+#### 2.5. 常量值引用：`{@value}`
+
+用于在注释中直接引用静态常量（`static final` 字段）的值。
+
+**示例：**
+
+```java
+public class Config {
+    /**
+     * 默认的连接超时时间（毫秒）。
+     * 当前值为 {@value}。
+     */
+    public static final int DEFAULT_TIMEOUT = 5000;
+
+    /**
+     * 获取配置值。
+     * @param key 配置键，例如 {@value com.example.api.Constants#API_KEY}
+     * @return 配置值
+     */
+    public String getValue(String key) {
+        // ...
+    }
+}
+```
+**生成效果：** `{@value}` 会被自动替换为 `5000`。当引用其他类的常量时，需要写全路径。
+
+### 3. 包和模块的文档
+
+为整个包或模块提供概述性文档，是大型项目不可或缺的一环。
+
+*   **包文档 (`package-info.java`)**: 在你的包下创建一个名为 `package-info.java` 的文件。在这个文件里，你可以为整个包编写 Javadoc。这是描述包的设计理念、架构和整体用途的最佳位置。
+
+    ```java
+    /**
+     * 提供了核心的服务层接口和实现，用于处理业务逻辑。
+     * <p>
+     * 这个包的主要入口点是 {@link com.example.service.OrderService}。
+     * 所有服务都遵循依赖注入的原则。
+     *
+     * @since 1.0
+     */
+    package com.example.service;
+    ```
+
+*   **模块文档 (`module-info.java`)**: 在 Java 9+ 的模块化项目中，你也可以为模块声明编写 Javadoc。
+
+    ```java
+    /**
+     * 定义了应用程序的核心 API 和服务提供者接口。
+     */
+    module com.example.core {
+        exports com.example.api;
+        // ...
+    }
+    ```
+
+### 4. 编写风格
+
+1.  **第一句话是总结句**：Javadoc 工具会将每个方法的第一句话作为摘要显示在索引页上。因此，第一句话必须是 concise and informative 的总结。它应该以句号结束。
+
+2.  **为读者而写**：始终站在 API 调用者的角度思考。他们需要知道什么？他们可能误解什么？写清楚方法的**前置条件**（preconditions，如参数要求）、**后置条件**（postconditions，如返回值保证）和**副作用**（side-effects，如修改了对象状态）。
+
+3.  **使用 HTML 标签增强可读性**：
+    *   `<p>`: 用于分段。
+    *   `<ul>`, `<li>`: 用于无序列表。
+    *   `<code>`, `<pre>`: 用于多行代码示例（虽然 `{@code}` 更常用）。
+    *   `<strong>`, `<em>`: 用于强调。
+    *   避免使用标题标签如 `<h1>`, `<h2>`，它们会与 Javadoc 生成的样式冲突。
+
+4.  **为泛型添加注释**：使用 `<T>` 标签来描述泛型类型参数。
+
+    ```java
+    /**
+     * @param <T> 元素的类型，必须是可比较的。
+     */
+    public class SortedList<T extends Comparable<T>> { ... }
+    ```
+
+5.  **保持注释与代码同步**：过时的注释比没有注释更糟糕。每次修改代码逻辑时，都要检查并更新相关的 Javadoc。
+
+### 5. 生成和查看 Javadoc
+
+*   **通过 IDE**：大多数 IDE（如 IntelliJ IDEA, Eclipse）都内置了生成 Javadoc 的功能，通常在 "Tools" 或 "Project" 菜单下。
+*   **通过 Maven**：使用 `maven-javadoc-plugin` 插件。在 `pom.xml` 中配置后，运行 `mvn javadoc:javadoc` 即可。
+*   **通过 Gradle**：Gradle 内置了 `javadoc` 任务。直接运行 `gradle javadoc` 即可。
+*   **通过命令行**：
+    ```bash
+    # 为指定 Java 文件生成文档到 docs 目录
+    javadoc -d docs -author -version MyClass.java
+
+    # 为整个源码包生成文档
+    javadoc -d docs -sourcepath src -subpackages com.example
+    ```
+
+### 总结
+
+将 Javadoc 视为你对外交付的 API 的一部分。清晰、准确、完整的 Javadoc 是专业精神的体现，它能够减少沟通成本，避免误用，并让你的代码库在未来几年内依然易于维护。投入时间编写高质量的文档，是一项回报率极高的投资。
