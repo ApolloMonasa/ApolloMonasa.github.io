@@ -6,9 +6,9 @@ customJS = ["/js/custom.js"]
 # FixIt 主题版本，建议保持默认，除非您手动升级了主题。
 version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
 # 网站描述，非常重要！会显示在浏览器标签页的副标题和搜索引擎结果中。
-description = "个人博客，包括但不限于算法竞赛，Minecraft模组开发，计科相关内容，学习思想日志。"
+description = "Apollo的个人博客，内容包括但不限于算法竞赛，Minecraft模组开发，计科|金融相关内容。"
 # 网站关键词，用逗号分隔，有助于搜索引擎优化 (SEO)。
-keywords = ["Minecraft", "模组开发", "NeoForge", "教程", "中文", "算法竞赛"]
+keywords = ["Minecraft", "模组开发", "NeoForge", "教程", "中文", "算法竞赛", "ApolloMonasa", "Apollo"]
 # 网站默认主题颜色，"auto" 表示跟随操作系统设置，可选 "light", "dark"。
 defaultTheme = "auto"
 # 指纹加密算法，用于确保浏览器加载的 CSS/JS 资源未被篡改。留空即可。
