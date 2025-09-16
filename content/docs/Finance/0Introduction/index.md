@@ -1,5 +1,5 @@
 ---
-title: "金融学导论"
+title: "简介"
 weight: 0
 date: 2025-09-08T21:30:11+08:00
 draft: true
