@@ -2,6 +2,43 @@
 // Custom style
 // 自定义样式
 // ==============================
+
+/* 你的原始粉色 - A vibrant, energetic pink. */
 .mark-pink {
-  --fi-mark-background-color: rgb(240, 97, 180);
+  --fi-mark-background-color: rgb(240, 97, 180); /* #F061B4 */
+}
+
+/* 柠檬黄 - Bright and classic, like a real highlighter. */
+.mark-yellow {
+  --fi-mark-background-color: rgb(255, 240, 100); /* #FFF064 */
+}
+
+/* 青柠绿 - A fresh and lively green, very eye-catching. */
+.mark-lime {
+  --fi-mark-background-color: rgb(160, 240, 130); /* #A0F082 */
+}
+
+/* 天空蓝 - Clean and calm, great for informational highlights. */
+.mark-sky {
+  --fi-mark-background-color: rgb(90, 210, 230); /* #5AD2E6 */
+}
+
+/* 薰衣草紫 - A stylish and modern purple, soft yet distinct. */
+.mark-purple {
+  --fi-mark-background-color: rgb(190, 140, 240); /* #BE8CF0 */
+}
+
+/* 阳光橙 - Warm and friendly, perfect for drawing attention. */
+.mark-orange {
+  --fi-mark-background-color: rgb(255, 170, 85); /* #FFAA55 */
+}
+
+/* 珊瑚红 - A softer red, less alarming and more like a gentle note. */
+.mark-coral {
+  --fi-mark-background-color: rgb(255, 120, 120); /* #FF7878 */
+}
+
+/* 薄荷青 - A modern and techy feel, somewhere between green and blue. */
+.mark-teal {
+  --fi-mark-background-color: rgb(70, 190, 180); /* #46BEB4 */
 }
