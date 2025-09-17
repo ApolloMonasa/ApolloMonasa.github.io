@@ -27,7 +27,7 @@ capitalizeTitles = true
 # 是否在每个页面的标题后面都追加上网站的全局标题（在 hugo.toml 中设置的 title）。
 withSiteTitle = true
 # 追加网站标题时使用的分隔符，例如 "页面标题 - 网站标题"。
-titleDelimiter = "-"
+titleDelimiter = "|"
 # 是否在首页的标题中也追加副标题。
 indexWithSubtitle = false
 # 是否将文章摘要显示为纯文本（去掉 Markdown 格式）。
