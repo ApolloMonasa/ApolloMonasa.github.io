@@ -717,14 +717,14 @@ disableThemeInject = false
     count = 5
   # 文章底部的打赏功能。
   [page.reward]
-    enable = false
-    animation = false
+    enable = true
+    animation = true
     position = "after"
-    # comment = "Buy me a coffee"
+    # comment = "如果觉得不错，就支持一下吧？"
     mode = "static"
-    # [page.reward.ways]
-    #   wechatpay = "/images/wechatpay.png"
-    #   alipay = "/images/alipay.png"
+    [page.reward.ways]
+       wechatpay = "https://free.picui.cn/free/2025/09/17/68ca6d70693e6.png"
+       #alipay = "https://free.picui.cn/free/2025/09/17/68ca6d70b0183.jpg"
 
   # 文章底部的分享按钮。
   [page.share]
