@@ -119,8 +119,6 @@ System.out.println("He said: \"Java is fun!\""); // 使用双引号转义
 ---
 {.awesome-hr}
 
-好的，这是将您提供的所有文本都格式化为 Markdown 引用块（blockquote）之后的内容：
-
 > [!DANGER]- 关键字
 > ### 关键字
 > 这里可以看到Java所有的关键字，不过不用急着学习，后面会逐步介绍。
