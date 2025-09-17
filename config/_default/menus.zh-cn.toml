@@ -16,7 +16,7 @@
   identifier = "posts"
   name = "金融学"
   url = "/docs/finance/0introduction"
-  title = "浏览所有文章"
+  title = "浏览金融学文章"
   weight = 20              # [修正] 唯一的 weight
   [main.params]
     icon = "fa-solid fa-pen-nib" # [建议] 为“文章”添加图标
