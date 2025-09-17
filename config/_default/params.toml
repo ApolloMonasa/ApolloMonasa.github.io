@@ -125,7 +125,7 @@ disableThemeInject = false
     # 这里我帮你移除了旧的路径，留空会显示下面的文字标题。
     logo = "https://i.ooxx.ooo/i/ZDQ0N.png"
     # 如果没有 Logo，会显示的文字标题。
-    name = "Apollo and wmsnp's Blogs"
+    name = "THINKING | Apollo wmsnp"
     # 可以在标题前添加额外内容（支持HTML），比如图标。
     pre = ""
     # 可以在标题后添加额外内容（支持HTML）。

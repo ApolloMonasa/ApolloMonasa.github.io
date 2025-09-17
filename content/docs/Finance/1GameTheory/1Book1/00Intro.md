@@ -1,5 +1,5 @@
 ---
-title: "简介"
+title: "《策略思维》简介"
 weight: 0
 date: 2025-09-13T23:14:18+08:00
 draft: true
