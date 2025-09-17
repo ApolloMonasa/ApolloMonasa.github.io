@@ -7,7 +7,7 @@ draft: false
     # - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
     # - ApolloMonasa
 tags: ["金融"] # 预设一个空标签，方便后续填写
-categories: ["Posts"] # 预设一个空分类
+categories: ["Docs"] # 预设一个空分类
 
 # --- FixIt 主题特有字段 ---
 comment: true     # 博客文章默认开启评论
