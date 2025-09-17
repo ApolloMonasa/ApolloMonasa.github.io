@@ -1,0 +1,8 @@
+{{/* Shortcode for a margin note */}}
+<span class="marginnote">
+  <label for="mn-{{ .Ordinal }}" class="margin-toggle">⊕</label>
+  <input type="checkbox" id="mn-{{ .Ordinal }}" class="margin-toggle"/>
+  <span class="marginnote-content">
+    {{ .Inner | .Page.RenderString }}
+  </span>
+</span>
