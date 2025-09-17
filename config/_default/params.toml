@@ -6,9 +6,9 @@ customJS = ["/js/custom.js"]
 # FixIt 主题版本，建议保持默认，除非您手动升级了主题。
 version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
 # 网站描述，非常重要！会显示在浏览器标签页的副标题和搜索引擎结果中。
-description = "Apollo的个人博客，内容包括但不限于算法竞赛，Minecraft模组开发，计科|金融相关内容。"
+description = "欢迎来到Apollo的个人博客。这里分享关于 Minecraft 模组开发(NeoForge/Fabric)的中文教程、算法竞赛(ACM/ICPC)的解题思路，以及计算机科学与金融交叉领域的学习笔记。"
 # 网站关键词，用逗号分隔，有助于搜索引擎优化 (SEO)。
-keywords = ["Minecraft", "模组开发", "NeoForge", "教程", "中文", "算法竞赛", "ApolloMonasa", "Apollo"]
+keywords = ["Minecraft", "模组开发", "NeoForge", "Fabric", "中文教程", "算法竞赛", "ACM", "ICPC", "LeetCode", "题解", "计算机科学", "ApolloMonasa", "Apollo"]
 # 网站默认主题颜色，"auto" 表示跟随操作系统设置，可选 "light", "dark"。
 defaultTheme = "auto"
 # 指纹加密算法，用于确保浏览器加载的 CSS/JS 资源未被篡改。留空即可。
@@ -17,7 +17,7 @@ fingerprint = ""
 # 日期格式，"2006-01-02" 是 Go 语言的特殊写法，代表 YYYY-MM-DD。
 dateFormat = "2006-01-02"
 # 网站分享预览图（例如分享到微信、Twitter 时显示的图片）。暂时可以留空。
-images = []
+images = ["https://i.ooxx.ooo/i/NTYyY.png"]
 # 是否启用 PWA (渐进式 Web 应用)，允许用户将网站“安装”到桌面。初期可以禁用。
 enablePWA = false
 # 是否为外部链接（指向其他网站的链接）自动添加一个特殊图标。
@@ -450,9 +450,9 @@ disableThemeInject = false
 # --- SEO 优化配置 ---
 [seo]
   # 默认的分享图片 URL
-  image = ""
+  image = "https://i.ooxx.ooo/i/NTYyY.png"
   # 默认的缩略图 URL
-  thumbnailUrl = ""
+  thumbnailUrl = "https://i.ooxx.ooo/i/NTYyY.png"
 
 # --- 网站分析工具 (如 Google Analytics) ---
 [analytics]

@@ -4,7 +4,7 @@
 # -------------------------------------------------------------------------------------
 
 # --- 核心配置：根据你的项目修改 ---
-title = "Apollo Blogs"
+title = "一个计科金融大学生的浅显思考"
 baseURL = "https://ApolloMonasa.github.io/"
 
 # --- 主题和语言配置：保持不变 ---
@@ -27,3 +27,15 @@ summaryLength = 150
 # 忽略一些不影响构建的小错误
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", 'warning-dev-version']
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"] # 确保 RSS 和 JSON Feed 开启，便于订阅和被其他服务抓取
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# SEO 优化的 URL 结构 (Permalinks)
+# 默认的 URL 结构可能包含日期，不利于常青内容。建议使用文章标题作为 URL。
+[permalinks]
+  posts = "/:slug/"  # 或者 "/posts/:slug/" 这样更清晰
