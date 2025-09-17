@@ -257,7 +257,7 @@ disableThemeInject = false
     # 头像下方的菜单链接标识符。
     avatarMenu = ""
     # 首页大标题，如果留空，会使用 hugo.toml 里的网站标题。
-    title = "Hi! I'm ApolloMonasa"
+    title = "一天是永恒的缩影，逆水行舟，不进则退"
     # 首页副标题。
     subtitle = "Welcome To My Blog Site!"
     # 副标题是否使用打字机动画。
