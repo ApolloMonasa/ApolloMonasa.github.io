@@ -268,7 +268,7 @@ disableThemeInject = false
     disclaimer = ""
   # 首页的文章列表。
   [home.posts]
-    enable = false
+    enable = true
     # 每页显示多少篇文章。
     paginate = 10
 
