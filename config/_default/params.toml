@@ -558,6 +558,7 @@ disableThemeInject = false
 [customPartials]
   head = [
     "inject/fixit-docs-bookmark.html",
+    "custom/katex.html"
   ]
   profile = []
   aside = []
@@ -693,7 +694,7 @@ disableThemeInject = false
     # 是否显示“复制”按钮。
     copy = true
     # 是否显示“编辑”按钮，通常用于可交互的代码块，教程站可设为 false。
-    edit = true
+    edit = false
     # 默认最多显示多少行代码，超过的会折叠。
     maxShownLines = 10
   # Mapbox GL JS 地图配置。
@@ -713,7 +714,7 @@ disableThemeInject = false
     replace = false
   # 相关文章推荐。
   [page.related]
-    enable = true
+    enable = false
     count = 5
   # 文章底部的打赏功能。
   [page.reward]
