@@ -255,7 +255,7 @@ disableThemeInject = false
     # 直接指定一个头像图片的 URL (优先级不高于 gravatarEmail)。
     avatarURL = "https://free.picui.cn/free/2025/09/18/68cbd74504899.png"
     # 头像下方的菜单链接标识符。
-    avatarMenu = ""
+    avatarMenu = "reading-notes"
     # 首页大标题，如果留空，会使用 hugo.toml 里的网站标题。
     title = "一天是永恒的缩影，逆水行舟，不进则退"
     # 首页副标题。
