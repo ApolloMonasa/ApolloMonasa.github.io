@@ -17,7 +17,7 @@ fingerprint = ""
 # 日期格式，"2006-01-02" 是 Go 语言的特殊写法，代表 YYYY-MM-DD。
 dateFormat = "2006-01-02"
 # 网站分享预览图（例如分享到微信、Twitter 时显示的图片）。暂时可以留空。
-images = ["https://i.ooxx.ooo/i/NTYyY.png"]
+images = ["https://free.picui.cn/free/2025/09/18/68cbd74504899.png"]
 # 是否启用 PWA (渐进式 Web 应用)，允许用户将网站“安装”到桌面。初期可以禁用。
 enablePWA = false
 # 是否为外部链接（指向其他网站的链接）自动添加一个特殊图标。
@@ -44,7 +44,7 @@ disableThemeInject = false
   # 点击名字后跳转的链接，通常是你的 GitHub 主页。
   link = "https://github.com/ApolloMonasa"
   # 头像图片地址。如果为空，会尝试使用 Gravatar 获取头像。这里已填好你的链接。
-  avatar = "https://i.ooxx.ooo/i/NTYyY.png"
+  avatar = "https://free.picui.cn/free/2025/09/18/68cbd74504899.png"
 
 # --- Git 仓库信息 (用于“编辑此页”、“报告问题”等功能) ---
 # 强烈建议配置此项，方便读者贡献和反馈。
@@ -62,11 +62,11 @@ disableThemeInject = false
 # --- App 图标配置 (当网站被添加到手机主屏幕时使用) ---
 [app]
   # 添加到主屏幕时显示的名字。
-  title = "Apollo ans wmsnp's Blogs"
+  title = "THINKING"
   # 是否不生成 favicon 图标链接。
   noFavicon = false
   # SVG 格式的 favicon。
-  svgFavicon = "https://i.ooxx.ooo/i/ZDQ0N.png"
+  svgFavicon = "https://free.picui.cn/free/2025/09/18/68cbd74504899.png"
   # Safari 浏览器标签页固定时的图标颜色。
   iconColor = "#5bbad5"
   # Windows 磁贴颜色。
@@ -123,7 +123,7 @@ disableThemeInject = false
     # Logo 图片的路径。建议准备一个，放在项目的 static/images/ 目录下。
     # 示例: logo = "/images/my-logo.png"
     # 这里我帮你移除了旧的路径，留空会显示下面的文字标题。
-    logo = "https://i.ooxx.ooo/i/ZDQ0N.png"
+    logo = "https://free.picui.cn/free/2025/09/18/68cbd7455e461.png"
     # 如果没有 Logo，会显示的文字标题。
     name = "THINKING | Apollo wmsnp"
     # 可以在标题前添加额外内容（支持HTML），比如图标。
@@ -253,7 +253,7 @@ disableThemeInject = false
     # 用于获取 Gravatar 头像的邮箱（如果下面的 avatarURL 为空）。
     gravatarEmail = "apollomonasa@gmail.com"
     # 直接指定一个头像图片的 URL (优先级不高于 gravatarEmail)。
-    avatarURL = "https://i.ooxx.ooo/i/NTYyY.png"
+    avatarURL = "https://free.picui.cn/free/2025/09/18/68cbd74504899.png"
     # 头像下方的菜单链接标识符。
     avatarMenu = ""
     # 首页大标题，如果留空，会使用 hugo.toml 里的网站标题。
