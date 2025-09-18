@@ -66,7 +66,7 @@ disableThemeInject = false
   # 是否不生成 favicon 图标链接。
   noFavicon = false
   # SVG 格式的 favicon。
-  svgFavicon = "https://free.picui.cn/free/2025/09/18/68cbd74504899.png"
+  svgFavicon = "https://free.picui.cn/free/2025/09/18/68cbd7455e461.png"
   # Safari 浏览器标签页固定时的图标颜色。
   iconColor = "#5bbad5"
   # Windows 磁贴颜色。
@@ -428,7 +428,7 @@ disableThemeInject = false
 # --- 网站访问量统计 (Busuanzi) ---
 [busuanzi]
   # 是否启用。如果启用，页脚会显示网站总访问量和页面阅读量。
-  enable = false
+  enable = true
   # Busuanzi 的 JS 文件源，国内可以用下面的镜像。
   # source = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
   source = "https://vercount.one/js"
@@ -678,11 +678,11 @@ disableThemeInject = false
   [page.math]
     enable = true
     # 行内公式的左右定界符。
-    inlineLeftDelimiter = ""
-    inlineRightDelimiter = ""
+    inlineLeftDelimiter = "$"
+    inlineRightDelimiter = "$"
     # 块级公式的左右定界符。
-    blockLeftDelimiter = ""
-    blockRightDelimiter = ""
+    blockLeftDelimiter = "$$"
+    blockRightDelimiter = "$$"
     # 是否启用 "复制公式" 功能。
     copyTex = true
     # 是否启用 mhchem 化学公式扩展。
@@ -851,5 +851,5 @@ disableThemeInject = false
     images = []
     # 发布者信息。
     [page.seo.publisher]
-      name = ""
+      name = "ApolloMonasa"
       logoUrl = ""
