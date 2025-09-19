@@ -677,16 +677,6 @@ disableThemeInject = false
   # KaTeX 数学公式支持。
   [page.math]
     enable = true
-    # 行内公式的左右定界符。
-    inlineLeftDelimiter = "$"
-    inlineRightDelimiter = "$"
-    # 块级公式的左右定界符。
-    blockLeftDelimiter = "$$"
-    blockRightDelimiter = "$$"
-    # 是否启用 "复制公式" 功能。
-    copyTex = true
-    # 是否启用 mhchem 化学公式扩展。
-    mhchem = true
   # 代码块的默认设置。
   [page.code]
     # 是否启用代码块的额外功能（复制按钮等）。

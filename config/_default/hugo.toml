@@ -28,7 +28,7 @@ summaryLength = 150
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", 'warning-dev-version']
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"] # 确保 RSS 和 JSON Feed 开启，便于订阅和被其他服务抓取
+    home = ["html", "rss", "archives", "offline", "search", "json"] # 确保 RSS 和 JSON Feed 开启，便于订阅和被其他服务抓取
 
 [taxonomies]
   category = "categories"
@@ -38,4 +38,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", '
 # SEO 优化的 URL 结构 (Permalinks)
 # 默认的 URL 结构可能包含日期，不利于常青内容。建议使用文章标题作为 URL。
 [permalinks]
-  posts = "/:slug/"  # 或者 "/posts/:slug/" 这样更清晰
+  [permalinks.page]
+    # posts = "/p/:slugorcontentbasename"
+  [permalinks.section]
+    # posts = "/posts/:slugorcontentbasename"
+  [permalinks.taxonomy]
+  [permalinks.term]
