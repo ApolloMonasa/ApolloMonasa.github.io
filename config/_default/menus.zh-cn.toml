@@ -12,6 +12,16 @@
   [main.params]
     icon = "fa-solid fa-code" # [修改] 为NeoForge教程添加了代码图标
 
+# --- [新增] 计算机科学 ---
+[[main]]
+  identifier = "cs"
+  name = "计算机科学"
+  url = "/docs/ComputerScience/00intro"  # 建议的路径，保持和其他教程一致
+  title = "浏览计算机科学相关文章"
+  weight = 15                     # 插入到 NeoForge(10) 和 金融学(20) 之间
+  [main.params]
+    icon = "fa-solid fa-desktop"  # 为计算机科学添加了电脑图标
+
 [[main]]
   identifier = "posts"
   name = "金融学"
