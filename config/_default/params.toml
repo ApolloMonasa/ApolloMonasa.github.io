@@ -814,9 +814,9 @@ disableThemeInject = false
       # 你在仓库 Discussions 中用于存放评论的分类名
       category = "Announcements"
       # 从 Giscus 官网获取
-      categoryId = "DIC_kwDOOvyxEc4Cvq-u"
+      categoryId = "DIC_kwDOOvyxEc4Cvq-t"
       # 页面与 discussion 的映射方式
-      mapping = "url"
+      mapping = "pathname"
       # 启用 Giscus 的 "Reactions" 功能
       reactionsEnabled = "1"
       emitMetadata = "0"
@@ -828,7 +828,7 @@ disableThemeInject = false
       lightTheme = "light"
       darkTheme = "dark"
       # 是否延迟加载
-      lazyLoad = true
+      lazyLoad = false
   # 加载自定义的第三方库。
   [page.library]
     [page.library.css]
