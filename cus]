@@ -1,0 +1,176 @@
+* [33m11c27a5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m 修一下
+* [33mb0a8a1f[m 更改评论系统
+* [33m0a777f3[m feat : 新增菜单导航至计科简介
+* [33m4012321[m fix : 改名
+* [33m0d72ec1[m feat : 修改读书随笔的目录样式istoplevel
+* [33mcdae3ed[m feat : Invest:1:01
+[31m|[m * [33m8c668a9[m[33m ([m[1;32mfeature/Digital[m[33m)[m feat: 确定数电大纲
+[31m|[m[31m/[m  
+* [33m2ef1965[m 把小月亮捣乱改坏的配置改回去
+* [33m8887848[m 新
+* [33md59b97a[m fix
+* [33m5fe5bc7[m fix
+* [33m088f853[m fix : 关闭主页文章列表
+* [33m074ed9a[m fix : 尝试修复公式和App图标
+*   [33m87f3530[m Merge branch 'main' of https://github.com/ApolloMonasa/ApolloMonasa.github.io
+[33m|[m[34m\[m  
+[33m|[m * [33mee4e069[m 为FixItsDocs添加Demo
+[33m|[m * [33mbb6c50d[m 很不优雅的启用了katex
+* [34m|[m [33m34d8b47[m fix : 替换失效的图床
+[34m|[m[34m/[m  
+* [33m7920353[m feat给模板加上摘要
+* [33m21d34be[m feat : 修改网站标题分隔符
+* [33mb3a400c[m fix : rename site
+* [33mc22d00e[m chore:删除人机言论
+* [33maffd315[m chore : 简介修改标题
+* [33m80c02cb[m fix : 修复菜单悬停文章
+* [33mc333c2a[m SEO实践
+* [33mea00271[m 简单SEO
+* [33m99cc8a7[m marginnote失败
+* [33meef81fe[m feat:开启打赏
+* [33mfe2bce8[m fix : 改category
+* [33m4718364[m Feat:调整设置，增加内容
+* [33m3313395[m chore: make it on
+* [33mda1bfd1[m feat : 重写简介
+* [33m4f9c432[m feat : 丰富了css自定义高亮样式
+* [33m54309d8[m fix : pink css
+* [33med152f2[m fix
+* [33m3bd337c[m make it on
+*   [33me4a6ab5[m Merge branch 'feature/Finance'
+[35m|[m[36m\[m  
+[35m|[m * [33m79dc594[m[33m ([m[1;32mfeature/Finance[m[33m)[m 初步整理了投资学原理笔记的框架
+[35m|[m * [33mfb25d59[m feat : 初步确认了策略思维框架
+[35m|[m * [33m570d057[m feat : intro
+[35m|[m * [33md61b236[m init: Finance
+* [36m|[m [33m1b9e7bf[m fix : description 和 Title
+* [36m|[m [33m02d96ff[m fix : $$
+* [36m|[m [33m1067ec5[m fix : $$
+* [36m|[m [33m398e7e6[m chore : make it on
+* [36m|[m [33m2e5f710[m chore : 加上作者
+* [36m|[m [33mbd710b1[m feat : 完成你好世界和值与求值的部分修改工作
+* [36m|[m   [33m5d8062e[m Merge branch 'main' of https://github.com/ApolloMonasa/ApolloMonasa.github.io
+[1;31m|[m[1;32m\[m [36m\[m  
+[1;31m|[m * [36m|[m [33mea5a352[m 关闭了Gravatar 懒汉小月亮，把一个true改成false都不亲自动手
+[1;31m|[m * [36m|[m [33me31bf92[m 很敷衍地写完了第九章，我的任务到此结束，晚安
+* [1;32m|[m [36m|[m [33ma76af46[m fix : 修复邮箱功能
+[1;32m|[m[1;32m/[m [36m/[m  
+* [36m|[m [33me8c6863[m chore 修改几处排版错误
+* [36m|[m [33m13713ac[m chores 修改文章名为全英文
+* [36m|[m [33m9d9bfd9[m feat : 进阶meimaid用法
+* [36m|[m [33m443dc62[m feat : 附上比对代码
+* [36m|[m [33m3c1f649[m chore : update
+* [36m|[m [33m3dfa8a1[m fix : mermaid.md
+* [36m|[m [33mceca32b[m chore: mermaid
+* [36m|[m [33mc950f24[m 我承认刚刚说话有点大声了
+* [36m|[m [33m69bafbc[m 完成了Java教程第7、8节 由于小月亮对我怨念过大，我把第9节写完就不写了。之后专门负责拿显微镜挑他的错
+* [36m|[m [33m00b2377[m chrome : name of theme intro
+* [36m|[m [33mcac24c9[m 制裁了喋喋不休的机器人
+* [36m|[m [33m3450dbc[m :arrow_up: Chore(theme): update FixIt version
+[36m|[m[36m/[m  
+* [33m8116420[m chrome: 设置每页显示10篇文章
+[1;32m|[m * [33m5c12532[m[33m ([m[1;32mfeature/WebFrontEnd[m[33m)[m First commit Test
+[1;32m|[m[1;32m/[m  
+* [33m529d467[m fix:重写README.md
+* [33m874b2ac[m 完善：Java教程-类与继承 备注：这么多东西，半真半假，够小月亮喝一壶的了
+* [33mec2e6a2[m 小月亮对我有意见，紧急修改😭
+* [33mf580e5b[m :arrow_up: Chore(theme): update FixIt version
+* [33md097042[m fix : 修改了wmsnp的部分错误
+* [33mc5a0874[m fix : 错别字
+* [33m26266bb[m fix : 上线
+* [33ma076fc7[m fix : 补充和修改:你好世界
+*   [33m830c0df[m Merge branch 'main' of github.com:ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33mea855e2[m 把标题翻译成英文，并略加调整编排
+* [1;35m|[m [33mdbbeb57[m null
+[1;35m|[m[1;35m/[m  
+* [33m9ac9b08[m fix : 完善环境配置
+*   [33m8df7219[m Merge branch 'main' of github.com:ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge
+[1;36m|[m[31m\[m  
+[1;36m|[m * [33m92b586a[m :arrow_up: Chore(theme): update FixIt version
+* [31m|[m [33m4fded71[m fix : submodule update
+[31m|[m[31m/[m  
+* [33m5df31e7[m fix : 修改简介
+*   [33m188b0ac[m Merge branch 'wmsnp' Java教程第三、五章
+[32m|[m[33m\[m  
+[32m|[m * [33mae5b4e9[m Java教程第三、五节
+* [33m|[m [33mb5d131d[m feat: NeoForge简介
+* [33m|[m [33ma584f71[m feat : 增加docs模板
+* [33m|[m [33m9154c13[m chrome:add Custom style
+[33m|[m[33m/[m  
+* [33me99eb36[m 开启了扩展语法功能，调整了Java教程的章节顺序，并从物理上打消了小月亮跟我对着干的念头
+* [33m129a989[m chrome : debug
+* [33m8d3d2a9[m fix : 修复default.md
+* [33mf699c04[m feat:mod default.md
+* [33m7e40ce0[m feat : icons
+* [33medc199e[m fix : param
+* [33mea908e0[m fix:add link of it
+* [33m7260eab[m feat:再次更新了我们的项目实现文档(求职数据可视化)
+*   [33m6c1340e[m Merge branch 'wmsnp': Java第一、二节
+[34m|[m[35m\[m  
+[34m|[m * [33mc97911d[m Java第一、二节
+* [35m|[m [33m245463f[m Merge branch 'main' of github.com:ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge
+[36m|[m[35m\[m[35m|[m 
+[36m|[m * [33m6e9e87f[m 文档页面支持多个作者
+* [1;31m|[m [33mfdbb36e[m feat:更新了招聘信息可视化平台技术文档
+[1;31m|[m[1;31m/[m  
+* [33m60f6f7d[m fix:上线简介
+* [33m69a3c8d[m fix:让菜单NeoForge教程指向其简介页面
+* [33mce2943e[m fix:修复安卓端目录
+* [33m42dde42[m feat:招聘数据分析与可视化平台技术实现文档
+*   [33m67fc007[m Merge branch 'main' of github.com:ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33mab26aa6[m :arrow_up: Chore(theme): update FixIt version
+* [1;33m|[m [33me63f183[m fix:重构文件目录系统
+[1;33m|[m[1;33m/[m  
+* [33me95cd28[m fix:weigth:简介
+* [33ma8e7927[m chrome:补充weight
+* [33m5a3b9b8[m feat:更新简介
+*   [33mda60961[m Merge branch 'main' of github.com:ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge
+[1;34m|[m[1;35m\[m  
+* [1;35m|[m [33meba1799[m feat: 尝试开启评论区
+[1;35m|[m [1;35m|[m * [33m3ba9969[m[33m ([m[1;31morigin/dependabot/github_actions/actions/checkout-5[m[33m)[m Bump actions/checkout from 4 to 5
+[1;35m|[m [1;35m|[m[1;35m/[m  
+[1;35m|[m [1;35m|[m * [33mb14cf02[m[33m ([m[1;31morigin/dependabot/github_actions/actions/upload-pages-artifact-4[m[33m)[m Bump actions/upload-pages-artifact from 3 to 4
+[1;35m|[m [1;35m|[m[1;35m/[m  
+[1;35m|[m * [33m816ef12[m :arrow_up: Chore(theme): update FixIt version
+[1;35m|[m * [33mfa3ef71[m :arrow_up: Chore(theme): update FixIt version
+[1;35m|[m[1;35m/[m  
+* [33mfef983a[m fix : 修正了baseURL
+* [33m22a3eff[m feat : 增加标签页图标
+* [33mecd2f22[m fix:关闭Docs字样
+* [33m18c484e[m feat : 测试GitHubPages
+* [33mba9f84a[m feat:第一次正式修改了配置文件
+* [33mdaeba0c[m :arrow_up: Chore(theme): update FixIt version
+* [33m111d6e9[m :arrow_up: Chore(theme): update FixIt version
+* [33m788f353[m :arrow_up: Chore(theme): update FixIt version
+* [33mc4d8504[m :arrow_up: Chore(theme): update FixIt version
+* [33m9b7bfa9[m :arrow_up: Chore(theme): update FixIt version
+* [33mb11768d[m :arrow_up: Chore(theme): update FixIt version
+* [33m2f7e1a4[m :arrow_up: Chore(theme): update FixIt version
+* [33me05acdb[m :arrow_up: Chore(theme): update FixIt version
+* [33m40845c9[m :arrow_up: Chore(theme): update FixIt version
+* [33m5bf4acf[m :arrow_up: Chore(theme): update FixIt version
+* [33mb0b28ec[m :arrow_up: Chore(theme): update FixIt version
+* [33m54b6f82[m Delete G.jpg
+* [33mf5905dd[m Update update-theme.yml
+* [33mcbc704e[m :arrow_up: Chore(theme): update FixIt version
+* [33m7f0a8a7[m :arrow_up: Chore(theme): update FixIt version
+* [33me73e883[m :arrow_up: Chore(theme): update FixIt version
+* [33m194210f[m :arrow_up: Chore(theme): update FixIt version
+* [33m9679064[m :arrow_up: Chore(theme): update FixIt version
+* [33m0ab8d54[m Pic\
+* [33m25648dd[m :arrow_up: Chore(theme): update FixIt version
+* [33m939534a[m :arrow_up: Chore(theme): update FixIt version
+* [33m5bfbc92[m :arrow_up: Chore(theme): update FixIt version
+* [33m90ddc6a[m :arrow_up: Chore(theme): update FixIt version
+[31m|[m * [33maeb8b8d[m[33m ([m[1;31morigin/dependabot/github_actions/stefanzweifel/git-auto-commit-action-6[m[33m)[m Bump stefanzweifel/git-auto-commit-action from 5 to 6
+[31m|[m[31m/[m  
+* [33mcfd88ab[m :arrow_up: Chore(theme): update FixIt version
+* [33mb46dfee[m :arrow_up: Chore(theme): update FixIt version
+* [33m5167391[m 增加了示例文档
+* [33m70a7338[m 添加FixItsDoc子模块以支持文档编写
+*   [33me13dea7[m Merge pull request #1 from ApolloMonasa/dependabot/submodules/themes/shortcode-docs-bookmark-e40fd43
+[33m|[m[34m\[m  
+[33m|[m * [33m1ef38f7[m Bump themes/shortcode-docs-bookmark from `65eb428` to `e40fd43`
+[33m|[m[33m/[m  
+* [33m9a2f1df[m Initial commit
