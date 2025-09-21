@@ -793,7 +793,7 @@ disableThemeInject = false
       enable = false
     # Utterances 评论系统配置。
     [page.comment.utterances]
-      enable = true
+      enable = false
       repo = "ApolloMonasa/MyBlogComments"
       issueTerm = "pathname"
       theme = "github-light"
@@ -806,22 +806,22 @@ disableThemeInject = false
       # ...
     # --- Giscus 评论配置 (推荐！基于 GitHub Discussions) ---
     [page.comment.giscus]
-      enable = false # 如果要用 Giscus，把这里设为 true
+      enable = true # 如果要用 Giscus，把这里设为 true
       # 你的 GitHub "用户名/仓库名"
-      repo = "ApolloMonasa/Minecraft-Modding-Tutorial-For-NeoForge"
+      repo = "ApolloMonasa/ApolloMonasa.github.io"
       # 从 Giscus 官网获取
-      repoId = ""
+      repoId = "R_kgDOOvyxEQ"
       # 你在仓库 Discussions 中用于存放评论的分类名
       category = "Announcements"
       # 从 Giscus 官网获取
-      categoryId = ""
+      categoryId = "DIC_kwDOOvyxEc4Cvq-u"
       # 页面与 discussion 的映射方式
-      mapping = "pathname"
+      mapping = "url"
       # 启用 Giscus 的 "Reactions" 功能
       reactionsEnabled = "1"
       emitMetadata = "0"
       # 评论框位置 ["top", "bottom"]
-      inputPosition = "bottom"
+      inputPosition = "top"
       # 语言
       lang = "zh-CN"
       # 主题
