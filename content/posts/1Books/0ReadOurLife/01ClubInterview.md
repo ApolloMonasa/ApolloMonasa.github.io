@@ -3,29 +3,29 @@
 # |                           核心元数据 (Core Metadata)                            |
 # -------------------------------------------------------------------------------------
 # 【必填】文章标题：清晰、吸引人，并包含核心关键词
-title: "{{ replace .Name "-" " " | title }}"
+title: "社团面试"
 # 【必填】文章发布日期
-date: {{ .Date }}
+date: 2025-09-22T08:33:33+08:00
 # 【建议】文章最后修改日期：更新文章后，请手动更新此日期，以告知搜索引擎内容已更新
-lastmod: {{ .Date }}
+weight: 1
+lastmod: 2025-09-22T08:33:33+08:00
 # 【必填】文章作者：FixIt主题支持多种格式
 # 格式一: 简单字符串
 # author: "ApolloMonasa"
 # 格式二: 包含链接和头像的复杂对象 (推荐)
-author:
-    - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-    - ApolloMonasa
+# author:
+#     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
+#     - ApolloMonasa
 # 【必填】是否为草稿：发布前请务必设置为 false
-draft: true
-weight: 
+draft: false
 
 # -------------------------------------------------------------------------------------
 # |                             SEO 与分享 (SEO & Sharing)                           |
 # -------------------------------------------------------------------------------------
 # 【核心SEO】文章描述：1-3句话，准确概括文章内容，包含关键词。会显示在搜索引擎结果中。
-description: ""
+description: "社团面试过程中应该注意的点，什么人应该留下，什么人不应该留下。"
 # 【建议SEO】文章关键词：针对本文的特定关键词，用逗号分隔
-keywords: []
+keywords: ["社团", "面试", "筛选"]
 # 【可选SEO】自定义URL：用于创建更简洁或更具描述性的URL，不设置则根据标题自动生成
 # slug: "custom-url-slug-for-this-post"
 # 【核心分享】社交分享预览图 (og:image)：非常重要！推荐尺寸 1200x630。
@@ -37,9 +37,9 @@ images: [] # 例如: ["/images/posts/my-post-banner.png"]
 # |                            内容组织 (Taxonomies)                               |
 # -------------------------------------------------------------------------------------
 # 【必填】标签：可以有多个，用于内容聚合
-tags: [] # 例如: ["Minecraft", "教程"]
+tags: ["随笔"] # 例如: ["Minecraft", "教程"]
 # 【必填】分类：通常只有一个，用于内容归档
-categories: [Portfolio] # 例如: ["模组开发"]
+categories: ["Posts"] # 例如: ["模组开发"]
 # 【可选】系列：将多篇文章组织成一个系列，自动生成上一篇/下一篇链接
 # series: [] # 例如: ["NeoForge 开发系列"]
 
@@ -54,6 +54,6 @@ toc: true
 featuredImage: "" # 例如: "/images/posts/my-post-cover.jpg"
 ---
 
-**摘要：**
+**摘要：** 昨天我们学生资助管理中心进行了一面的工作，我作为部长参与到了面试过程中去，毫无疑问这是我第一次作为面试官，虽然只是校级社团的面试，但肯定是留给我印象最深的一次面试经历。
 
 <!--more-->
