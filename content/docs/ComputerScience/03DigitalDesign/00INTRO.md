@@ -63,34 +63,32 @@ featuredImage: "" # 例如: "/images/posts/my-post-cover.jpg"
 下面是这门课的全部章节目录，每个链接都会带你进入对应章节的“开篇导读”。建议按照顺序一步步来，把基础打牢固！
 
 ---
-
-1.  **[第一章：数字系统与二进制数]({{< ref "1NumberSystemBinaryNumber/00Intro.md" >}})**
+1.  **[第一章：数字系统与二进制数]({{< ref "/docs/ComputerScience/03DigitalDesign/1NumberSystemBinaryNumber/00Intro.md" >}})**
     > 一切的开始，带你进入 0 和 1 的世界。
 
-2.  **[第二章：布尔代数与逻辑门]({{< ref "2BooleanAlgebraLogicGates/00Intro.md" >}})**
+2.  **[第二章：布尔代数与逻辑门]({{< ref "/docs/ComputerScience/03DigitalDesign/2BooleanAlgebraLogicGates/00Intro.md" >}})**
     > 这是我们设计电路的“数学语言”，是内功心法。
 
-3.  **[第三章：门级电路化简]({{< ref "3SimplicationOfGateCircuits/00Intro.md" >}})**
+3.  **[第三章：门级电路化简]({{< ref "/docs/ComputerScience/03DigitalDesign/3SimplicationOfGateCircuits/00Intro.md" >}})**
     > 如何用最少的“积木”搭出同样功能的电路？省钱省地儿的艺术。
 
-4.  **[第四章：组合逻辑电路]({{< ref "4CombinationLogic/00Intro.md" >}})**
+4.  **[第四章：组合逻辑电路]({{< ref "/docs/ComputerScience/03DigitalDesign/4CombinationLogic/00Intro.md" >}})**
     > 电路开始干正事了！加法器、编码器...各种实用模块登场。
 
-5.  **[第五章：同步时序逻辑]({{< ref "5SynchronousSequentialLogic/00Intro.md" >}})**
+5.  **[第五章：同步时序逻辑]({{< ref "/docs/ComputerScience/03DigitalDesign/5SynchronousSequentialLogic/00Intro.md" >}})**
     > **全书核心！** 电路开始拥有“记忆”，状态机的概念会在这里彻底讲明白。
 
-6.  **[第六章：寄存器与计数器]({{< ref "6RegisterCounter/00Intro.md" >}})**
+6.  **[第六章：寄存器与计数器]({{< ref "/docs/ComputerScience/03DigitalDesign/6RegisterCounter/00Intro.md" >}})**
     > 时序逻辑最常见的两大应用，几乎所有数字系统里都有它们的身影。
 
-7.  **[第七章：存储器与可编程逻辑器件]({{< ref "7MemoryAndPLD/00Intro.md" >}})**
+7.  **[第七章：存储器与可编程逻辑器件]({{< ref "/docs/ComputerScience/03DigitalDesign/7MemoryAndPLD/00Intro.md" >}})**
     > 了解数据是如何存储的，并接触我们未来的“魔法棒”——FPGA。
 
-8.  **[第八章：寄存器传输级设计]({{< ref "8RTLDesign/00Intro.md" >}})**
+8.  **[第八章：寄存器传输级设计]({{< ref "/docs/ComputerScience/03DigitalDesign/8RTLDesign/00Intro.md" >}})**
     > 进阶内容！教你从更高的抽象层次去思考和设计一个复杂的数字系统。
 
-9.  **[第九章：实验：标准IC与FPGA]({{< ref "9ExperimentWithStandardICsAndFPGAs/00Intro.md" >}})**
+9.  **[第九章：实验：标准IC与FPGA]({{< ref "/docs/ComputerScience/03DigitalDesign/9ExperimentWithStandardICsAndFPGAs/00Intro.md" >}})**
     > 理论结合实践，动手环节！把前面学的东西在开发板上变成现实。
 
-10. **[第十章：标准图形符号]({{< ref "10StandardGraphicSymbol/00Intro.md" >}})**
+10. **[第十章：标准图形符号]({{< ref "/docs/ComputerScience/03DigitalDesign/10StandardGraphicSymbol/00Intro.md" >}})**
     > 附录性质，当你看到一些不认识的电路符号时，可以来这里查阅。
-
