@@ -50,6 +50,8 @@ toc: true
 featuredImage: "" # 例如: "/images/posts/my-post-cover.jpg"
 ---
 
-**摘要：** 记数系统（numeral system，system of numeration）又称记数法、记数制度、数制，是使用一组數字符号来表示數的体系。
+**摘要：** 本文主要介绍我们的数字系统，数制及其表示方法，让读者全面了解数制相关知识。
 
 <!--more-->
+> [!NOTE] 数制
+> 记数系统（numeral system，system of numeration）又称记数法、记数制度、数制，是使用一组数字符号来表示數的体系。

@@ -12,9 +12,9 @@ lastmod: 2025-09-23T09:00:55+08:00
 # 格式一: 简单字符串
 # author: "ApolloMonasa"
 # 格式二: 包含链接和头像的复杂对象 (推荐)
-author:
-    - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-    - ApolloMonasa
+# author:
+#     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
+#     - ApolloMonasa
 # 【必填】是否为草稿：发布前请务必设置为 false
 draft: false
 
@@ -22,9 +22,9 @@ draft: false
 # |                             SEO 与分享 (SEO & Sharing)                           |
 # -------------------------------------------------------------------------------------
 # 【核心SEO】文章描述：1-3句话，准确概括文章内容，包含关键词。会显示在搜索引擎结果中。
-description: ""
+description: "本章节主要介绍一些会在数电这门课中用到的数字系统和数制，以及各种编码，还有他们各自的作用，如果较为完备地在离散数学这门课程中学习过相关知识，这一章大可以直接跳过。"
 # 【建议SEO】文章关键词：针对本文的特定关键词，用逗号分隔
-keywords: []
+keywords: ["数字系统", "数制", "编码"]
 # 【可选SEO】自定义URL：用于创建更简洁或更具描述性的URL，不设置则根据标题自动生成
 # slug: "custom-url-slug-for-this-post"
 # 【核心分享】社交分享预览图 (og:image)：非常重要！推荐尺寸 1200x630。
@@ -53,6 +53,6 @@ toc: true
 featuredImage: "" # 例如: "/images/posts/my-post-cover.jpg"
 ---
 
-**摘要：**
+**摘要：** 本章节主要介绍一些会在数电这门课中用到的数字系统和数制，以及各种编码，还有他们各自的作用，如果较为完备地在离散数学这门课程中学习过相关知识，这一章大可以直接跳过。
 
 <!--more-->
