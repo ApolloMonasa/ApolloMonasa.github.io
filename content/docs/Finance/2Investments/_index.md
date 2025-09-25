@@ -1,4 +1,4 @@
 ---
-title: 投资学
+title: 投资学原理
 weight: 2
 ---
