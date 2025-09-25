@@ -1,4 +1,4 @@
 ---
 title: 货币金融学
-weight: 5
+weight: 50
 ---

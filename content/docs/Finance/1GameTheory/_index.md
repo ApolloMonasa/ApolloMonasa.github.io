@@ -1,4 +1,4 @@
 ---
 title: 博弈论基础
-weight: 1
+weight: 10
 ---

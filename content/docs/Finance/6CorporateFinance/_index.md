@@ -1,4 +1,4 @@
 ---
 title: 公司理财
-weight: 6
+weight: 60
 ---
