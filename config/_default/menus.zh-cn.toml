@@ -34,11 +34,22 @@
 [[main]]
   identifier = "reading-notes"
   name = "读书随笔"
-  url = "/posts/0intro/" # 注意：这里使用了相对路径，这是 Hugo 的标准做法
+  url = "/posts/1books/1insidethegamethechinesegovernmentandeconomicdevelopment/0intro/" # 注意：这里使用了相对路径，这是 Hugo 的标准做法
+
   title = "浏览读书随笔"
   weight = 25              # [新增] 插入到金融学(20)和归档(30)之间
   [main.params]
     icon = "fa-solid fa-book-open" # [新增] 为读书随笔添加了打开的书本图标
+
+[[main]]
+  identifier = "chores-notes"
+  name = "杂项"
+  url = "/posts/0chores/2remotedesktop/0intro/" # 注意：这里使用了相对路径，这是 Hugo 的标准做法
+
+  title = "浏览读书随笔"
+  weight = 27              # [新增] 插入到金融学(20)和归档(30)之间
+  [main.params]
+    icon = "fa-solid fa-toolbox" # [新增] 为读书随笔添加了打开的书本图标
 
 [[main]]
   identifier = "archives"

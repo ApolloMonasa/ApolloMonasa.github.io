@@ -1,6 +1,6 @@
 ---
-title: 作品集
-weight: 2
+title: 杂项
+weight: 0
 cascade:
   params:
     type: docs

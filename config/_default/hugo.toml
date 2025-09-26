@@ -34,13 +34,3 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken", '
   category = "categories"
   tag = "tags"
   series = "series"
-
-# SEO 优化的 URL 结构 (Permalinks)
-# 默认的 URL 结构可能包含日期，不利于常青内容。建议使用文章标题作为 URL。
-[permalinks]
-  [permalinks.page]
-    # posts = "/p/:slugorcontentbasename"
-  [permalinks.section]
-    # posts = "/posts/:slugorcontentbasename"
-  [permalinks.taxonomy]
-  [permalinks.term]
