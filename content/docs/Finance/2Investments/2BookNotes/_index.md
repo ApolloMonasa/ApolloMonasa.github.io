@@ -1,4 +1,4 @@
 ---
 title: 教材笔记
-weight: 2
+weight: 20
 ---

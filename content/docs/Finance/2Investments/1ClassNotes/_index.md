@@ -1,4 +1,4 @@
 ---
 title: 课堂随笔
-weight: 1
+weight: 10
 ---
