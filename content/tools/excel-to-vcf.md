@@ -12,9 +12,9 @@ lastmod: 2025-10-25T23:21:51+08:00
 # 格式一: 简单字符串
 # author: "ApolloMonasa"
 # 格式二: 包含链接和头像的复杂对象 (推荐)
-author:
-    - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-    - ApolloMonasa
+# author:
+#     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
+#     - ApolloMonasa
 # 【必填】是否为草稿：发布前请务必设置为 false
 draft: false
 weight: 0
@@ -37,7 +37,7 @@ images: [] # 例如: ["/images/posts/my-post-banner.png"]
 # |                            内容组织 (Taxonomies)                               |
 # -------------------------------------------------------------------------------------
 # 【必填】标签：可以有多个，用于内容聚合
-tags: [] # 例如: ["Minecraft", "教程"]
+tags: ["Tool"] # 例如: ["Minecraft", "教程"]
 # 【必填】分类：通常只有一个，用于内容归档
 categories: [] # 例如: ["模组开发"]
 # 【可选】系列：将多篇文章组织成一个系列，自动生成上一篇/下一篇链接
