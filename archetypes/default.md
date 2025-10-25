@@ -12,11 +12,11 @@ lastmod: {{ .Date }}
 # 格式一: 简单字符串
 # author: "ApolloMonasa"
 # 格式二: 包含链接和头像的复杂对象 (推荐)
-author:
-    - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-    - ApolloMonasa
+# author:
+#     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
+#     - ApolloMonasa
 # 【必填】是否为草稿：发布前请务必设置为 false
-draft: true
+draft: false
 weight: 
 
 # -------------------------------------------------------------------------------------
