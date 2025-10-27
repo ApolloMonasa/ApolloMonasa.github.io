@@ -245,3 +245,39 @@ function downloadVcf(content, fileName) {
     word-wrap: break-word;
 }
 </style>
+
+另一个
+
+
+<input type="file" id="file-input2" accept=".xlsx,.xls">
+<button id="convert-btn2">转换为 VCF</button>
+
+<script type="module">
+import init, { xlsx_to_vcf } from '/wasm/xlsx2vcf.js';
+
+(async function run() {
+    await init();
+    document.getElementById('convert-btn2').addEventListener('click', () => {
+        const fileInput = document.getElementById('file-input2');
+        if (!fileInput.files.length) return alert("请选择 Excel 文件");
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+            const arrayBuffer = e.target.result;
+            const uint8array = new Uint8Array(arrayBuffer);
+            try {
+                const vcf = xlsx_to_vcf(uint8array);
+                const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8;' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'contacts.vcf';
+                link.click();
+                URL.revokeObjectURL(link.href);
+            } catch (err) {
+                alert("转换失败：" + err);
+            }
+        };
+        reader.readAsArrayBuffer(file);
+    });
+})();
+</script>
