@@ -197,6 +197,7 @@ vi clusterconfig.xml
 {{< admonition type="warning" title="配置关键点" >}}
 -   `nodeNames` 和 `DEVICE` 中的 `name`: 应该与你的虚拟机主机名一致。你可以使用 `hostname` 命令查看。
 -   `backIp1s`, `backIp1`, `sshIp1`: **全部使用我们在上一篇教程中配置的“仅主机”网络 IP**，即 `192.168.170.130`。这是确保安装脚本能正确通信的关键。
+-   记得删除中文注释避免编码类错误
 {{< /admonition >}}
 
 #### 3. 下载并解压安装包
