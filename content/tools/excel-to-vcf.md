@@ -4,7 +4,9 @@
 # -------------------------------------------------------------------------------------
 title: "Excel 通讯录转 VCF 工具 (支持深色模式)"
 date: 2025-10-25T23:21:51+08:00
-lastmod: 2025-10-26T11:00:00+08:00
+lastmod: 2025-10-26T12:00:00+08:00 # <-- 更新一下最后修改日期
+author:
+  - name: "wmsnp"
 draft: false
 weight: 0
 
@@ -43,13 +45,13 @@ featuredImage: ""
 *   `职位`
 *   `邮箱`
 *   `固话`
+*   `生日` <!-- NEW: 更新说明文档 -->
 *   `备注`
 
 <a href="#" id="download-template-btn" class="template-link">👇 点击这里下载模板文件 (通讯录模板.xlsx)</a>
 
 ### 2. 上传并转换
 
-<!-- NEW: 全新的HTML结构，更易于样式化 -->
 <div class="converter-container">
     <div class="converter__input-area">
         <label for="file-input" class="converter__file-label">
@@ -65,7 +67,6 @@ featuredImage: ""
 <!-- 引入 SheetJS 库 -->
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
-<!-- NEW: JavaScript 增强了 UX -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const fileInput = document.getElementById('file-input');
@@ -79,9 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================================
     downloadTemplateBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        // NEW: 模板数据中增加“生日”列
         const templateData = [
-            { "姓名": "张三", "手机": "13800138000", "公司": "示例科技有限公司", "职位": "经理", "邮箱": "zhangsan@example.com", "固话": "010-12345678", "备注": "重要客户" },
-            { "姓名": "李四", "手机": "13900139001", "公司": "", "职位": "", "邮箱": "lisi@example.com", "固话": "", "备注": "同事，技术部" }
+            { "姓名": "张三", "手机": "13800138000", "公司": "示例科技有限公司", "职位": "经理", "邮箱": "zhangsan@example.com", "固话": "010-12345678", "生日": "1990-05-20", "备注": "重要客户" },
+            { "姓名": "李四", "手机": "13900139001", "公司": "", "职位": "", "邮箱": "lisi@example.com", "固话": "", "生日": "1992-11-11", "备注": "同事，技术部" }
         ];
         const worksheet = XLSX.utils.json_to_sheet(templateData);
         const workbook = XLSX.utils.book_new();
@@ -111,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // 禁用按钮，防止重复点击
         convertBtn.disabled = true;
         convertBtn.textContent = '正在转换...';
         
@@ -148,18 +149,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     const title = contact['职位'] || '';
                     const email = contact['邮箱'] || '';
                     const workPhone = String(contact['固话'] || '').trim();
+                    const birthday = contact['生日'] || ''; // NEW: 读取生日字段
                     const note = contact['备注'] || '';
 
                     if (name && mobile) {
                         let card = "BEGIN:VCARD\nVERSION:3.0\n";
                         card += `FN;CHARSET=UTF-8:${name}\n`;
                         card += `N;CHARSET=UTF-8:${name};;;;\n`;
+
+                        if (birthday) card += `BDAY:${birthday}\n`; // NEW: 将生日写入 BDAY 字段 (请确保格式为 YYYY-MM-DD)
+                        
                         if (mobile) card += `TEL;TYPE=CELL:${mobile}\n`;
                         if (workPhone) card += `TEL;TYPE=WORK:${workPhone}\n`;
                         if (email) card += `EMAIL:${email}\n`;
                         if (company) card += `ORG;CHARSET=UTF-8:${company}\n`;
                         if (title) card += `TITLE;CHARSET=UTF-8:${title}\n`;
                         if (note) card += `NOTE;CHARSET=UTF-8:${note}\n`;
+                        
                         card += "END:VCARD\n";
                         vcfContent += card;
                     }
@@ -191,11 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================================
-    // 辅助函数
+    // 辅助函数 (无变动)
     // ==========================================================
     function updateStatus(message, type) {
         statusOutput.innerHTML = message;
-        statusOutput.className = 'converter__status'; // Reset classes
+        statusOutput.className = 'converter__status';
         if (type === 'success') {
             statusOutput.classList.add('status--success');
         } else if (type === 'error') {
@@ -227,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- NEW: 全新的CSS，使用CSS变量以支持主题切换 -->
+<!-- CSS 样式无需改动 -->
 <style>
 /* 下载模板链接样式 */
 .template-link {
@@ -241,10 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
     color: var(--theme-primary-color-darken, #0056b3);
     border-bottom-color: var(--theme-primary-color-darken, #0056b3);
 }
-
 /* 转换器容器主样式 */
 .converter-container {
-    /* 使用 CSS 变量，并提供后备值 */
     background-color: var(--card-background-color, #ffffff);
     color: var(--theme-text-color-primary, #222);
     border: 1px solid var(--theme-border-color, #e0e0e0);
@@ -256,14 +260,13 @@ document.addEventListener('DOMContentLoaded', function() {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     transition: background-color 0.3s, border-color 0.3s;
 }
-
 /* 文件输入区域 */
 .converter__input-area {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* 在小屏幕上换行 */
+    flex-wrap: wrap;
 }
 .converter__file-label {
     display: inline-flex;
@@ -285,9 +288,8 @@ document.addEventListener('DOMContentLoaded', function() {
 .converter__file-name {
     font-size: 0.9em;
     color: var(--theme-text-color-secondary, #666);
-    flex-grow: 1; /* 占据剩余空间 */
+    flex-grow: 1;
 }
-
 /* 主转换按钮 */
 .converter__button {
     width: 100%;
@@ -311,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function() {
     cursor: not-allowed;
     opacity: 0.7;
 }
-
 /* 状态输出区域 */
 .converter__status {
     margin-top: 20px;
