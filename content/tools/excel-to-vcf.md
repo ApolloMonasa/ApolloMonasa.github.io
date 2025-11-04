@@ -145,12 +145,12 @@ pre{white-space:pre-wrap;word-break:break-word;background:#F9FAFB;padding:.5rem;
 <script src="/js/xlsx2vcf.js"></script>
 <script type="module">
 import init, { xlsx_to_vcf } from '/wasm/xlsx2vcf.js';
-const statusOutput = document.getElementById('status-output2');
+const statusOutput = document.getElementById('status-rust');
 (async function run() {
     await init();
-    document.getElementById('convert-btn2').addEventListener('click', () => {
-        const fileInput = document.getElementById('file-input2');
-        statusOutput.classList.remove('tw-hidden');
+    document.getElementById('convert-rust').addEventListener('click', () => {
+        const fileInput = document.getElementById('file-rust');
+        statusOutput.style.display = 'block';
         if (!fileInput.files.length) return statusOutput.textContent = '错误：请先选择一个 Excel 文件。';
         const reader = new FileReader();
         reader.onload = async (e) => {
