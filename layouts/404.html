@@ -1,0 +1,40 @@
+{{- define "content" -}}
+<article class="page" id="content-404">
+<h1 id="error-emoji"></h1>
+<p class="error-text">
+    {{- T "pageNotFoundText" -}}&nbsp;
+    <a href="javascript:void(0);" title="{{ T `back` }}" onclick="window.history.back();">
+    {{- dict "Class" "fa-regular fa-hand-point-left fa-fw" | partial "plugin/icon.html" -}}
+    </a>
+</p>
+<script>
+(function() {
+    const emojiArray = ['\\(o_o)/', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)','(=\'X\'=)', '(>_<)', '(;-;)'];
+    document.getElementById('error-emoji').appendChild(
+    document.createTextNode(emojiArray[Math.floor(Math.random() * emojiArray.length)])
+    );
+})();
+</script>
+
+<div id="bevy-container" class="bevy-container"><canvas id="bevy-canvas"></canvas></div>
+<script type="module">
+import init from "https://cdn.jsdelivr.net/gh/wmsnp/404jumper@cdn/wasm/404jumper.js";
+async function fetchBrotliWasm(url) {
+    const response = await fetch(url);
+    const brotli = await import("https://unpkg.com/brotli-dec-wasm@2.3.0/index.js?module").then(m => m.default);
+    const compressedData = new Uint8Array(await response.arrayBuffer());
+    return brotli.decompress(compressedData);
+}
+(async function () {
+    const wasmBytes = await fetchBrotliWasm("https://cdn.jsdelivr.net/gh/wmsnp/404jumper@cdn/wasm/404jumper.wasm.br");
+    await init(wasmBytes);
+})();
+</script>
+<style>
+.bevy-container { width: 100vw; height: 40vh; max-height: 300px; margin: 1rem 0; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+.bevy-canvas { width: 100% !important; height: 100% !important; display: block; }
+@media (max-width: 768px) {.bevy-container { height: 35vh; max-height: 250px; }}
+@media (max-width: 480px) {.bevy-container { height: 30vh; max-height: 200px; }}
+</style>
+</article>
+{{- end -}}
