@@ -522,7 +522,7 @@ disableThemeInject = false
   # 起始位置 ["left", "right"]
   start = "left"
   # 显示位置 ["top", "bottom"]
-  position = "top"
+  position = "bottom"
   # 是否反向
   reversed = false
   # 亮色主题下的颜色
@@ -530,7 +530,7 @@ disableThemeInject = false
   # 暗色主题下的颜色
   dark = ""
   # 进度条高度
-  height = "3px"
+  height = "4px"
 
 # --- 页面加载时的动画进度条 (Pace.js) ---
 [pace]
@@ -615,17 +615,17 @@ disableThemeInject = false
   # 是否自动记录并恢复阅读进度。
   autoBookmark = true
   # 是否显示字数统计。
-  wordCount = true
+  wordCount = false
   # 是否显示预计阅读时间。
-  readingTime = true
+  readingTime = false
   # 文章结束标记，会在文章末尾显示。
-  endFlag = "---"
+  endFlag = "---Ending---"
   # 是否启用 instant.page 预加载技术，加快页面跳转速度。
-  instantPage = false
+  instantPage = true
   # 是否在侧边栏显示系列文章列表。
-  collectionList = false
+  collectionList = true
   # 是否在文章末尾显示系列文章导航。
-  collectionNavigation = false
+  collectionNavigation = true
 
   # 文章转载信息配置。
   [page.repost]
