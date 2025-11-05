@@ -2,57 +2,36 @@
 # -------------------------------------------------------------------------------------
 # |                           核心元数据 (Core Metadata)                            |
 # -------------------------------------------------------------------------------------
-# 【必填】文章标题：清晰、吸引人，并包含核心关键词
-title: "Excel 通讯录转 VCF 工具"
-# 【必填】文章发布日期
+# NEW: 使用您提供的完整元数据
+title: "Excel to VCF Converter (JS & WASM Comparison)"
 date: 2025-10-25T23:21:51+08:00
-# 【建议】文章最后修改日期：更新文章后，请手动更新此日期，以告知搜索引擎内容已更新
-lastmod: 2025-10-25T23:21:51+08:00
-# 【必填】文章作者：FixIt主题支持多种格式
-# 格式一: 简单字符串
-# author: "ApolloMonasa"
-# 格式二: 包含链接和头像的复杂对象 (推荐)
-# author:
-#     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-#     - ApolloMonasa
-# 【必填】是否为草稿：发布前请务必设置为 false
+lastmod: 2025-10-26T14:00:00+08:00
+author:
+  - name: "wmsnp"
 draft: false
 weight: 0
 
 # -------------------------------------------------------------------------------------
 # |                             SEO 与分享 (SEO & Sharing)                           |
 # -------------------------------------------------------------------------------------
-# 【核心SEO】文章描述：1-3句话，准确概括文章内容，包含关键词。会显示在搜索引擎结果中。
-description: ""
-# 【建议SEO】文章关键词：针对本文的特定关键词，用逗号分隔
-keywords: []
-# 【可选SEO】自定义URL：用于创建更简洁或更具描述性的URL，不设置则根据标题自动生成
-# slug: "custom-url-slug-for-this-post"
-# 【核心分享】社交分享预览图 (og:image)：非常重要！推荐尺寸 1200x630。
-# 如果不设置，将使用 params.toml 中定义的全局 images。
-# 将图片放在 /static/images/posts/ 目录下，然后在这里引用。
-images: [] # 例如: ["/images/posts/my-post-banner.png"]
+description: "一个安全、纯前端的在线工具，可以快速将 Excel 通讯录文件转换为 VCF (vCard) 格式。同时对比了原生 JavaScript 和 Rust/WASM 的实现性能。完美支持深色模式。"
+keywords: ["Excel to VCF", "通讯录转换", "Excel转vCard", "WASM", "Rust", "在线工具", "VCF生成器"]
+images: []
 
 # -------------------------------------------------------------------------------------
 # |                            内容组织 (Taxonomies)                               |
 # -------------------------------------------------------------------------------------
-# 【必填】标签：可以有多个，用于内容聚合
-tags: ["Tool"] # 例如: ["Minecraft", "教程"]
-# 【必填】分类：通常只有一个，用于内容归档
-categories: [] # 例如: ["模组开发"]
-# 【可选】系列：将多篇文章组织成一个系列，自动生成上一篇/下一篇链接
-# series: [] # 例如: ["NeoForge 开发系列"]
+tags: ["Tool", "Excel", "VCF", "WASM", "JavaScript"]
+categories: ["实用工具"]
 
 # -------------------------------------------------------------------------------------
 # |                         FixIt 主题特定配置 (Theme-Specific)                     |
 # -------------------------------------------------------------------------------------
-# 是否开启评论
 comment: true
-# 是否显示目录
 toc: true
-# 文章封面图：显示在文章列表和文章顶部
-featuredImage: "" # 例如: "/images/posts/my-post-cover.jpg"
+featuredImage: ""
 ---
+<!-- 保留朋友的样式表 -->
 <style>
 *,*::before,*::after{box-sizing:border-box;}
 img{max-width:100%;display:block;}
@@ -105,7 +84,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#F9FAFB;padding:.5rem;
 
 ### 1. 准备您的 Excel 文件
 
-请确保您的 Excel 文件第一行为表头，并且包含至少 **"姓名"** 和 **"手机"** 两列。建议的列名如下：
+请确保您的 Excel 文件第一行为表头，并且包含至少 **"姓名"** 和 **"手机"** 两列。建议的列名如下 (左侧的JS版本支持所有列，右侧的WASM版本仅支持基础列)：
 
 *   `姓名` (必填)
 *   `手机` (必填)
@@ -113,8 +92,10 @@ pre{white-space:pre-wrap;word-break:break-word;background:#F9FAFB;padding:.5rem;
 *   `职位`
 *   `邮箱`
 *   `固话`
+*   `生日` <!-- NEW: 更新说明，支持新字段 -->
+*   `备注` <!-- NEW: 更新说明，支持新字段 -->
 
-<a href="#" id="download-template-btn" style="font-weight: bold; text-decoration: underline;">点击这里下载模板文件</a>
+<a href="#" id="download-template-btn" style="font-weight: bold; text-decoration: underline;">点击这里下载模板文件 (支持所有字段)</a>
 
 ### 2. 上传并转换
 
@@ -142,15 +123,143 @@ pre{white-space:pre-wrap;word-break:break-word;background:#F9FAFB;padding:.5rem;
 </div>
 </div>
 
-<script src="/js/xlsx2vcf.js"></script>
+<!-- 引入 SheetJS 库 (JS版本需要) -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+<!-- NEW: 注入您功能完整的 JavaScript 逻辑 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // ==========================================================
+    // 模板下载功能 (已更新，支持新字段)
+    // ==========================================================
+    document.getElementById('download-template-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        const templateData = [
+            { "姓名": "张三", "手机": "13800138000", "公司": "示例科技", "职位": "经理", "邮箱": "zhangsan@example.com", "固话": "010-12345678", "生日": "1990-05-20", "备注": "重要客户" },
+            { "姓名": "李四", "手机": "13900139001", "公司": "", "职位": "", "邮箱": "lisi@example.com", "固话": "", "生日": "1992-11-11", "备注": "同事" }
+        ];
+        const worksheet = XLSX.utils.json_to_sheet(templateData);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "通讯录");
+        XLSX.writeFile(workbook, "通讯录模板.xlsx");
+    });
+
+    // ==========================================================
+    // JavaScript 版本转换器逻辑
+    // ==========================================================
+    const fileInputJs = document.getElementById('file-js');
+    const convertBtnJs = document.getElementById('convert-js');
+    const statusOutputJs = document.getElementById('status-js');
+
+    convertBtnJs.addEventListener('click', () => {
+        if (fileInputJs.files.length === 0) {
+            updateStatus(statusOutputJs, '❌ 错误：请先选择一个 Excel 文件。', 'error');
+            return;
+        }
+        
+        convertBtnJs.disabled = true;
+        convertBtnJs.textContent = '正在转换...';
+        
+        const file = fileInputJs.files[0];
+        const reader = new FileReader();
+        
+        updateStatus(statusOutputJs, '正在读取文件...', 'info');
+        
+        reader.onload = function(e) {
+            const startTime = performance.now();
+            try {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+                const contacts = XLSX.utils.sheet_to_json(worksheet);
+                
+                if (contacts.length === 0) {
+                    updateStatus(statusOutputJs, '❌ 错误：Excel文件中没有找到数据。', 'error'); return;
+                }
+                if (!contacts[0]['姓名'] || !contacts[0]['手机']) {
+                    updateStatus(statusOutputJs, '❌ 错误：必须包含 "姓名" 和 "手机" 列。', 'error'); return;
+                }
+                
+                let vcfContent = '';
+                contacts.forEach(contact => {
+                    const name = contact['姓名'] || '';
+                    const mobile = String(contact['手机'] || '').trim();
+                    if (!name || !mobile) return;
+
+                    // NEW: 读取新增字段
+                    const birthday = contact['生日'] || '';
+                    const note = contact['备注'] || '';
+                    
+                    let card = "BEGIN:VCARD\nVERSION:3.0\n";
+                    card += `FN;CHARSET=UTF-8:${name}\n`;
+                    card += `N;CHARSET=UTF-8:${name};;;;\n`;
+                    if (contact['公司']) card += `ORG;CHARSET=UTF-8:${contact['公司']}\n`;
+                    if (contact['职位']) card += `TITLE;CHARSET=UTF-8:${contact['职位']}\n`;
+                    if (contact['邮箱']) card += `EMAIL:${contact['邮箱']}\n`;
+                    if (mobile) card += `TEL;TYPE=CELL:${mobile}\n`;
+                    if (contact['固话']) card += `TEL;TYPE=WORK:${String(contact['固话']).trim()}\n`;
+                    if (birthday) card += `BDAY:${birthday}\n`;
+                    if (note) card += `NOTE;CHARSET=UTF-8:${note}\n`;
+                    card += "END:VCARD\n";
+                    vcfContent += card;
+                });
+                
+                if (!vcfContent) {
+                    updateStatus(statusOutputJs, '⚠️ 警告：未生成任何有效联系人。', 'error'); return;
+                }
+                
+                downloadVcf(vcfContent, 'contacts.vcf');
+                const timeTaken = (performance.now() - startTime).toFixed(2);
+                updateStatus(statusOutputJs, `✅ 成功生成 VCF！耗时 ${timeTaken} 毫秒。`, 'success');
+
+            } catch (error) {
+                console.error(error);
+                updateStatus(statusOutputJs, '❌ 文件处理失败，请确保格式正确。', 'error');
+            } finally {
+                resetButton(convertBtnJs, '转换为 VCF 文件');
+            }
+        };
+        reader.readAsArrayBuffer(file);
+    });
+
+    // ==========================================================
+    // 辅助函数
+    // ==========================================================
+    function updateStatus(element, message, type) {
+        element.style.display = 'block';
+        element.textContent = message;
+        element.className = 'p2 mt2 w-full'; // Reset classes from friend's style
+        if (type === 'success') element.style.color = '#155724';
+        else if (type === 'error') element.style.color = '#721c24';
+        else element.style.color = '#555';
+    }
+    function resetButton(button, text) {
+        button.disabled = false;
+        button.textContent = text;
+    }
+    function downloadVcf(content, fileName) {
+        const blob = new Blob([content], { type: 'text/vcard;charset=utf-8;' });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.setAttribute("download", fileName);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    }
+});
+</script>
+
+<!-- 保留朋友的 WASM 逻辑 -->
 <script type="module">
 import init, { xlsx_to_vcf } from '/wasm/xlsx2vcf.js';
-const statusOutput = document.getElementById('status-output2');
+const statusOutput = document.getElementById('status-rust');
 (async function run() {
     await init();
-    document.getElementById('convert-btn2').addEventListener('click', () => {
-        const fileInput = document.getElementById('file-input2');
-        statusOutput.classList.remove('tw-hidden');
+    document.getElementById('convert-rust').addEventListener('click', () => {
+        const fileInput = document.getElementById('file-rust');
+        statusOutput.style.display = 'block';
         if (!fileInput.files.length) return statusOutput.textContent = '错误：请先选择一个 Excel 文件。';
         const reader = new FileReader();
         reader.onload = async (e) => {

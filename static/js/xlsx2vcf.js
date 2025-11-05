@@ -28,10 +28,10 @@ document.getElementById('download-template-btn').addEventListener('click', (e) =
 // ==========================================================
 // 核心转换功能 (与之前相同)
 // ==========================================================
-document.getElementById('convert-btn').addEventListener('click', () => {
-    const fileInput = document.getElementById('file-input');
-    const statusOutput = document.getElementById('status-output');
-    statusOutput.classList.remove('tw-hidden');
+document.getElementById('convert-js').addEventListener('click', () => {
+    const fileInput = document.getElementById('file-js');
+    const statusOutput = document.getElementById('status-js');
+    statusOutput.style.display = 'block';
     if (fileInput.files.length === 0) {
         statusOutput.textContent = '错误：请先选择一个 Excel 文件。';
         return;
