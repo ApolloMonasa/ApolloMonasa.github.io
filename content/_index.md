@@ -33,27 +33,44 @@ gantt
 ```
 
 ```mermaid
-graph TD;
-    A[程序启动] --> B[主函数 main]
-    B --> C[输入玩家总数 n]
-    C --> D[创建 JosephRing 对象 ring1、ring2]
-    D --> E[调用 ring1.simulate1() 执行算法1]
-    E --> F[初始化双向循环链表（initRing）]
-    F --> G[输出初始 Musk 列表（编号+Musk值）]
-    G --> H[按当前节点 Musk 取模步长，正向遍历找淘汰节点]
-    H --> I[输出淘汰编号，删除节点并维护链表]
-    I --> J{剩余节点数>0?}
-    J -- Yes --> H
-    J -- No --> K[调用 ring2.simulate2() 执行算法2]
-    K --> L[复用链表初始化逻辑，输出初始 Musk 列表]
-    L --> M[按步长大小选择正向/反向遍历（优化效率）]
-    M --> N[输出淘汰编号，删除节点并维护链表]
-    N --> O{剩余节点数>0?}
-    O -- Yes --> M
-    O -- No --> P[调用析构函数 ~JosephRing() 释放内存]
-    P --> Q[程序结束]
+graph LR
+    subgraph 主流程
+        A[开始] --> B{输入 n};
+        B --> C[创建两个<br>JosephRing];
+        C --> D[测试 simulate1];
+        D --> E[测试 simulate2];
+        E --> F[结束];
+    end
 
+    subgraph simulate 核心逻辑
+        S_Start[开始 simulate] --> S_Check{环是否为空?};
+        S_Check -- 是 --> S_Err[打印错误];
+        S_Check -- 否 --> S_Print_Init[打印初始状态];
+        
+        S_Print_Init --> S_Loop_Cond{循环:<br>size > 0?};
+        S_Loop_Cond -- 是 --> S_Calc_m[1. 计算步数 m];
+        
+        S_Calc_m --> S_Find_Node{2. 寻找淘汰节点};
+        subgraph " "
+            direction TB
+            S_Find_Node -- simulate1 --> S_Find_1[单向查找];
+            S_Find_Node -- simulate2 --> S_Decision{双向优化?};
+            S_Decision -- 是 --> S_Find_2_Fwd[正向短路查找];
+            S_Decision -- 否 --> S_Find_2_Bwd[反向短路查找];
+        end
+
+        S_Find_1 --> S_Eliminate;
+        S_Find_2_Fwd --> S_Eliminate;
+        S_Find_2_Bwd --> S_Eliminate;
+        
+        S_Eliminate[3. 执行淘汰<br>打印ID, 移除节点<br>更新cur, size--];
+        S_Eliminate --> S_Loop_Cond;
+
+        S_Loop_Cond -- 否 --> S_End[结束 simulate];
+    end
 ```
+
+
 
 ```mermaid
 graph TD;
