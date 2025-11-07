@@ -16,7 +16,7 @@ sudo apt install mysql-server -y
 systemctl status mysql
 ```
 
-### 补充（手动启动）
+### MUST NO MATTER THE STATUS IS RUNNING OR NOT（手动启动）
 ```bash
 systemctl start mysql
 ```
@@ -39,6 +39,9 @@ mysql -u <user> -p
 ### 修改root账户的密码
 现在安装的版本基本上用这个命令就行：
 ```bash
+#first use the 'mysql' database
+use mysql
+
 ## 这个不行换下面那个
 alter user 'root'@'%' identified with mysql_native_password by '123456';
 
