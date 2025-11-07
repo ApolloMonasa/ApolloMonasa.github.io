@@ -33,7 +33,7 @@ gantt
 ```
 
 ```mermaid
-graph TD
+graph TD;
     A[程序启动] --> B[主函数 main]
     B --> C[输入玩家总数 n]
     C --> D[创建 JosephRing 对象 ring1、ring2]
@@ -56,7 +56,7 @@ graph TD
 ```
 
 ```mermaid
-graph TD
+graph TD;
     A[约瑟夫环模拟程序]
     B[主模块 main]
     C[JosephRing 核心类]
