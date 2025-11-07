@@ -1,5 +1,5 @@
 ---
-title: "Mac安装SQL
+title: "Mac安装SQL"
 date: 2025-11-07T08:50:00+08:00
 weight: 10
 tags: ["SQL"]

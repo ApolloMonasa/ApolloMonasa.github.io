@@ -1,5 +1,5 @@
 ---
-title: "Windows安装SQL
+title: "Windows安装SQL"
 date: 2025-11-07T08:50:00+08:00
 weight: 30
 tags: ["SQL"]
