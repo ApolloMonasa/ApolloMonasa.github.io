@@ -1,7 +1,7 @@
 ---
 title: "Linux安装SQL
 date: 2025-11-07T08:50:00+08:00
-weight: 10
+weight: 20
 tags: ["SQL"]
 ---
 
