@@ -9,8 +9,6 @@ date: 2025-11-08T16:14:34+08:00
 # 【建议】文章最后修改日期：更新文章后，请手动更新此日期，以告知搜索引擎内容已更新
 lastmod: 2025-11-08T16:14:34+08:00
 # 【必填】文章作者：FixIt主题支持多种格式
-<!-- author:
-    - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"} -->
 # 【必填】是否为草稿：发布前请务必设置为 false
 draft: false
 weight: 30
