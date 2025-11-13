@@ -272,6 +272,10 @@ gs_om -t status --detail
 ```
 如果看到 `cluster state` 为 `Normal`，则表示一切正常。
 
+如果不正常，就运行以下指令手动启动一下。
+```bash
+gs_om -t start
+```
 ### 2. 连接数据库
 使用 `gsql` 命令连接到您的数据库进行操作。
 ```bash
