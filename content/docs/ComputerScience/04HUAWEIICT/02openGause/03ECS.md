@@ -246,16 +246,30 @@ chmod -R 755 /opt/software/openGauss/script
 ```
 
 **步骤2：** 从 `root` 用户切换到 `omm` 用户。
+
+不过在此之前要安装一下缺失的软件：
+
+```bash
+yum install gcc python-devel -y
+```
+
 ```bash
 su - omm
+
+pip3 intstall netifaces
 ```
 > 你的命令行提示符现在应该从 `[root@opengauss ~]#` 变为了 `[omm@opengauss ~]$`。
 
 **步骤3：** **以 `omm` 用户**执行安装脚本。
+
+
 ```bash
 /opt/software/openGauss/script/gs_install -X /opt/software/openGauss/clusterconfig.xml --gsinit-parameter="--encoding=UTF8" --dn-guc="max_process_memory=4GB" --dn-guc="shared_buffers=256MB" --dn-guc="bulk_write_ring_size=256MB" --dn-guc="cstore_buffers=16MB"
 ```
-
+或者可以给6GB内存：
+```bash
+/opt/software/openGauss/script/gs_install -X /opt/software/openGauss/clusterconfig.xml --gsinit-parameter="--encoding=UTF8" --dn-guc="max_process_memory=6GB" --dn-guc="shared_buffers=256MB" --dn-guc="bulk_write_ring_size=256MB" --dn-guc="cstore_buffers=16MB"
+```
 **步骤4：** 根据提示设置数据库密码。
 1.  当看到 `Please enter password for database:` 时，输入数据库管理员（`omm`）的密码。**此密码用于连接数据库，可以与上一步的操作系统用户 `omm` 密码不同**。请务必设置一个强密码并牢记。
 2.  再次输入相同的密码进行确认。
