@@ -112,4 +112,8 @@ mkdir -p /opt/software/openGauss
 # 下载ARM版安装包到指定目录
 wget -P /opt/software/openGauss https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.1/arm/openGauss-5.0.1-openEuler-64bit-all.tar.gz
 
+tar -zxvf openGauss-5.0.1-openEuler-64bit-all.tar.gz.1
+
+tar -zxvf openGauss-5.0.1-openEuler-64bit-om.tar.gz
+
 ```
