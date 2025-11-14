@@ -256,7 +256,7 @@ yum install gcc python-devel -y
 ```bash
 su - omm
 
-pip3 intstall netifaces
+pip3 install netifaces
 ```
 > 你的命令行提示符现在应该从 `[root@opengauss ~]#` 变为了 `[omm@opengauss ~]$`。
 
