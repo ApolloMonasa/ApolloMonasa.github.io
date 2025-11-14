@@ -3,9 +3,10 @@
 # |                           核心元数据 (Core Metadata)                            |
 # -------------------------------------------------------------------------------------
 # 【必填】文章标题：清晰、吸引人，并包含核心关键词
-title: "华为云鲲鹏ECS搭建openGauss：终极防错实践"
+title: "华为云鲲鹏ECS搭建openGauss"
 # 【必填】文章发布日期
 date: 2025-11-12T10:00:00+08:00
+# 【建议】文章最后修改日期：更新文章后，请手动更新此日期，以告知搜索引擎内容已更新
 
 # 【必填】是否为草稿：发布前请務必设置为 false
 draft: false
@@ -17,7 +18,7 @@ weight: 30
 # 【核心SEO】文章描述：1-3句话，准确概括文章内容，包含关键词。会显示在搜索引擎结果中。
 description: "本教程专为鲲鹏（ARM）学习者设计，提供了一套标准化的低成本配置方案。所有命令均采用绝对路径，确保您直接复制粘贴即可100%成功，彻底杜绝因环境不一致或路径错误导致的失败。手把手教您在华为云鲲鹏ECS上搭建 openGauss 学习环境。"
 # 【建议SEO】文章关键词：针对本文的特定关键词，用逗号分隔
-keywords: ["openGauss", "鲲鹏", "ARM", "数据库学习", "华为云ECS", "openEuler", "绝对路径", "防错教程", "gs_preinstall", "Cgroup"]
+keywords: ["openGauss", "鲲鹏", "ARM", "数据库学习", "华为云ECS", "openEuler", "绝对路径", "防错教程", "gs_preinstall", "Cgroup", "rc.local"]
 
 # -------------------------------------------------------------------------------------
 # |                            内容组织 (Taxonomies)                               |
@@ -139,12 +140,12 @@ wget -P /opt/software/openGauss https://opengauss.obs.cn-south-1.myhuaweicloud.c
 全新的 openEuler 系统缺少 openGauss 必需的依赖和最佳配置。`gs_preinstall` 脚本会进行严格检查，若不满足则会失败或挂起。此步骤将一次性完成所有准备工作，确保后续流程顺利进行。
 
 > **📖 为什么要这么做？**
-> 我们将提前关闭透明大页（THP，数据库性能杀手）、优化内核参数、放宽资源限制，并**安装所有必需的依赖包**（如`libaio`, `chrony`, `libcgroup-tools`）。这是保证安装成功的关键，也是生产部署的最佳实践。
+> 我们将提前关闭透明大页（THP，数据库性能杀手）、优化内核参数、放宽资源限制，安装所有必需的依赖包，并**确保所有优化在系统重启后依然生效**。这是保证安装成功的关键，也是生产部署的最佳实践。
 
 **以 `root` 用户身份**，完整复制并执行以下命令块来完成所有优化：
 
 ```bash
-# 1. 关闭并禁用透明大页 (THP)
+# 1. 关闭并禁用透明大页 (THP)，并确保开机自启服务生效
 echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled
 echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag
 cat >> /etc/rc.local <<EOF
@@ -156,6 +157,9 @@ if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
 fi
 EOF
 chmod +x /etc/rc.local
+# 激活rc.local服务，确保重启后配置持久化
+systemctl enable rc-local.service
+systemctl start rc-local.service
 
 # 2. 优化内核网络与内存参数
 cat >> /etc/sysctl.conf <<EOF
@@ -181,7 +185,7 @@ systemctl start chronyd
 systemctl enable chronyd
 ```
 > **✅ 预期输出：**
-> 您会看到软件包的安装过程和内核参数的输出。执行完毕后，系统环境就已经为 openGauss 的安装做好了万全准备。
+> 您会看到软件包的安装过程和各项服务的启动信息。执行完毕后，系统环境就已经为 openGauss 的安装做好了万全准备。
 
 ## 三、核心部署：配置、初始化与安装
 
