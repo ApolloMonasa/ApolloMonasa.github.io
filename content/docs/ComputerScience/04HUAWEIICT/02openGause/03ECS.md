@@ -402,10 +402,10 @@ gs_om -t start
 
 2.  **创建新用户并授权：**
     成功登录后，您会看到 `postgres=#` 提示符。请执行以下SQL命令来创建新用户。
-    > 💡 **请务必修改**下面的 `navicat_user` 和 `YourComplexPassword!@#` 为您自己的设定！
+    > 💡 **请务必修改**下面的 `navicat_user` 和 `123abc!!!` 为您自己的设定！
 
     ```sql
-    CREATE USER navicat_user WITH PASSWORD 'YourComplexPassword!@#' SYSADMIN;
+    CREATE USER navicat_user WITH PASSWORD '123abc!!!' SYSADMIN;
     ```
     > **📖 命令解读：**
     > *   `CREATE USER navicat_user`：创建一个名为 `navicat_user` 的新用户。
@@ -426,7 +426,7 @@ gs_om -t start
     *   **端口**：`26000`
     *   **初始数据库**：`postgres`
     *   **用户名**：`navicat_user` (**注意：** 是您刚刚创建的新用户，不是`omm`！)
-    *   **密码**：`YourComplexPassword!@#` (您为新用户设定的密码)
+    *   **密码**：`123abc!!!` (您为新用户设定的密码)
 3.  点击“**测试连接**”。
 
 如果一切顺利，您将看到梦寐以求的“**连接成功**”提示！点击“确定”保存，开始您的 openGauss 图形化管理之旅。
