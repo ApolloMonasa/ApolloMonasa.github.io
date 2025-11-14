@@ -351,3 +351,144 @@ gs_om -t start
 3.  点击“**测试连接**”。
 
 如果一切顺利，您将看到梦寐以求的“**连接成功**”提示！点击“确定”保存，开始您的 openGauss 图形化管理之旅。
+
+---
+
+## 如何开启开机自动启动openGause服务
+
+> 使用一段时间之后你会发现，每次开机之后还要手动启动很烦人，于是我们这里整理了如何开机自启。
+
+
+本流程适用于 CentOS 7/8, openEuler 等使用 `systemd` 的 Linux 系统。**全程需要 `root` 用户权限**。
+
+#### **核心思路：**
+
+成功的关键在于我们必须先准确找到三个核心信息。
+
+1.  `gs_om` 启动脚本的**绝对路径**。
+2.  运行 openGauss 的**用户名**和**用户组**。
+3.  包含环境变量的 **`.bashrc` 文件的绝对路径**。
+
+---
+
+#### **第一步：信息收集**
+
+在开始配置前，请先执行以下命令，并将结果记录下来。
+
+**1. 查找 `gs_om` 的真实路径**
+
+```bash
+find / -name gs_om
+```
+命令可能会返回多个结果。根据您的安装情况，选择最合理的一个。在您的案例中，正确的路径是 `/opt/huawei/wisequery/script/gs_om`。
+> **记下这个路径，例如：`/opt/huawei/wisequery/script/gs_om`**
+
+**2. 确认运行用户和用户组**
+
+假设您的运行用户是 `omm`：
+```bash
+id omm
+```
+输出会显示 `uid=1000(omm) gid=1000(dbgrp)`。
+> **记下用户名：`omm`**
+> **记下用户组：`dbgrp`**
+
+**3. 确认 `.bashrc` 文件的路径**
+
+对于 `omm` 用户，路径通常是固定的。
+> **记下 `.bashrc` 路径：`/home/omm/.bashrc`**
+
+现在，我们已经掌握了所有必需的信息，可以开始创建服务文件了。
+
+#### **第二步：创建 `systemd` 服务文件**
+
+1.  使用 `vim` 或其他编辑器创建服务文件：
+    ```bash
+    sudo vim /etc/systemd/system/opengauss.service
+    ```
+
+2.  将下面的模板**完整复制**并粘贴到文件中。这是一个经过验证、可以解决环境变量问题的最终模板。
+
+    ```ini
+    [Unit]
+    Description=openGauss Database Server
+    # 表示在网络服务启动后才启动本服务
+    After=network.target
+
+    [Service]
+    # Type=forking 表示启动脚本会创建子进程，然后主脚本退出
+    Type=forking
+
+    # 【请填入第一步找到的信息】
+    User=[你的运行用户名]
+    Group=[你的运行用户组]
+
+    # 【核心配置】使用bash加载环境变量后，再执行gs_om命令
+    # 【请将路径替换为第一步找到的真实路径】
+    ExecStart=/bin/bash -c "source [你的.bashrc绝对路径] && [你的gs_om绝对路径] -t start"
+    ExecStop=/bin/bash -c "source [你的.bashrc绝对路径] && [你的gs_om绝对路径] -t stop"
+
+    # 设置服务失败时自动重启
+    Restart=on-failure
+
+    [Install]
+    # 表示服务将在多用户模式下被启用
+    WantedBy=multi-user.target
+    ```
+
+3.  **根据第一步记录的信息，替换模板中的占位符**。
+    在您的案例中，替换完成后应该是这样：
+
+    ```ini
+    [Unit]
+    Description=openGauss Database Server
+    After=network.target
+
+    [Service]
+    Type=forking
+
+    User=omm
+    Group=dbgrp
+
+    ExecStart=/bin/bash -c "source /home/omm/.bashrc && /opt/huawei/wisequery/script/gs_om -t start"
+    ExecStop=/bin/bash -c "source /home/omm/.bashrc && /opt/huawei/wisequery/script/gs_om -t stop"
+
+    Restart=on-failure
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+4.  保存并退出编辑器 (`:wq`)。
+
+#### **第三步：加载并启用服务**
+
+1.  **重新加载 `systemd` 配置**，使其识别我们新创建的文件：
+    ```bash
+    sudo systemctl daemon-reload
+    ```
+
+2.  **设置服务为开机自启**：
+    ```bash
+    sudo systemctl enable opengauss.service
+    ```
+
+3.  **立即启动服务进行测试**：
+    ```bash
+    sudo systemctl start opengauss.service
+    ```
+
+#### **第四步：验证**
+
+1.  **检查服务状态**：
+    ```bash
+    sudo systemctl status opengauss.service
+    ```
+    如果看到绿色的 `Active: active (running)`，恭喜您，配置已成功！
+
+2.  **（可选）终极测试**：重启服务器，并在重启后再次检查服务状态，确保它已自动运行。
+    ```bash
+    sudo reboot
+    ```
+
+按照这个流程，您就可以精准、高效地完成 openGauss 的开机自启配置。
