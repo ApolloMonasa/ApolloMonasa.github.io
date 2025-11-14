@@ -236,6 +236,60 @@ python /opt/software/openGauss/script/gs_preinstall -U omm -G dbgrp -X /opt/soft
 > **✅ 预期输出：**
 > 当您看到 `Preinstallation succeeded.` 时，表示环境初始化成功。
 
+---
+如果出现错误，可以执行以下指令：
+
+### **4. 系统深度优化 (解决预检查警告)**
+
+全新的 openEuler 系统虽然稳定，但其默认配置对于高性能数据库而言并非最优。openGauss 的预安装脚本会进行严格检查，并可能因某些系统参数不符合要求而中断。为了确保一次成功，我们提前进行优化。
+
+> **📖 为什么要这么做？**
+> 我们将提前关闭透明大页（THP，数据库性能杀手）、调整网络重试参数、放宽用户资源限制，并启用时间同步服务。这不仅能保证 `gs_preinstall` 脚本顺利通过，更是生产环境部署 openGauss 的最佳实践。
+
+**以 `root` 用户身份**，执行以下命令块来完成所有优化：
+
+```bash
+# 关闭并禁用透明大页 (THP)
+echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled
+echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag
+cat >> /etc/rc.local <<EOF
+if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+   echo never > /sys/kernel/mm/transparent_hugepage/enabled
+fi
+if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+   echo never > /sys/kernel/mm/transparent_hugepage/defrag
+fi
+EOF
+chmod +x /etc/rc.local
+
+# 优化内核网络参数
+cat >> /etc/sysctl.conf <<EOF
+net.ipv4.tcp_retries1 = 5
+net.ipv4.tcp_syn_retries = 5
+EOF
+sysctl -p
+
+# 提升系统资源限制
+cat >> /etc/security/limits.conf <<EOF
+* soft nofile 1000000
+* hard nofile 1000000
+* soft nproc unlimited
+* hard nproc unlimited
+EOF
+
+# 安装并启用时间同步服务
+yum install chrony -y
+systemctl start chrony
+systemctl enable chrony
+```
+> **✅ 预期输出：**
+> 您会看到 `chrony` 包的安装过程和内核参数的输出。执行完毕后，系统环境就已经为 openGauss 的安装做好了万全准备。
+
+
+
+---
+
+
 ### 3. 执行安装 (gs_install)
 
 万事俱备，只欠东风！现在我们将切换到 `omm` 用户，执行最终的安装命令。
