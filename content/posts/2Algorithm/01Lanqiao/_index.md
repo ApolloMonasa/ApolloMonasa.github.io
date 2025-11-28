@@ -1,4 +1,4 @@
 ---
-title: 读书随笔
+title: 蓝桥杯
 weight: 1
 ---
