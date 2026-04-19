@@ -15,21 +15,7 @@ layout: "homepage"
 
 ```mermaid
 gantt
-    title 个人时间安排
-    dateFormat YYYY-MM-DD
-    section 学术科研
-    论文阅读    :active, acad1, 2025-10-17,2d
-    类脑计算低功耗睡眠分期    :active, acad2, after acad1,4d
-    section 生活娱乐
-    黄山行      :   p1, 2025-10-30, 4d
-    section 竞赛
-    OceanBase数据库大赛初赛    :crit, cont1, 2025-10-20,24d
-    OceanBase数据库大赛决赛    :crit, cont2, 2025-11-19,34d
-    OceanBase数据库大赛答辩    :crit, cont3, 2026-1-1,1d
-    华为ICT大赛校赛    :crit, cont4, 2025-11-9,1d
-    华为ICT大赛省初赛    :crit, cont5, 2025-11-15,2d
-    华为ICT大赛省复赛    :crit, cont6, 2026-3-1,4w
-    华为ICT大赛中国总决赛    :crit, cont6, 2026-5-1,4w
+
 ```
 
 
