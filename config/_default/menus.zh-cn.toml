@@ -6,13 +6,12 @@
 [[main]]
   identifier = "neoforge"
   name = "NeoForge开发教程"
-  url = "/docs/neoforge/0Introduction"  # [修正] 指向教程的根目录，而不是具体页面
+  url = "/docs/neoforge/0Introduction" 
   title = "NeoForge 模组开发教程"
-  weight = 10              # [修正] 使用唯一的 weight，并留出间隔
+  weight = 10         
   [main.params]
-    icon = "fa-solid fa-code" # [修改] 为NeoForge教程添加了代码图标
+    icon = "fa-solid fa-code"
 
-# --- [新增] 计算机科学 ---
 [[main]]
   identifier = "cs"
   name = "计算机科学"
@@ -28,7 +27,7 @@
   name = "归档"
   url = "/archives/"
   title = "按时间归档"
-  weight = 30              # [修正] 唯一的 weight
+  weight = 30
   [main.params]
     icon = "fa-solid fa-archive"
 
@@ -37,7 +36,7 @@
   name = "分类"
   url = "/categories/"
   title = "按分类浏览"
-  weight = 40              # [修正] 唯一的 weight
+  weight = 40
   [main.params]
     icon = "fa-solid fa-folder-tree"
 
@@ -46,15 +45,6 @@
   name = "标签"
   url = "/tags/"
   title = "按标签浏览"
-  weight = 50              # [修正] 唯一的 weight
+  weight = 50 
   [main.params]
     icon = "fa-solid fa-tags"
-
-[[main]]
-  identifier = "portfolio"
-  name = "作品集"
-  url = "/portfolio/"
-  title = "查看我的作品集"
-  weight = 60              # [修正] 唯一的 weight
-  [main.params]
-    icon = "fa-solid fa-folder-open" # [建议] 为“作品集”添加图标
