@@ -22,34 +22,6 @@
   [main.params]
     icon = "fa-solid fa-desktop"  # 为计算机科学添加了电脑图标
 
-[[main]]
-  identifier = "posts"
-  name = "金融学"
-  url = "/docs/finance/0introduction"
-  title = "浏览金融学文章"
-  weight = 20              # [修正] 唯一的 weight
-  [main.params]
-    icon = "fa-solid fa-pen-nib" # [建议] 为“文章”添加图标
-
-[[main]]
-  identifier = "reading-notes"
-  name = "读书随笔"
-  url = "/posts/1books/1insidethegamethechinesegovernmentandeconomicdevelopment/0intro/" # 注意：这里使用了相对路径，这是 Hugo 的标准做法
-
-  title = "浏览读书随笔"
-  weight = 25              # [新增] 插入到金融学(20)和归档(30)之间
-  [main.params]
-    icon = "fa-solid fa-book-open" # [新增] 为读书随笔添加了打开的书本图标
-
-[[main]]
-  identifier = "chores-notes"
-  name = "杂项"
-  url = "/posts/0chores/2remotedesktop/0intro/" # 注意：这里使用了相对路径，这是 Hugo 的标准做法
-
-  title = "浏览读书随笔"
-  weight = 27              # [新增] 插入到金融学(20)和归档(30)之间
-  [main.params]
-    icon = "fa-solid fa-toolbox" # [新增] 为读书随笔添加了打开的书本图标
 
 [[main]]
   identifier = "archives"
