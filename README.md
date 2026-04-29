@@ -1,5 +1,9 @@
-## Apollo and wmsnp' Blogs
+## Thinking | Apollo and wmsnp
 
 >这是我们共同搭建的博客网站，主要合作内容是MinecraftModding，尤其是NeoForge开发。
 
-慢慢偏离中心了，NeoForge开发暂时暂停，假期启动。
+于2025年年末慢慢偏离中心了，NeoForge开发暂时暂停，假期启动(骗你的)。
+
+---
+
+最终决定在2026年年中拨乱反正，删除了菜单中乱七八糟的选单，只留下了模组开发教程和计算机相关内容，希望最晚于2026六月底重新开始写作！
