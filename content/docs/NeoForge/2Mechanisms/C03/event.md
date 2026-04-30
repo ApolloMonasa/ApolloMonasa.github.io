@@ -5,19 +5,19 @@
 # 【必填】文章标题：清晰、吸引人，并包含核心关键词
 title: "事件"
 # 【必填】文章发布日期
-date: 2026-04-30T02:33:21Z
+date: 2026-04-30T02:40:55Z
 # 【建议】文章最后修改日期：更新文章后，请手动更新此日期，以告知搜索引擎内容已更新
-lastmod: 2026-04-30T02:33:21Z
+lastmod: 2026-04-30T02:40:55Z
 # 【必填】文章作者：FixIt主题支持多种格式
 # 格式一: 简单字符串
 # author: "ApolloMonasa"
 # 格式二: 包含链接和头像的复杂对象 (推荐)
-author:
+# author:
 #     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
-    - ApolloMonasa
+#     - ApolloMonasa
 # 【必填】是否为草稿：发布前请务必设置为 false
 draft: false
-weight: 3
+weight: 1
 
 # -------------------------------------------------------------------------------------
 # |                             SEO 与分享 (SEO & Sharing)                           |
@@ -53,4 +53,20 @@ toc: true
 # 文章封面图：显示在文章列表和文章顶部
 featuredImage: "" # 例如: "/images/posts/my-post-cover.jpg"
 ---
+# 事件概论
 
+## 1.什么是事件
+
+## 2.Minecraft没有事件系统
+
+## 3.事件订阅
+
+## 4.自动注册
+
+## 5.事件的取消和结果
+
+## 6.优先级
+
+## 7.如果没有我需要的事件怎么办？
+
+## 8.但是我需要给自己的【某种机制】弄一个事件

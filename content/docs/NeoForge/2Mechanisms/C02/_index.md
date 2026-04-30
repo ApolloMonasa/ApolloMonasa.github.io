@@ -11,14 +11,3 @@ description: ""
 keywords: ""
 draft: false
 ---
-
-## 1.开发环境部署
-
-### 1-1.常见问题
-
-### 1-2.在Eclipse中运行 Minecraft
-
-### 1-3.在IDEA中运行 Minecraft
-
-## 2.入口类
-
