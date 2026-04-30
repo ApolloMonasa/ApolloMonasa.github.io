@@ -1,5 +1,5 @@
 ---
-title: "简介"
+title: "写在前面：这是什么？"
 subtitle: ""
 author:
     - {name: "wmsnp", link: "https://github.com/wmsnp", avatar: "https://i.ooxx.ooo/i/ZGM0M.jpg"}
@@ -11,6 +11,11 @@ description: ""
 keywords: ""
 draft: false
 ---
+**Prerequisities:**
+Thking-NeoForge是一套全面的，基于NeoForge的，中文 Minecraft Mod 开发指南。身为读者的你，需要记住以下事项：
+- **如无特殊说明，本教程基于 Minecraft 26.2 和NeoForge，本教程原则上不涉及任何旧版内容。**
+
+
 **摘要：**
 
 ==[**NeoForge**](https://neoforged.net/)==[pink]是为==Minecraft Java Edition==[primary]设计的开源模组（MOD）加载器和应用程序接口（API）。它本质上是著名模组加载器**Minecraft Forge(简称Forge)** 的一个现代分支，或许你现在还对上述一些名词感到陌生，别担心，一点点读下去，你会懂的！
