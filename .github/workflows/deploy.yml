@@ -43,6 +43,11 @@ jobs:
           # use the environment variable HUGO_VERSION as the hugo version, if not set, use `latest`.
           hugo-version: ${{ vars.HUGO_VERSION || 'latest' }}
           extended: true
+      - name: Setup Dart Sass
+        run: |
+          curl -LJO https://github.com/sass/dart-sass/releases/download/1.105.1/dart-sass-1.105.1-linux-x64.tar.gz
+          tar -xf dart-sass-1.105.1-linux-x64.tar.gz
+          echo "$PWD/dart-sass" >> $GITHUB_PATH
       - name: Hugo build
         run: hugo --gc --minify --logLevel info
       - name: Upload artifact
