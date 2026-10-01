@@ -18,8 +18,26 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Update theme
-        run: git submodule update --remote --merge
+      - name: Update theme (latest stable tag only)
+        run: |
+          set -euo pipefail
+          cd themes/FixIt
+          git fetch --tags --force origin
+          # latest tag, skipping pre-releases (v1.0.0-alpha / -beta / -rc and variants)
+          LATEST=$(git tag --sort=-v:refname | grep -vE -- '-(alpha|beta|rc)' | head -n1)
+          TARGET=$(git rev-parse "${LATEST}^{commit}")
+          CURRENT=$(git rev-parse HEAD)
+          if [ "$TARGET" = "$CURRENT" ]; then
+            echo "FixIt already at latest stable tag $LATEST"
+            exit 0
+          fi
+          # forward-only: never downgrade below the current pin
+          if [ "$(git show -s --format=%ct "$TARGET")" -lt "$(git show -s --format=%ct "$CURRENT")" ]; then
+            echo "Latest stable tag $LATEST is not newer than the current pin, skipping"
+            exit 0
+          fi
+          git checkout -q "$LATEST"
+          echo "Pinned FixIt to $LATEST ($(git rev-parse --short HEAD))"
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
